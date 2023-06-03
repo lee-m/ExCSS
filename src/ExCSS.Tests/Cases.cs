@@ -866,7 +866,7 @@ tobi loki jane {
 			Assert.Equal(1, sheet.Rules.Length);
 
             Assert.Equal(@"p[qwe=""a\"",b""]", ((StyleRule)sheet.Rules[0]).SelectorText);
-            Assert.Equal(@"red", ((StyleRule)sheet.Rules[0]).Style["color"]);
+            Assert.Equal(@"rgb(255, 0, 0)", ((StyleRule)sheet.Rules[0]).Style["color"]);
 		}
 
 		[Fact]
@@ -983,15 +983,15 @@ baz {
         {
             var sheet = ParseSheet(@"h1 { background-color: \000062
 lack; }");
-            Assert.Equal(@"black", ((StyleRule)sheet.Rules[0]).Style["background-color"]);
+            Assert.Equal(@"rgb(0, 0, 0)", ((StyleRule)sheet.Rules[0]).Style["background-color"]);
         }
 
         [Fact]
         public void StyleSheetUnicodeEscapeVarious()
         {
             var sheet = ParseSheet("h1 { background-color: \\000062\r\nlack; color: \\000062\tlack; border-color: \\000062\nlack; outline-color: \\000062 lack }");
-            Assert.Equal(@"black", ((StyleRule)sheet.Rules[0]).Style["background-color"]);
-            Assert.Equal(@"black", ((StyleRule)sheet.Rules[0]).Style["color"]);
+            Assert.Equal(@"rgb(0, 0, 0)", ((StyleRule)sheet.Rules[0]).Style["background-color"]);
+            Assert.Equal(@"rgb(0, 0, 0)", ((StyleRule)sheet.Rules[0]).Style["color"]);
             Assert.Equal(@"black", ((StyleRule)sheet.Rules[0]).Style["border-color"]);
             Assert.Equal(@"black", ((StyleRule)sheet.Rules[0]).Style["outline-color"]);
         }
