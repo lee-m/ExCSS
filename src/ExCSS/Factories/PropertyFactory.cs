@@ -20,6 +20,7 @@ namespace ExCSS
 
         private PropertyFactory()
         {
+            AddLonghand(PropertyNames.All, () => new AllProperty());
             AddLonghand(PropertyNames.AlignContent, () => new AlignContentProperty());
             AddLonghand(PropertyNames.AlignItems, () => new AlignItemsProperty());
             AddLonghand(PropertyNames.AlignSelf, () => new AlignSelfProperty());

@@ -314,6 +314,12 @@ namespace ExCSS
             }
         }
 
+        public IProperty All
+        {
+            get => GetProperty(PropertyNames.All);
+            set => SetProperty(PropertyNames.All, value.ValueText);
+        }
+
         public IProperty AlignContent
         {
             get => GetProperty(PropertyNames.AlignContent);

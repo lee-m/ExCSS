@@ -13,7 +13,7 @@ namespace ExCSS
 
         internal override IValueConverter Converter => StyleConverter;
 
-        internal override IValue CoerceValue(TokenValue newTokenValue)
+        protected override IValue CoerceValue(TokenValue newTokenValue)
         {
             var colorFunction = new ColorFunctionValueConverter();
             var wideKeywordConverter = new WideKeywordValueConverter();

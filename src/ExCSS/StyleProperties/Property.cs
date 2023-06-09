@@ -28,7 +28,7 @@ namespace ExCSS
             return Value != null;
         }
 
-        internal virtual IValue CoerceValue(TokenValue newTokenValue)
+        protected virtual IValue CoerceValue(TokenValue newTokenValue)
             => null;
 
         public string ValueText => DeclaredValue != null ? DeclaredValue.CssText : Keywords.Initial;
