@@ -267,7 +267,7 @@
         public static readonly string Hover = "hover";
         public static readonly string Any = "any";
         public static readonly string ScaleDown = "scale-down";
-        public static readonly string CurrentColor = "currentColor";
+        public static readonly string CurrentColor = "currentcolor";
         public static readonly string Public = "PUBLIC";
         public static readonly string System = "SYSTEM";
         public static readonly string CData = "[CDATA[";

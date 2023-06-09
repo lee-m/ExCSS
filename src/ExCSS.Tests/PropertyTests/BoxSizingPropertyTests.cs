@@ -15,7 +15,7 @@ namespace ExCSS.Tests.PropertyTests
             var concrete = (BoxSizingProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("content-box", concrete.Value);
+            Assert.Equal("content-box", concrete.ValueText);
         }
 
         [Fact]
@@ -29,7 +29,7 @@ namespace ExCSS.Tests.PropertyTests
             var concrete = (BoxSizingProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("border-box", concrete.Value);
+            Assert.Equal("border-box", concrete.ValueText);
         }
     }
 }

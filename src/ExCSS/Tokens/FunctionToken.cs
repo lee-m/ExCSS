@@ -45,5 +45,12 @@ namespace ExCSS
         {
             return GetEnumerator();
         }
+
+        public bool IsColorFunction =>
+            Data == FunctionNames.Rgb
+            || Data == FunctionNames.Rgba
+            || Data == FunctionNames.Hsl
+            || Data == FunctionNames.Hsla
+            || Data == FunctionNames.Hwb;
     }
 }

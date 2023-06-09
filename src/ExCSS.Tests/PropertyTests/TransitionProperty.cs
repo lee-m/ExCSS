@@ -16,7 +16,7 @@
             var concrete = (TransitionPropertyProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("none", concrete.Value);
+            Assert.Equal("none", concrete.ValueText);
         }
 
         [Fact]
@@ -30,7 +30,7 @@
             var concrete = (TransitionPropertyProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("all", concrete.Value);
+            Assert.Equal("all", concrete.ValueText);
         }
 
         [Fact]
@@ -44,7 +44,7 @@
             var concrete = (TransitionPropertyProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("width, height", concrete.Value);
+            Assert.Equal("width, height", concrete.ValueText);
         }
 
         [Fact]
@@ -97,7 +97,7 @@
             var concrete = (TransitionTimingFunctionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("ease", concrete.Value);
+            Assert.Equal("ease", concrete.ValueText);
         }
 
         [Fact]
@@ -111,7 +111,7 @@
             var concrete = (TransitionTimingFunctionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("ease-in", concrete.Value);
+            Assert.Equal("ease-in", concrete.ValueText);
         }
 
         [Fact]
@@ -125,7 +125,7 @@
             var concrete = (TransitionTimingFunctionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("step-start", concrete.Value);
+            Assert.Equal("step-start", concrete.ValueText);
         }
 
         [Fact]
@@ -139,7 +139,7 @@
             var concrete = (TransitionTimingFunctionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("step-start, step-end", concrete.Value);
+            Assert.Equal("step-start, step-end", concrete.ValueText);
         }
 
         [Fact]
@@ -153,7 +153,7 @@
             var concrete = (TransitionTimingFunctionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("step-start, step-end, linear, ease-in-out", concrete.Value);
+            Assert.Equal("step-start, step-end, linear, ease-in-out", concrete.ValueText);
         }
 
         [Fact]
@@ -167,7 +167,7 @@
             var concrete = (TransitionTimingFunctionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("cubic-bezier(0, 1, 0.5, 1)", concrete.Value);
+            Assert.Equal("cubic-bezier(0, 1, 0.5, 1)", concrete.ValueText);
         }
 
         [Fact]
@@ -181,7 +181,7 @@
             var concrete = (TransitionTimingFunctionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("steps(10, start)", concrete.Value);
+            Assert.Equal("steps(10, start)", concrete.ValueText);
         }
 
         [Fact]
@@ -195,7 +195,7 @@
             var concrete = (TransitionTimingFunctionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("steps(25, end)", concrete.Value);
+            Assert.Equal("steps(25, end)", concrete.ValueText);
         }
 
         [Fact]
@@ -209,7 +209,7 @@
             var concrete = (TransitionTimingFunctionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("steps(25), linear, cubic-bezier(0.25, 1, 0.5, 1)", concrete.Value);
+            Assert.Equal("steps(25), linear, cubic-bezier(0.25, 1, 0.5, 1)", concrete.ValueText);
         }
 
         [Fact]
@@ -223,7 +223,7 @@
             var concrete = (TransitionDurationProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("6s", concrete.Value);
+            Assert.Equal("6s", concrete.ValueText);
         }
 
         [Fact]
@@ -237,7 +237,7 @@
             var concrete = (TransitionDurationProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("60ms", concrete.Value);
+            Assert.Equal("60ms", concrete.ValueText);
         }
 
         [Fact]
@@ -251,7 +251,7 @@
             var concrete = (TransitionDurationProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("60ms, 1s, 2s", concrete.Value);
+            Assert.Equal("60ms, 1s, 2s", concrete.ValueText);
         }
 
         [Fact]
@@ -265,7 +265,7 @@
             var concrete = (TransitionDelayProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("60ms", concrete.Value);
+            Assert.Equal("60ms", concrete.ValueText);
         }
 
         [Fact]
@@ -279,7 +279,7 @@
             var concrete = (TransitionDelayProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("60ms, 1s, 2s", concrete.Value);
+            Assert.Equal("60ms, 1s, 2s", concrete.ValueText);
         }
 
         [Fact]
@@ -293,7 +293,7 @@
             var concrete = (TransitionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("60ms, 1s, 2s", concrete.Value);
+            Assert.Equal("60ms, 1s, 2s", concrete.ValueText);
         }
 
         [Fact]
@@ -307,7 +307,7 @@
             var concrete = (TransitionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("steps(25), linear, cubic-bezier(0.25, 1, 0.5, 1)", concrete.Value);
+            Assert.Equal("steps(25), linear, cubic-bezier(0.25, 1, 0.5, 1)", concrete.ValueText);
         }
 
         [Fact]
@@ -321,7 +321,7 @@
             var concrete = (TransitionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("width, height", concrete.Value);
+            Assert.Equal("width, height", concrete.ValueText);
         }
 
         [Fact]
@@ -335,7 +335,7 @@
             var concrete = (TransitionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("ease", concrete.Value);
+            Assert.Equal("ease", concrete.ValueText);
         }
 
         [Fact]
@@ -349,7 +349,7 @@
             var concrete = (TransitionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("all 1s ease", concrete.Value);
+            Assert.Equal("all 1s ease", concrete.ValueText);
         }
 
         [Fact]
@@ -363,7 +363,7 @@
             var concrete = (TransitionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("all 1s ease, height 50ms steps(5)", concrete.Value);
+            Assert.Equal("all 1s ease, height 50ms steps(5)", concrete.ValueText);
         }
 
         [Fact]
@@ -377,7 +377,7 @@
             var concrete = (TransitionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("all 1s ease, height 50ms step-start, width, cubic-bezier(0.2, 0.5, 1, 1)", concrete.Value);
+            Assert.Equal("all 1s ease, height 50ms step-start, width, cubic-bezier(0.2, 0.5, 1, 1)", concrete.ValueText);
         }
     }
 }

@@ -16,7 +16,7 @@
             var concrete = (BackgroundAttachmentProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("scroll", concrete.Value);
+            Assert.Equal("scroll", concrete.ValueText);
         }
 
         [Fact]
@@ -30,7 +30,7 @@
             var concrete = (BackgroundAttachmentProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("initial", concrete.Value);
+            Assert.Equal("initial", concrete.ValueText);
         }
 
         [Fact]
@@ -44,7 +44,7 @@
             var concrete = (BackgroundAttachmentProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("fixed", concrete.Value);
+            Assert.Equal("fixed", concrete.ValueText);
         }
 
         [Fact]
@@ -58,7 +58,7 @@
             var concrete = (BackgroundAttachmentProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("fixed, local", concrete.Value);
+            Assert.Equal("fixed, local", concrete.ValueText);
         }
 
         [Fact]
@@ -72,7 +72,7 @@
             var concrete = (BackgroundAttachmentProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("fixed, local, scroll, scroll", concrete.Value);
+            Assert.Equal("fixed, local, scroll, scroll", concrete.ValueText);
         }
 
         [Fact]
@@ -99,7 +99,7 @@
             var concrete = (BackgroundClipProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("padding-box", concrete.Value);
+            Assert.Equal("padding-box", concrete.ValueText);
         }
 
         [Fact]
@@ -113,7 +113,7 @@
             var concrete = (BackgroundClipProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("padding-box, border-box", concrete.Value);
+            Assert.Equal("padding-box, border-box", concrete.ValueText);
         }
 
         [Fact]
@@ -127,7 +127,7 @@
             var concrete = (BackgroundClipProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("content-box", concrete.Value);
+            Assert.Equal("content-box", concrete.ValueText);
         }
 
         [Fact]
@@ -141,7 +141,7 @@
             var concrete = (BackgroundColorProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("rgb(0, 128, 128)", concrete.Value);
+            Assert.Equal("rgb(0, 128, 128)", concrete.ValueText);
         }
 
         [Fact]
@@ -155,7 +155,7 @@
             var concrete = (BackgroundColorProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("rgb(255, 255, 128)", concrete.Value);
+            Assert.Equal("rgb(255, 255, 128)", concrete.ValueText);
         }
 
         [Fact]
@@ -169,7 +169,7 @@
             var concrete = (BackgroundColorProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("hsla(50deg, 33%, 25%, 0.75)", concrete.Value);
+            Assert.Equal("hsla(50deg, 33%, 25%, 0.75)", concrete.ValueText);
         }
 
         [Fact]
@@ -183,7 +183,7 @@
             var concrete = (BackgroundColorProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("rgba(0, 0, 0, 0)", concrete.Value);
+            Assert.Equal("rgba(0, 0, 0, 0)", concrete.ValueText);
         }
 
         [Fact]
@@ -197,7 +197,7 @@
             var concrete = (BackgroundColorProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("rgb(187, 255, 0)", concrete.Value);
+            Assert.Equal("rgb(187, 255, 0)", concrete.ValueText);
         }
 
         [Fact]
@@ -224,7 +224,7 @@
             var concrete = (BackgroundImageProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("none", concrete.Value);
+            Assert.Equal("none", concrete.ValueText);
         }
 
         [Fact]
@@ -238,7 +238,7 @@
             var concrete = (BackgroundImageProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("url(\"img/sprites.svg?v=1bc768be1b3c\"), none", concrete.Value);
+            Assert.Equal("url(\"img/sprites.svg?v=1bc768be1b3c\"), none", concrete.ValueText);
         }
 
         [Fact]
@@ -252,7 +252,7 @@
             var concrete = (BackgroundImageProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("url(\"image.png\")", concrete.Value);
+            Assert.Equal("url(\"image.png\")", concrete.ValueText);
         }
 
         [Fact]
@@ -266,7 +266,7 @@
             var concrete = (BackgroundImageProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("url(\"http://www.example.com/images/bck.png\")", concrete.Value);
+            Assert.Equal("url(\"http://www.example.com/images/bck.png\")", concrete.ValueText);
         }
 
         [Fact]
@@ -280,7 +280,7 @@
             var concrete = (BackgroundImageProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("url(\"image.png\"), url(\"bla.png\")", concrete.Value);
+            Assert.Equal("url(\"image.png\"), url(\"bla.png\")", concrete.ValueText);
         }
 
         [Fact]
@@ -294,7 +294,7 @@
             var concrete = (BackgroundImageProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("url(\"image.png\"), none, url(\"foo.gif\")", concrete.Value);
+            Assert.Equal("url(\"image.png\"), none, url(\"foo.gif\")", concrete.ValueText);
         }
 
         [Fact]
@@ -308,7 +308,7 @@
             var concrete = (BackgroundOriginProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("content-box", concrete.Value);
+            Assert.Equal("content-box", concrete.ValueText);
         }
 
         [Fact]
@@ -322,7 +322,7 @@
             var concrete = (BackgroundOriginProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("content-box, padding-box", concrete.Value);
+            Assert.Equal("content-box, padding-box", concrete.ValueText);
         }
 
         [Fact]
@@ -336,7 +336,7 @@
             var concrete = (BackgroundOriginProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("border-box", concrete.Value);
+            Assert.Equal("border-box", concrete.ValueText);
         }
 
         [Fact]
@@ -350,7 +350,7 @@
             var concrete = (BackgroundPositionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("top", concrete.Value);
+            Assert.Equal("top", concrete.ValueText);
         }
 
         [Fact]
@@ -364,7 +364,7 @@
             var concrete = (BackgroundPositionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("25% 75%", concrete.Value);
+            Assert.Equal("25% 75%", concrete.ValueText);
         }
 
         [Fact]
@@ -378,7 +378,7 @@
             var concrete = (BackgroundPositionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("center 75%", concrete.Value);
+            Assert.Equal("center 75%", concrete.ValueText);
         }
 
         [Fact]
@@ -392,7 +392,7 @@
             var concrete = (BackgroundPositionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("right 20px bottom 20px", concrete.Value);
+            Assert.Equal("right 20px bottom 20px", concrete.ValueText);
         }
 
         [Fact]
@@ -406,7 +406,7 @@
             var concrete = (BackgroundPositionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("10px 20px, center", concrete.Value);
+            Assert.Equal("10px 20px, center", concrete.ValueText);
         }
 
         [Fact]
@@ -420,7 +420,7 @@
             var concrete = (BackgroundPositionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("0 0, 0 0", concrete.Value);
+            Assert.Equal("0 0, 0 0", concrete.ValueText);
         }
 
         [Fact]
@@ -434,7 +434,7 @@
             var concrete = (BackgroundRepeatProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("repeat-x", concrete.Value);
+            Assert.Equal("repeat-x", concrete.ValueText);
         }
 
         [Fact]
@@ -448,7 +448,7 @@
             var concrete = (BackgroundRepeatProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("repeat-y", concrete.Value);
+            Assert.Equal("repeat-y", concrete.ValueText);
         }
 
         [Fact]
@@ -462,7 +462,7 @@
             var concrete = (BackgroundRepeatProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("repeat", concrete.Value);
+            Assert.Equal("repeat", concrete.ValueText);
         }
 
         [Fact]
@@ -476,7 +476,7 @@
             var concrete = (BackgroundRepeatProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("round", concrete.Value);
+            Assert.Equal("round", concrete.ValueText);
         }
 
         [Fact]
@@ -490,7 +490,7 @@
             var concrete = (BackgroundRepeatProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("repeat space", concrete.Value);
+            Assert.Equal("repeat space", concrete.ValueText);
         }
 
         [Fact]
@@ -517,7 +517,7 @@
             var concrete = (BackgroundRepeatProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("repeat-x, repeat-y", concrete.Value);
+            Assert.Equal("repeat-x, repeat-y", concrete.ValueText);
         }
 
         [Fact]
@@ -531,7 +531,7 @@
             var concrete = (BackgroundRepeatProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("space round", concrete.Value);
+            Assert.Equal("space round", concrete.ValueText);
         }
 
         [Fact]
@@ -558,7 +558,7 @@
             var concrete = (BackgroundRepeatProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("repeat repeat, no-repeat repeat", concrete.Value);
+            Assert.Equal("repeat repeat, no-repeat repeat", concrete.ValueText);
         }
 
         [Fact]
@@ -572,7 +572,7 @@
             var concrete = (BackgroundSizeProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("2em", concrete.Value);
+            Assert.Equal("2em", concrete.ValueText);
         }
 
         [Fact]
@@ -586,7 +586,7 @@
             var concrete = (BackgroundSizeProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("20%", concrete.Value);
+            Assert.Equal("20%", concrete.ValueText);
         }
 
         [Fact]
@@ -600,7 +600,7 @@
             var concrete = (BackgroundSizeProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("auto auto", concrete.Value);
+            Assert.Equal("auto auto", concrete.ValueText);
         }
 
         [Fact]
@@ -614,7 +614,7 @@
             var concrete = (BackgroundSizeProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("auto 50px", concrete.Value);
+            Assert.Equal("auto 50px", concrete.ValueText);
         }
 
         [Fact]
@@ -628,7 +628,7 @@
             var concrete = (BackgroundSizeProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("25px 50px", concrete.Value);
+            Assert.Equal("25px 50px", concrete.ValueText);
         }
 
         [Fact]
@@ -642,7 +642,7 @@
             var concrete = (BackgroundSizeProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("50% 50%", concrete.Value);
+            Assert.Equal("50% 50%", concrete.ValueText);
         }
 
         [Fact]
@@ -656,7 +656,7 @@
             var concrete = (BackgroundSizeProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("auto", concrete.Value);
+            Assert.Equal("auto", concrete.ValueText);
         }
 
         [Fact]
@@ -670,7 +670,7 @@
             var concrete = (BackgroundSizeProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("cover", concrete.Value);
+            Assert.Equal("cover", concrete.ValueText);
         }
 
         [Fact]
@@ -684,7 +684,7 @@
             var concrete = (BackgroundSizeProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("contain, cover", concrete.Value);
+            Assert.Equal("contain, cover", concrete.ValueText);
         }
 
         [Fact]
@@ -698,7 +698,7 @@
             var concrete = (BackgroundSizeProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("contain, 100px, auto, 20%", concrete.Value);
+            Assert.Equal("contain, 100px, auto, 20%", concrete.ValueText);
         }
 
         [Fact]
@@ -712,7 +712,7 @@
             var concrete = (BackgroundProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("rgb(255, 0, 0)", concrete.Value);
+            Assert.Equal("rgb(255, 0, 0)", concrete.ValueText);
         }
 
         [Fact]
@@ -726,7 +726,7 @@
             var concrete = (BackgroundProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("url(\"pendant.png\") rgb(255, 255, 255)", concrete.Value);
+            Assert.Equal("url(\"pendant.png\") rgb(255, 255, 255)", concrete.ValueText);
         }
 
         [Fact]
@@ -740,7 +740,7 @@
             var concrete = (BackgroundProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("url(\"topbanner.png\") repeat-y fixed rgb(0, 0, 221)", concrete.Value);
+            Assert.Equal("url(\"topbanner.png\") repeat-y fixed rgb(0, 0, 221)", concrete.ValueText);
         }
 
         [Fact]
@@ -754,7 +754,7 @@
             var concrete = (BackgroundProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("url(\"img_tree.png\") right top no-repeat", concrete.Value);
+            Assert.Equal("url(\"img_tree.png\") right top no-repeat", concrete.ValueText);
         }
 
         [Fact]
@@ -769,7 +769,7 @@
             var concrete = (BackgroundImageProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("url(\"" + url + "\")", concrete.Value);
+            Assert.Equal("url(\"" + url + "\")", concrete.ValueText);
         }
     }
 }

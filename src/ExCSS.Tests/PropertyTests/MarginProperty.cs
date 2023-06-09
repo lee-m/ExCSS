@@ -16,7 +16,7 @@
             var concrete = (MarginLeftProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("15px", concrete.Value);
+            Assert.Equal("15px", concrete.ValueText);
         }
 
         [Fact]
@@ -30,7 +30,7 @@
             var concrete = (MarginLeftProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("initial", concrete.Value);
+            Assert.Equal("initial", concrete.ValueText);
         }
 
         [Fact]
@@ -44,7 +44,7 @@
             var concrete = (MarginRightProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("3em", concrete.Value);
+            Assert.Equal("3em", concrete.ValueText);
         }
 
         [Fact]
@@ -58,7 +58,7 @@
             var concrete = (MarginRightProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("10%", concrete.Value);
+            Assert.Equal("10%", concrete.ValueText);
         }
 
         [Fact]
@@ -72,7 +72,7 @@
             var concrete = (MarginTopProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("4%", concrete.Value);
+            Assert.Equal("4%", concrete.ValueText);
         }
 
         [Fact]
@@ -86,7 +86,7 @@
             var concrete = (MarginBottomProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("0", concrete.Value);
+            Assert.Equal("0", concrete.ValueText);
         }
 
         [Fact]
@@ -100,7 +100,7 @@
             var concrete = (MarginBottomProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("-3px", concrete.Value);
+            Assert.Equal("-3px", concrete.ValueText);
         }
 
         [Fact]
@@ -114,7 +114,7 @@
             var concrete = (MarginBottomProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("auto", concrete.Value);
+            Assert.Equal("auto", concrete.ValueText);
         }
 
         [Fact]
@@ -128,7 +128,7 @@
             var concrete = (MarginProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("0", concrete.Value);
+            Assert.Equal("0", concrete.ValueText);
         }
 
         [Fact]
@@ -142,7 +142,7 @@
             var concrete = (MarginProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("25%", concrete.Value);
+            Assert.Equal("25%", concrete.ValueText);
         }
 
         [Fact]
@@ -156,7 +156,7 @@
             var concrete = (MarginProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("10px 3em", concrete.Value);
+            Assert.Equal("10px 3em", concrete.ValueText);
         }
 
         [Fact]
@@ -170,7 +170,7 @@
             var concrete = (MarginProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("10px auto", concrete.Value);
+            Assert.Equal("10px auto", concrete.ValueText);
         }
 
         [Fact]
@@ -184,7 +184,7 @@
             var concrete = (MarginProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("auto", concrete.Value);
+            Assert.Equal("auto", concrete.ValueText);
         }
 
         [Fact]
@@ -198,7 +198,7 @@
             var concrete = (MarginProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("10px 3em 5px", concrete.Value);
+            Assert.Equal("10px 3em 5px", concrete.ValueText);
         }
 
         [Fact]
@@ -212,7 +212,7 @@
             var concrete = (MarginProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("10px 5% auto 2%", concrete.Value);
+            Assert.Equal("10px 5% auto 2%", concrete.ValueText);
         }
 
         [Fact]

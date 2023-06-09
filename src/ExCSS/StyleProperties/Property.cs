@@ -1,4 +1,6 @@
 ﻿using System.IO;
+using ExCSS.New;
+using ExCSS.New.Values;
 
 // ReSharper disable UnusedMember.Global
 
@@ -16,20 +18,20 @@ namespace ExCSS
 
         public override void ToCss(TextWriter writer, IStyleFormatter formatter)
         {
-            writer.Write(formatter.Declaration(Name, Value, IsImportant));
+            writer.Write(formatter.Declaration(Name, ValueText, IsImportant));
         }
 
 
         internal bool TrySetValue(TokenValue newTokenValue)
         {
-            var value = Converter.Convert(newTokenValue ?? TokenValue.Initial);
-
-            if (value == null) return false;
-            DeclaredValue = value;
-            return true;
+            Value = CoerceValue(newTokenValue);
+            return Value != null;
         }
 
-        public string Value => DeclaredValue != null ? DeclaredValue.CssText : Keywords.Initial;
+        internal virtual IValue CoerceValue(TokenValue newTokenValue)
+            => null;
+
+        public string ValueText => DeclaredValue != null ? DeclaredValue.CssText : Keywords.Initial;
 
         public string Original => DeclaredValue != null ? DeclaredValue.Original.Text : Keywords.Initial;
 
@@ -53,6 +55,7 @@ namespace ExCSS
         public string Name { get; }
 
         public bool IsImportant { get; set; }
+        public IValue Value { get; protected set; }
 
         public string CssText => this.ToCss();
 

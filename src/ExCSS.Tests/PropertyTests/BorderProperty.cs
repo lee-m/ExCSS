@@ -16,7 +16,7 @@
             var concrete = (BorderSpacingProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("20px", concrete.Value);
+            Assert.Equal("20px", concrete.ValueText);
         }
 
         [Fact]
@@ -30,7 +30,7 @@
             var concrete = (BorderSpacingProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("0", concrete.Value);
+            Assert.Equal("0", concrete.ValueText);
         }
 
         [Fact]
@@ -44,7 +44,7 @@
             var concrete = (BorderSpacingProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("15px 3em", concrete.Value);
+            Assert.Equal("15px 3em", concrete.ValueText);
         }
 
         [Fact]
@@ -58,7 +58,7 @@
             var concrete = (BorderSpacingProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("15px 0", concrete.Value);
+            Assert.Equal("15px 0", concrete.ValueText);
         }
 
         [Fact]
@@ -85,7 +85,7 @@
             var concrete = (BorderBottomColorProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("rgb(255, 0, 0)", concrete.Value);
+            Assert.Equal("rgb(255, 0, 0)", concrete.ValueText);
         }
 
         [Fact]
@@ -99,7 +99,7 @@
             var concrete = (BorderTopColorProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("rgb(0, 255, 0)", concrete.Value);
+            Assert.Equal("rgb(0, 255, 0)", concrete.ValueText);
         }
 
         [Fact]
@@ -113,7 +113,7 @@
             var concrete = (BorderRightColorProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("rgba(1, 1, 1, 0)", concrete.Value);
+            Assert.Equal("rgba(1, 1, 1, 0)", concrete.ValueText);
         }
 
         [Fact]
@@ -127,7 +127,7 @@
             var concrete = (BorderLeftColorProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("rgb(1, 255, 100)", concrete.Value);
+            Assert.Equal("rgb(1, 255, 100)", concrete.ValueText);
         }
 
         [Fact]
@@ -141,7 +141,7 @@
             var concrete = (BorderColorProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("rgba(0, 0, 0, 0)", concrete.Value);
+            Assert.Equal("rgba(0, 0, 0, 0)", concrete.ValueText);
         }
 
         [Fact]
@@ -155,7 +155,7 @@
             var concrete = (BorderColorProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("rgb(255, 0, 0) rgb(0, 128, 0)", concrete.Value);
+            Assert.Equal("rgb(255, 0, 0) rgb(0, 128, 0)", concrete.ValueText);
         }
 
         [Fact]
@@ -169,7 +169,7 @@
             var concrete = (BorderColorProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("rgb(255, 0, 0) rgb(0, 0, 0)", concrete.Value);
+            Assert.Equal("rgb(255, 0, 0) rgb(0, 0, 0)", concrete.ValueText);
         }
 
         [Fact]
@@ -183,7 +183,7 @@
             var concrete = (BorderColorProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("rgb(255, 0, 0) rgb(0, 0, 255) rgb(0, 128, 0)", concrete.Value);
+            Assert.Equal("rgb(255, 0, 0) rgb(0, 0, 255) rgb(0, 128, 0)", concrete.ValueText);
         }
 
         [Fact]
@@ -197,7 +197,7 @@
             var concrete = (BorderColorProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("rgb(255, 0, 0) rgb(0, 0, 255) rgb(0, 128, 0) rgb(0, 0, 0)", concrete.Value);
+            Assert.Equal("rgb(255, 0, 0) rgb(0, 0, 255) rgb(0, 128, 0) rgb(0, 0, 0)", concrete.ValueText);
         }
 
         [Fact]
@@ -224,7 +224,7 @@
             var concrete = (BorderStyleProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("dotted", concrete.Value);
+            Assert.Equal("dotted", concrete.ValueText);
         }
 
         [Fact]
@@ -238,7 +238,7 @@
             var concrete = (BorderStyleProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("inset outset", concrete.Value);
+            Assert.Equal("inset outset", concrete.ValueText);
         }
 
         [Fact]
@@ -252,7 +252,7 @@
             var concrete = (BorderStyleProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("double groove", concrete.Value);
+            Assert.Equal("double groove", concrete.ValueText);
         }
 
         [Fact]
@@ -266,7 +266,7 @@
             var concrete = (BorderStyleProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("ridge solid dashed", concrete.Value);
+            Assert.Equal("ridge solid dashed", concrete.ValueText);
         }
 
         [Fact]
@@ -280,7 +280,7 @@
             var concrete = (BorderStyleProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("hidden dotted none none", concrete.Value);
+            Assert.Equal("hidden dotted none none", concrete.ValueText);
         }
 
         [Fact]
@@ -307,7 +307,7 @@
             var concrete = (BorderBottomStyleProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("groove", concrete.Value);
+            Assert.Equal("groove", concrete.ValueText);
         }
 
         [Fact]
@@ -321,7 +321,7 @@
             var concrete = (BorderTopStyleProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("none", concrete.Value);
+            Assert.Equal("none", concrete.ValueText);
         }
 
         [Fact]
@@ -335,7 +335,7 @@
             var concrete = (BorderRightStyleProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("double", concrete.Value);
+            Assert.Equal("double", concrete.ValueText);
         }
 
         [Fact]
@@ -349,7 +349,7 @@
             var concrete = (BorderLeftStyleProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("hidden", concrete.Value);
+            Assert.Equal("hidden", concrete.ValueText);
         }
 
         [Fact]
@@ -363,7 +363,7 @@
             var concrete = (BorderBottomWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("1px", concrete.Value);
+            Assert.Equal("1px", concrete.ValueText);
         }
 
         [Fact]
@@ -377,7 +377,7 @@
             var concrete = (BorderTopWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("0", concrete.Value);
+            Assert.Equal("0", concrete.ValueText);
         }
 
         [Fact]
@@ -391,7 +391,7 @@
             var concrete = (BorderRightWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("3em", concrete.Value);
+            Assert.Equal("3em", concrete.ValueText);
         }
 
         [Fact]
@@ -405,7 +405,7 @@
             var concrete = (BorderLeftWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("5px", concrete.Value);
+            Assert.Equal("5px", concrete.ValueText);
         }
 
         [Fact]
@@ -419,7 +419,7 @@
             var concrete = (BorderWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("3px", concrete.Value);
+            Assert.Equal("3px", concrete.ValueText);
         }
 
         [Fact]
@@ -433,7 +433,7 @@
             var concrete = (BorderWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("3px 0", concrete.Value);
+            Assert.Equal("3px 0", concrete.ValueText);
         }
 
         [Fact]
@@ -447,7 +447,7 @@
             var concrete = (BorderWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("1px", concrete.Value);
+            Assert.Equal("1px", concrete.ValueText);
         }
 
         [Fact]
@@ -461,7 +461,7 @@
             var concrete = (BorderWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("3px 1px 5px", concrete.Value);
+            Assert.Equal("3px 1px 5px", concrete.ValueText);
         }
 
         [Fact]
@@ -475,7 +475,7 @@
             var concrete = (BorderWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("1px 2px 3px 4px", concrete.Value);
+            Assert.Equal("1px 2px 3px 4px", concrete.ValueText);
         }
 
         [Fact]
@@ -489,7 +489,7 @@
             var concrete = (BorderWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("0.3em 0", concrete.Value);
+            Assert.Equal("0.3em 0", concrete.ValueText);
             //Assert.Equal(new Length(0.3f, Length.Unit.Em), concrete.Top);
             //Assert.Equal(Length.Zero, concrete.Right);
             //Assert.Equal(new Length(0.3f, Length.Unit.Em), concrete.Bottom);
@@ -507,7 +507,7 @@
             var concrete = (BorderWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("3px 0 1px 5px", concrete.Value);
+            Assert.Equal("3px 0 1px 5px", concrete.ValueText);
             //Assert.Equal(Length.Medium, concrete.Top);
             //Assert.Equal(Length.Zero, concrete.Right);
             //Assert.Equal(new Length(1f, Length.Unit.Px), concrete.Bottom);
@@ -538,7 +538,7 @@
             var concrete = (BorderLeftProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("0", concrete.Value);
+            Assert.Equal("0", concrete.ValueText);
             //Assert.Equal(Length.Zero, concrete.Width);
             //Assert.Equal(Color.Transparent, concrete.Color);
             //Assert.Equal(LineStyle.None, concrete.Style);
@@ -555,7 +555,7 @@
             var concrete = (BorderRightProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("dotted", concrete.Value);
+            Assert.Equal("dotted", concrete.ValueText);
             //Assert.Equal(Length.Medium, concrete.Width);
             //Assert.Equal(Color.Transparent, concrete.Color);
             //Assert.Equal(LineStyle.Dotted, concrete.Style);
@@ -572,7 +572,7 @@
             var concrete = (BorderTopProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("2px rgb(255, 0, 0)", concrete.Value);
+            Assert.Equal("2px rgb(255, 0, 0)", concrete.ValueText);
             //Assert.Equal(new Length(2f, Length.Unit.Px), concrete.Width);
             //Assert.Equal(Color.Red, concrete.Color);
             //Assert.Equal(LineStyle.None, concrete.Style);
@@ -589,7 +589,7 @@
             var concrete = (BorderBottomProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("rgb(255, 100, 0)", concrete.Value);
+            Assert.Equal("rgb(255, 100, 0)", concrete.ValueText);
             //Assert.Equal(Length.Medium, concrete.Width);
             //Assert.Equal(Color.FromRgb(255, 100, 0), concrete.Color);
             //Assert.Equal(LineStyle.None, concrete.Style);
@@ -623,7 +623,7 @@
             var concrete = (BorderProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("3em inset rgb(0, 128, 0)", concrete.Value);
+            Assert.Equal("3em inset rgb(0, 128, 0)", concrete.ValueText);
             //Assert.Equal(new Length(3f, Length.Unit.Em), concrete.Width);
             //Assert.Equal(Color.Green, concrete.Color);
             //Assert.Equal(LineStyle.Inset, concrete.Style);
@@ -657,7 +657,7 @@
             var concrete = (BorderProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("0.5px double rgb(0, 0, 0)", concrete.Value);
+            Assert.Equal("0.5px double rgb(0, 0, 0)", concrete.ValueText);
             //Assert.Equal(new Length(0.5f, Length.Unit.Px), concrete.Width);
             //Assert.Equal(Color.Black, concrete.Color);
             //Assert.Equal(LineStyle.Double, concrete.Style);
@@ -674,7 +674,7 @@
             var concrete = (BorderProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("1px outset currentColor", concrete.Value);
+            Assert.Equal("1px outset currentColor", concrete.ValueText);
             //Assert.Equal(new Length(1f, Length.Unit.Px), concrete.Width);
             //Assert.Equal(Color.Transparent, concrete.Color);
             //Assert.Equal(LineStyle.Outset, concrete.Style);
@@ -691,7 +691,7 @@
             var concrete = (BorderProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("1px outset", concrete.Value);
+            Assert.Equal("1px outset", concrete.ValueText);
             //Assert.Equal(new Length(1f, Length.Unit.Px), concrete.Width);
             //Assert.Equal(Color.Transparent, concrete.Color);
             //Assert.Equal(LineStyle.Outset, concrete.Style);

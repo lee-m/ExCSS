@@ -16,7 +16,7 @@
             var concrete = (BorderImageSourceProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("none", concrete.Value);
+            Assert.Equal("none", concrete.ValueText);
         }
 
         [Fact]
@@ -30,7 +30,7 @@
             var concrete = (BorderImageSourceProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("url(\"image.jpg\")", concrete.Value);
+            Assert.Equal("url(\"image.jpg\")", concrete.ValueText);
         }
 
         [Fact]
@@ -44,7 +44,7 @@
             var concrete = (BorderImageSourceProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("linear-gradient(to top, rgb(255, 0, 0), rgb(255, 255, 0))", concrete.Value);
+            Assert.Equal("linear-gradient(to top, rgb(255, 0, 0), rgb(255, 255, 0))", concrete.ValueText);
         }
 
         [Fact]
@@ -58,7 +58,7 @@
             var concrete = (BorderImageOutsetProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("0", concrete.Value);
+            Assert.Equal("0", concrete.ValueText);
         }
 
         [Fact]
@@ -72,7 +72,7 @@
             var concrete = (BorderImageOutsetProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("10px 25%", concrete.Value);
+            Assert.Equal("10px 25%", concrete.ValueText);
         }
 
         [Fact]
@@ -86,7 +86,7 @@
             var concrete = (BorderImageOutsetProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("10px 25% 0", concrete.Value);
+            Assert.Equal("10px 25% 0", concrete.ValueText);
         }
 
         [Fact]
@@ -100,7 +100,7 @@
             var concrete = (BorderImageOutsetProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("10px 25% 0 10%", concrete.Value);
+            Assert.Equal("10px 25% 0 10%", concrete.ValueText);
         }
 
         [Fact]
@@ -127,7 +127,7 @@
             var concrete = (BorderImageWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("0", concrete.Value);
+            Assert.Equal("0", concrete.ValueText);
         }
 
         [Fact]
@@ -141,7 +141,7 @@
             var concrete = (BorderImageWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("auto", concrete.Value);
+            Assert.Equal("auto", concrete.ValueText);
         }
 
         [Fact]
@@ -155,7 +155,7 @@
             var concrete = (BorderImageWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("5", concrete.Value);
+            Assert.Equal("5", concrete.ValueText);
         }
 
         [Fact]
@@ -169,7 +169,7 @@
             var concrete = (BorderImageWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("10px 25%", concrete.Value);
+            Assert.Equal("10px 25%", concrete.ValueText);
         }
 
         [Fact]
@@ -183,7 +183,7 @@
             var concrete = (BorderImageWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("10px 25% 0", concrete.Value);
+            Assert.Equal("10px 25% 0", concrete.ValueText);
         }
 
         [Fact]
@@ -197,7 +197,7 @@
             var concrete = (BorderImageWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("10px 25% auto 10%", concrete.Value);
+            Assert.Equal("10px 25% auto 10%", concrete.ValueText);
         }
 
         [Fact]
@@ -224,7 +224,7 @@
             var concrete = (BorderImageRepeatProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("stretch", concrete.Value);
+            Assert.Equal("stretch", concrete.ValueText);
         }
 
         [Fact]
@@ -238,7 +238,7 @@
             var concrete = (BorderImageRepeatProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("repeat", concrete.Value);
+            Assert.Equal("repeat", concrete.ValueText);
         }
 
         [Fact]
@@ -252,7 +252,7 @@
             var concrete = (BorderImageRepeatProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("round", concrete.Value);
+            Assert.Equal("round", concrete.ValueText);
         }
 
         [Fact]
@@ -266,7 +266,7 @@
             var concrete = (BorderImageRepeatProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("stretch round", concrete.Value);
+            Assert.Equal("stretch round", concrete.ValueText);
         }
 
         [Fact]
@@ -293,7 +293,7 @@
             var concrete = (BorderImageSliceProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("3", concrete.Value);
+            Assert.Equal("3", concrete.ValueText);
         }
 
         [Fact]
@@ -307,7 +307,7 @@
             var concrete = (BorderImageSliceProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("10%", concrete.Value);
+            Assert.Equal("10%", concrete.ValueText);
         }
 
         [Fact]
@@ -339,7 +339,7 @@
             var concrete = (BorderImageSliceProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("10% fill", concrete.Value);
+            Assert.Equal("10% fill", concrete.ValueText);
         }
 
         [Fact]
@@ -353,7 +353,7 @@
             var concrete = (BorderImageSliceProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("10% 30 fill", concrete.Value);
+            Assert.Equal("10% 30 fill", concrete.ValueText);
         }
 
         [Fact]
@@ -367,7 +367,7 @@
             var concrete = (BorderImageSliceProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("10% 30 0 0 fill", concrete.Value);
+            Assert.Equal("10% 30 0 0 fill", concrete.ValueText);
         }
 
         [Fact]
@@ -407,7 +407,7 @@
             var concrete = (BorderImageProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("none", concrete.Value);
+            Assert.Equal("none", concrete.ValueText);
         }
 
         [Fact]
@@ -421,7 +421,7 @@
             var concrete = (BorderImageProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("url(\"image.png\") 50 50", concrete.Value);
+            Assert.Equal("url(\"image.png\") 50 50", concrete.ValueText);
         }
 
         [Fact]
@@ -435,7 +435,7 @@
             var concrete = (BorderImageProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("url(\"image.png\") 30 30 repeat", concrete.Value);
+            Assert.Equal("url(\"image.png\") 30 30 repeat", concrete.ValueText);
         }
 
         [Fact]
@@ -449,7 +449,7 @@
             var concrete = (BorderImageProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("url(\"image.png\") stretch", concrete.Value);
+            Assert.Equal("url(\"image.png\") stretch", concrete.ValueText);
         }
 
         [Fact]
@@ -463,7 +463,7 @@
             var concrete = (BorderImageProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("url(\"image.png\") 30 30 / 15px", concrete.Value);
+            Assert.Equal("url(\"image.png\") 30 30 / 15px", concrete.ValueText);
         }
 
         [Fact]
@@ -477,7 +477,7 @@
             var concrete = (BorderImageProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("url(\"image.png\") 30 30 0 10 / 15px 0 15px 2em", concrete.Value);
+            Assert.Equal("url(\"image.png\") 30 30 0 10 / 15px 0 15px 2em", concrete.ValueText);
         }
 
         [Fact]
@@ -491,7 +491,7 @@
             var concrete = (BorderImageProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("url(\"image.png\") 30 30 / 15px / 5% 2% 0 10%", concrete.Value);
+            Assert.Equal("url(\"image.png\") 30 30 / 15px / 5% 2% 0 10%", concrete.ValueText);
         }
     }
 }

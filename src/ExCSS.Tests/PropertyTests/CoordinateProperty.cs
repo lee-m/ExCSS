@@ -17,7 +17,7 @@
             Assert.IsType<HeightProperty>(property);
             var concrete = (HeightProperty)property;
             Assert.False(concrete.IsInherited);
-            Assert.Equal("28%", concrete.Value);
+            Assert.Equal("28%", concrete.ValueText);
             //Assert.IsType<Percent>(value);
         }
 
@@ -32,7 +32,7 @@
             Assert.IsType<HeightProperty>(property);
             var concrete = (HeightProperty)property;
             Assert.False(concrete.IsInherited);
-            Assert.Equal("0.3em", concrete.Value);
+            Assert.Equal("0.3em", concrete.ValueText);
             //Assert.IsType<Length>(value);
         }
 
@@ -47,7 +47,7 @@
             Assert.IsType<HeightProperty>(property);
             var concrete = (HeightProperty)property;
             Assert.False(concrete.IsInherited);
-            Assert.Equal("144px", concrete.Value);
+            Assert.Equal("144px", concrete.ValueText);
             //Assert.IsType<Length>(value);
         }
 
@@ -62,7 +62,7 @@
             Assert.IsType<HeightProperty>(property);
             var concrete = (HeightProperty)property;
             Assert.False(concrete.IsInherited);
-            Assert.Equal("auto", concrete.Value);
+            Assert.Equal("auto", concrete.ValueText);
         }
 
         [Fact]
@@ -76,7 +76,7 @@
             Assert.IsType<WidthProperty>(property);
             var concrete = (WidthProperty)property;
             Assert.False(concrete.IsInherited);
-            Assert.Equal("0.5cm", concrete.Value);
+            Assert.Equal("0.5cm", concrete.ValueText);
             //Assert.IsType<Length>(value);
         }
 
@@ -91,7 +91,7 @@
             Assert.IsType<WidthProperty>(property);
             var concrete = (WidthProperty)property;
             Assert.False(concrete.IsInherited);
-            Assert.Equal("1.5mm", concrete.Value);
+            Assert.Equal("1.5mm", concrete.ValueText);
             //Assert.IsType<Length>(value);
         }
 
@@ -351,7 +351,7 @@
             var concrete = (MaxWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("none", concrete.Value);
+            Assert.Equal("none", concrete.ValueText);
         }
 
         [Fact]
@@ -365,7 +365,7 @@
             var concrete = (MaxWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("15px", concrete.Value);
+            Assert.Equal("15px", concrete.ValueText);
         }
 
         [Fact]
@@ -379,7 +379,7 @@
             var concrete = (MinWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("15%", concrete.Value);
+            Assert.Equal("15%", concrete.ValueText);
         }
     }
 }

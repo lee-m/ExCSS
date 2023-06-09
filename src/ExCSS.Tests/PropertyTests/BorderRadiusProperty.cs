@@ -16,7 +16,7 @@
             var concrete = (BorderBottomLeftRadiusProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("40px 40px", concrete.Value);
+            Assert.Equal("40px 40px", concrete.ValueText);
         }
 
         [Fact]
@@ -30,7 +30,7 @@
             var concrete = (BorderBottomLeftRadiusProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("40px 20em", concrete.Value);
+            Assert.Equal("40px 20em", concrete.ValueText);
         }
 
         [Fact]
@@ -44,7 +44,7 @@
             var concrete = (BorderBottomLeftRadiusProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("10px 5%", concrete.Value);
+            Assert.Equal("10px 5%", concrete.ValueText);
         }
 
         [Fact]
@@ -58,7 +58,7 @@
             var concrete = (BorderBottomLeftRadiusProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("10%", concrete.Value);
+            Assert.Equal("10%", concrete.ValueText);
         }
 
         [Fact]
@@ -72,7 +72,7 @@
             var concrete = (BorderBottomRightRadiusProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("0", concrete.Value);
+            Assert.Equal("0", concrete.ValueText);
         }
 
         [Fact]
@@ -86,7 +86,7 @@
             var concrete = (BorderBottomRightRadiusProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("20px", concrete.Value);
+            Assert.Equal("20px", concrete.ValueText);
         }
 
         [Fact]
@@ -100,7 +100,7 @@
             var concrete = (BorderTopLeftRadiusProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("3.5cm", concrete.Value);
+            Assert.Equal("3.5cm", concrete.ValueText);
         }
 
         [Fact]
@@ -114,7 +114,7 @@
             var concrete = (BorderTopRightRadiusProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("15% 3.5%", concrete.Value);
+            Assert.Equal("15% 3.5%", concrete.ValueText);
         }
 
         [Fact]
@@ -128,7 +128,7 @@
             var concrete = (BorderRadiusProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("15% 3.5%", concrete.Value);
+            Assert.Equal("15% 3.5%", concrete.ValueText);
         }
 
         [Fact]
@@ -150,7 +150,7 @@
             //Assert.Equal(Length.Zero, concrete.VerticalBottomRight);
             //Assert.Equal(Length.Zero, concrete.VerticalTopLeft);
             //Assert.Equal(Length.Zero, concrete.VerticalTopRight);
-            Assert.Equal("0", concrete.Value);
+            Assert.Equal("0", concrete.ValueText);
         }
 
         [Fact]
@@ -172,7 +172,7 @@
             //Assert.Equal(new Length(3f, Length.Unit.Px), concrete.VerticalBottomRight);
             //Assert.Equal(new Length(4f, Length.Unit.Px), concrete.HorizontalBottomLeft);
             //Assert.Equal(new Length(4f, Length.Unit.Px), concrete.VerticalBottomLeft);
-            Assert.Equal("2px 4px 3px", concrete.Value);
+            Assert.Equal("2px 4px 3px", concrete.ValueText);
         }
 
         [Fact]
@@ -194,7 +194,7 @@
             //Assert.Equal(new Length(3f, Length.Unit.Px), concrete.VerticalBottomRight);
             //Assert.Equal(new Length(0f, Length.Unit.Px), concrete.HorizontalBottomLeft);
             //Assert.Equal(new Length(0f, Length.Unit.Px), concrete.VerticalBottomLeft);
-            Assert.Equal("2px 4px 3px 0", concrete.Value);
+            Assert.Equal("2px 4px 3px 0", concrete.ValueText);
         }
 
         [Fact]
@@ -229,7 +229,7 @@
             //Assert.Equal(new Length(5f, Length.Unit.Em), concrete.VerticalBottomRight);
             //Assert.Equal(new Length(1f, Length.Unit.Em), concrete.HorizontalBottomLeft);
             //Assert.Equal(new Length(5f, Length.Unit.Em), concrete.VerticalBottomLeft);
-            Assert.Equal("1em / 5em", concrete.Value);
+            Assert.Equal("1em / 5em", concrete.ValueText);
         }
 
         [Fact]
@@ -251,7 +251,7 @@
             //Assert.Equal(new Length(2f, Length.Unit.Px), concrete.VerticalBottomRight);
             //Assert.Equal(new Length(3f, Length.Unit.Px), concrete.HorizontalBottomLeft);
             //Assert.Equal(new Length(4f, Length.Unit.Px), concrete.VerticalBottomLeft);
-            Assert.Equal("4px 3px 6px / 2px 4px", concrete.Value);
+            Assert.Equal("4px 3px 6px / 2px 4px", concrete.ValueText);
         }
 
         [Fact]
@@ -265,7 +265,7 @@
             var concrete = (BorderRadiusProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("4px 3px 6px 1em / 2px 4px 0 20%", concrete.Value);
+            Assert.Equal("4px 3px 6px 1em / 2px 4px 0 20%", concrete.ValueText);
         }
 
         [Fact]

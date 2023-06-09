@@ -16,7 +16,7 @@
             var concrete = (ListStylePositionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("outside", concrete.Value);
+            Assert.Equal("outside", concrete.ValueText);
         }
 
         [Fact]
@@ -56,7 +56,7 @@
             var concrete = (ListStylePositionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("inside", concrete.Value);
+            Assert.Equal("inside", concrete.ValueText);
         }
 
         [Fact]
@@ -70,7 +70,7 @@
             var concrete = (ListStyleImageProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("none", concrete.Value);
+            Assert.Equal("none", concrete.ValueText);
         }
 
         [Fact]
@@ -84,7 +84,7 @@
             var concrete = (ListStyleImageProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("url(\"http://www.example.com/images/list.png\")", concrete.Value);
+            Assert.Equal("url(\"http://www.example.com/images/list.png\")", concrete.ValueText);
         }
 
         [Fact]
@@ -98,7 +98,7 @@
             var concrete = (ListStyleTypeProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("disc", concrete.Value);
+            Assert.Equal("disc", concrete.ValueText);
         }
 
         [Fact]
@@ -112,7 +112,7 @@
             var concrete = (ListStyleTypeProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("lower-alpha", concrete.Value);
+            Assert.Equal("lower-alpha", concrete.ValueText);
         }
 
         [Fact]
@@ -126,7 +126,7 @@
             var concrete = (ListStyleTypeProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("georgian", concrete.Value);
+            Assert.Equal("georgian", concrete.ValueText);
         }
 
         [Fact]
@@ -140,7 +140,7 @@
             var concrete = (ListStyleTypeProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("decimal-leading-zero", concrete.Value);
+            Assert.Equal("decimal-leading-zero", concrete.ValueText);
         }
 
         [Fact]
@@ -167,7 +167,7 @@
             var concrete = (ListStyleProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("circle", concrete.Value);
+            Assert.Equal("circle", concrete.ValueText);
         }
 
         [Fact]
@@ -181,7 +181,7 @@
             var concrete = (ListStyleProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("none", concrete.Value);
+            Assert.Equal("none", concrete.ValueText);
         }
 
         [Fact]
@@ -195,7 +195,7 @@
             var concrete = (ListStyleProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("square inside", concrete.Value);
+            Assert.Equal("square inside", concrete.ValueText);
         }
 
         [Fact]
@@ -209,7 +209,7 @@
             var concrete = (ListStyleProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("square inside url(\"image.png\")", concrete.Value);
+            Assert.Equal("square inside url(\"image.png\")", concrete.ValueText);
         }
 
         [Fact]
@@ -223,7 +223,7 @@
             var concrete = (CounterResetProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("chapter section 1 page", concrete.Value);
+            Assert.Equal("chapter section 1 page", concrete.ValueText);
         }
 
         [Fact]
@@ -237,7 +237,7 @@
             var concrete = (CounterResetProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("counter-name", concrete.Value);
+            Assert.Equal("counter-name", concrete.ValueText);
         }
 
         [Fact]
@@ -251,7 +251,7 @@
             var concrete = (CounterResetProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("none", concrete.Value);
+            Assert.Equal("none", concrete.ValueText);
         }
 
         [Fact]
@@ -278,7 +278,7 @@
             var concrete = (CounterResetProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("counter-name -1", concrete.Value);
+            Assert.Equal("counter-name -1", concrete.ValueText);
         }
 
         [Fact]
@@ -292,7 +292,7 @@
             var concrete = (CounterResetProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("counter1 1 counter2 4", concrete.Value);
+            Assert.Equal("counter1 1 counter2 4", concrete.ValueText);
         }
 
         [Fact]
@@ -306,7 +306,7 @@
             var concrete = (CounterIncrementProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("none", concrete.Value);
+            Assert.Equal("none", concrete.ValueText);
         }
 
         [Fact]
@@ -320,7 +320,7 @@
             var concrete = (CounterIncrementProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("chapter section 2 page", concrete.Value);
+            Assert.Equal("chapter section 2 page", concrete.ValueText);
         }
     }
 }

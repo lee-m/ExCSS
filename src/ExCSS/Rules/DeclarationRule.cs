@@ -60,7 +60,7 @@ namespace ExCSS
             {
                 if (!declaration.HasValue || !declaration.Name.Is(propertyName)) continue;
 
-                var value = declaration.Value;
+                var value = declaration.ValueText;
                 RemoveChild(declaration);
                 return value;
             }
@@ -101,7 +101,7 @@ namespace ExCSS
         {
             foreach (var declaration in Declarations)
                 if (declaration.HasValue && declaration.Name.Is(propertyName))
-                    return declaration.Value;
+                    return declaration.ValueText;
 
             return string.Empty;
         }

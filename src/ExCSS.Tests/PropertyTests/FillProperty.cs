@@ -16,7 +16,7 @@
 			var concrete = (FillProperty)property;
 			Assert.False(concrete.IsInherited);
 			Assert.True(concrete.HasValue);
-			Assert.Equal("rgb(255, 0, 0)", concrete.Value);
+			Assert.Equal("rgb(255, 0, 0)", concrete.ValueText);
 		}
 
 		[Fact]
@@ -30,7 +30,7 @@
 			var concrete = (FillProperty)property;
 			Assert.False(concrete.IsInherited);
 			Assert.True(concrete.HasValue);
-			Assert.Equal("rgb(0, 255, 0)", concrete.Value);
+			Assert.Equal("rgb(0, 255, 0)", concrete.ValueText);
 		}
 
 		[Fact]
@@ -44,7 +44,7 @@
 			var concrete = (FillProperty)property;
 			Assert.False(concrete.IsInherited);
 			Assert.True(concrete.HasValue);
-			Assert.Equal("rgba(1, 1, 1, 0)", concrete.Value);
+			Assert.Equal("rgba(1, 1, 1, 0)", concrete.ValueText);
 		}
 
 		[Fact]
@@ -58,7 +58,7 @@
 			var concrete = (FillProperty)property;
 			Assert.False(concrete.IsInherited);
 			Assert.True(concrete.HasValue);
-			Assert.Equal("rgb(1, 255, 100)", concrete.Value);
+			Assert.Equal("rgb(1, 255, 100)", concrete.ValueText);
 		}
 
 		[Fact]
@@ -72,7 +72,7 @@
 			var concrete = (FillProperty)property;
 			Assert.False(concrete.IsInherited);
 			Assert.True(concrete.HasValue);
-			Assert.Equal("none", concrete.Value);
+			Assert.Equal("none", concrete.ValueText);
 		}
 
 		[Fact]
@@ -99,7 +99,7 @@
 			var concrete = (FillProperty)property;
 			Assert.False(concrete.IsInherited);
 			Assert.True(concrete.HasValue);
-			Assert.Equal("url(\"#linear\")", concrete.Value);
+			Assert.Equal("url(\"#linear\")", concrete.ValueText);
 		}
 
 		[Fact]
@@ -113,7 +113,7 @@
 			var concrete = (FillOpacityProperty)property;
 			Assert.False(concrete.IsInherited);
 			Assert.True(concrete.HasValue);
-			Assert.Equal("0.5", concrete.Value);
+			Assert.Equal("0.5", concrete.ValueText);
 		}
 
 		[Fact]
@@ -140,7 +140,7 @@
 			var concrete = (FillRuleProperty)property;
 			Assert.False(concrete.IsInherited);
 			Assert.True(concrete.HasValue);
-			Assert.Equal("nonzero", concrete.Value);
+			Assert.Equal("nonzero", concrete.ValueText);
 		}
 
 		[Fact]
@@ -154,7 +154,7 @@
 			var concrete = (FillRuleProperty)property;
 			Assert.False(concrete.IsInherited);
 			Assert.True(concrete.HasValue);
-			Assert.Equal("evenodd", concrete.Value);
+			Assert.Equal("evenodd", concrete.ValueText);
 		}
 
 		[Fact]

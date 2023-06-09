@@ -551,7 +551,7 @@ h1 { color: blue }");
                 Assert.Equal(names[i], decl.Name);
                 Assert.Equal(propertyName, decl.Name);
                 Assert.False(decl.IsImportant);
-                Assert.Equal("20px", decl.Value);   
+                Assert.Equal("20px", decl.ValueText);   
             }
         }
 
@@ -570,7 +570,7 @@ h1 { color: blue }");
                 Assert.Equal(names[i], decl.Name);
                 Assert.Equal(propertyName, decl.Name);
                 Assert.True(decl.IsImportant);
-                Assert.Equal("20px", decl.Value);
+                Assert.Equal("20px", decl.ValueText);
             }
         }
 
@@ -589,7 +589,7 @@ h1 { color: blue }");
                 Assert.Equal(names[i], decl.Name);
                 Assert.Equal(propertyName, decl.Name);
                 Assert.True(decl.IsImportant);
-                Assert.Equal("5px", decl.Value);
+                Assert.Equal("5px", decl.ValueText);
             }
         }
 
@@ -611,12 +611,12 @@ h1 { color: blue }");
                 if (i == 0)
                 {
                     Assert.True(decl.IsImportant);
-                    Assert.Equal("5px", decl.Value);
+                    Assert.Equal("5px", decl.ValueText);
                 }
                 else
                 {
                     Assert.False(decl.IsImportant);
-                    Assert.Equal("3px", decl.Value);
+                    Assert.Equal("3px", decl.ValueText);
                 }
             }
         }
@@ -639,12 +639,12 @@ h1 { color: blue }");
                 if (i < 3)
                 {
                     Assert.False(decl.IsImportant);
-                    Assert.Equal("5px", decl.Value);
+                    Assert.Equal("5px", decl.ValueText);
                 }
                 else
                 {
                     Assert.True(decl.IsImportant);
-                    Assert.Equal("3px", decl.Value);
+                    Assert.Equal("3px", decl.ValueText);
                 }
             }
         }
@@ -664,7 +664,7 @@ h1 { color: blue }");
                 Assert.Equal(names[i], decl.Name);
                 Assert.Equal(propertyName, decl.Name);
                 Assert.True(decl.IsImportant);
-                Assert.Equal("3px", decl.Value);
+                Assert.Equal("3px", decl.ValueText);
             }
         }
 
@@ -674,7 +674,7 @@ h1 { color: blue }");
             var prop = ParseDeclaration("font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif");
             Assert.Equal("font-family", prop.Name);
             Assert.False(prop.IsImportant);
-            Assert.Equal("\"Helvetica Neue\", Helvetica, Arial, sans-serif", prop.Value);
+            Assert.Equal("\"Helvetica Neue\", Helvetica, Arial, sans-serif", prop.ValueText);
         }
 
         [Fact]
@@ -689,7 +689,7 @@ h1 { color: blue }");
             var content = decl.GetProperty("content");
             Assert.Equal("content", content.Name);
             Assert.False(content.IsImportant);
-            Assert.Equal("\" (\" attr(href) \")\"", content.Value);
+            Assert.Equal("\" (\" attr(href) \")\"", content.ValueText);
         }
 
         [Fact]
@@ -708,7 +708,7 @@ h1 { color: blue }");
             var background = ParseDeclaration("background-color: rgba(255, 123, 13, 1)");
             Assert.Equal("background-color", background.Name);
             Assert.False(background.IsImportant);
-            Assert.Equal("rgba(255, 123, 13, 1)", background.Value);
+            Assert.Equal("rgba(255, 123, 13, 1)", background.ValueText);
         }
 
         [Fact]
@@ -804,7 +804,7 @@ h1 { color: blue }");
             var display = ParseDeclaration("display:block");
             Assert.Equal("display", display.Name);
             Assert.False(display.IsImportant);
-            Assert.Equal("block", display.Value);
+            Assert.Equal("block", display.ValueText);
         }
 
         [Fact]
@@ -1208,8 +1208,8 @@ h1 {
             var h1 = sheet.Rules[0] as StyleRule;
             Assert.Equal("h1", h1.SelectorText);
             var props = h1.Style.Children.OfType<Property>().ToList();
-            Assert.Equal("red", props[0].Value);
-            Assert.Equal("some-invalid-color", props[1].Value);
+            Assert.Equal("red", props[0].ValueText);
+            Assert.Equal("some-invalid-color", props[1].ValueText);
         }
 
     }

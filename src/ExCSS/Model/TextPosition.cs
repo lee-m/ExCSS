@@ -2,7 +2,7 @@
 
 namespace ExCSS
 {
-    public struct TextPosition : IEquatable<TextPosition>, IComparable<TextPosition>
+    public readonly struct TextPosition : IEquatable<TextPosition>, IComparable<TextPosition>
     {
         public static readonly TextPosition Empty = new();
 

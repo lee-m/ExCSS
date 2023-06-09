@@ -16,7 +16,7 @@
             var concrete = (OutlineStyleProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("dotted", concrete.Value);
+            Assert.Equal("dotted", concrete.ValueText);
         }
 
         [Fact]
@@ -30,7 +30,7 @@
             var concrete = (OutlineStyleProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("solid", concrete.Value);
+            Assert.Equal("solid", concrete.ValueText);
         }
 
         [Fact]
@@ -57,7 +57,7 @@
             var concrete = (OutlineColorProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("invert", concrete.Value);
+            Assert.Equal("invert", concrete.ValueText);
         }
 
         [Fact]
@@ -71,7 +71,7 @@
             var concrete = (OutlineColorProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("hsl(320deg, 80%, 50%)", concrete.Value);
+            Assert.Equal("hsl(320deg, 80%, 50%)", concrete.ValueText);
         }
 
         [Fact]
@@ -85,7 +85,7 @@
             var concrete = (OutlineColorProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("rgb(0, 0, 255)", concrete.Value);
+            Assert.Equal("rgb(0, 0, 255)", concrete.ValueText);
         }
 
         [Fact]
@@ -99,7 +99,7 @@
             var concrete = (OutlineColorProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("rgb(255, 0, 0)", concrete.Value);
+            Assert.Equal("rgb(255, 0, 0)", concrete.ValueText);
         }
 
         [Fact]
@@ -126,7 +126,7 @@
             var concrete = (OutlineWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("1px", concrete.Value);
+            Assert.Equal("1px", concrete.ValueText);
         }
 
         [Fact]
@@ -153,7 +153,7 @@
             var concrete = (OutlineWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("0.1em", concrete.Value);
+            Assert.Equal("0.1em", concrete.ValueText);
             //Assert.IsType<Length>(concrete.Value);
         }
 
@@ -168,7 +168,7 @@
             var concrete = (OutlineProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("1px", concrete.Value);
+            Assert.Equal("1px", concrete.ValueText);
         }
 
         [Fact]
@@ -182,7 +182,7 @@
             var concrete = (OutlineProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("1px invert", concrete.Value);
+            Assert.Equal("1px invert", concrete.ValueText);
         }
 
         [Fact]
@@ -196,7 +196,7 @@
             var concrete = (OutlineProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("0.3em dotted rgb(255, 255, 255)", concrete.Value);
+            Assert.Equal("0.3em dotted rgb(255, 255, 255)", concrete.ValueText);
         }
 
         [Fact]
@@ -223,7 +223,7 @@
             var concrete = (OutlineProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("1px solid rgb(0, 0, 0)", concrete.Value);
+            Assert.Equal("1px solid rgb(0, 0, 0)", concrete.ValueText);
         }
 
         [Fact]
@@ -237,7 +237,7 @@
             var concrete = (OutlineProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("1px solid rgb(0, 0, 0)", concrete.Value);
+            Assert.Equal("1px solid rgb(0, 0, 0)", concrete.ValueText);
         }
     }
 }

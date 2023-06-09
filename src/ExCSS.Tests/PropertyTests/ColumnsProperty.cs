@@ -16,7 +16,7 @@
             var concrete = (ColumnWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("300px", concrete.Value);
+            Assert.Equal("300px", concrete.ValueText);
         }
 
         [Fact]
@@ -43,7 +43,7 @@
             var concrete = (ColumnWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("0.3vw", concrete.Value);
+            Assert.Equal("0.3vw", concrete.ValueText);
         }
 
         [Fact]
@@ -57,7 +57,7 @@
             var concrete = (ColumnWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("auto", concrete.Value);
+            Assert.Equal("auto", concrete.ValueText);
         }
 
         [Fact]
@@ -71,7 +71,7 @@
             var concrete = (ColumnCountProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("auto", concrete.Value);
+            Assert.Equal("auto", concrete.ValueText);
         }
 
         [Fact]
@@ -85,7 +85,7 @@
             var concrete = (ColumnCountProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("3", concrete.Value);
+            Assert.Equal("3", concrete.ValueText);
         }
 
         [Fact]
@@ -99,7 +99,7 @@
             var concrete = (ColumnCountProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("0", concrete.Value);
+            Assert.Equal("0", concrete.ValueText);
         }
 
         [Fact]
@@ -113,7 +113,7 @@
             var concrete = (ColumnsProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("0", concrete.Value);
+            Assert.Equal("0", concrete.ValueText);
         }
 
         [Fact]
@@ -127,7 +127,7 @@
             var concrete = (ColumnsProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("10px", concrete.Value);
+            Assert.Equal("10px", concrete.ValueText);
         }
 
         [Fact]
@@ -141,7 +141,7 @@
             var concrete = (ColumnsProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("4", concrete.Value);
+            Assert.Equal("4", concrete.ValueText);
         }
 
         [Fact]
@@ -155,7 +155,7 @@
             var concrete = (ColumnsProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("25em 5", concrete.Value);
+            Assert.Equal("25em 5", concrete.ValueText);
         }
 
         [Fact]
@@ -169,7 +169,7 @@
             var concrete = (ColumnsProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("25em 5", concrete.Value);
+            Assert.Equal("25em 5", concrete.ValueText);
         }
 
         [Fact]
@@ -183,7 +183,7 @@
             var concrete = (ColumnsProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("auto auto", concrete.Value);
+            Assert.Equal("auto auto", concrete.ValueText);
         }
 
         [Fact]
@@ -197,7 +197,7 @@
             var concrete = (ColumnsProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("auto", concrete.Value);
+            Assert.Equal("auto", concrete.ValueText);
         }
 
         [Fact]
@@ -224,7 +224,7 @@
             var concrete = (ColumnSpanProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("all", concrete.Value);
+            Assert.Equal("all", concrete.ValueText);
         }
 
         [Fact]
@@ -238,7 +238,7 @@
             var concrete = (ColumnSpanProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("none", concrete.Value);
+            Assert.Equal("none", concrete.ValueText);
         }
 
         [Fact]
@@ -270,7 +270,7 @@
             var concrete = (ColumnFillProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("balance", concrete.Value);
+            Assert.Equal("balance", concrete.ValueText);
         }
 
         [Fact]
@@ -284,7 +284,7 @@
             var concrete = (ColumnFillProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("auto", concrete.Value);
+            Assert.Equal("auto", concrete.ValueText);
         }
 
         [Fact]
@@ -298,7 +298,7 @@
             var concrete = (ColumnRuleColorProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("rgba(0, 0, 0, 0)", concrete.Value);
+            Assert.Equal("rgba(0, 0, 0, 0)", concrete.ValueText);
         }
 
         [Fact]
@@ -312,7 +312,7 @@
             var concrete = (ColumnRuleColorProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("rgb(192, 56, 78)", concrete.Value);
+            Assert.Equal("rgb(192, 56, 78)", concrete.ValueText);
         }
 
         [Fact]
@@ -326,7 +326,7 @@
             var concrete = (ColumnRuleColorProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("rgb(255, 0, 0)", concrete.Value);
+            Assert.Equal("rgb(255, 0, 0)", concrete.ValueText);
         }
 
         [Fact]
@@ -353,7 +353,7 @@
             var concrete = (ColumnRuleStyleProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("inset", concrete.Value);
+            Assert.Equal("inset", concrete.ValueText);
         }
 
         [Fact]
@@ -367,7 +367,7 @@
             var concrete = (ColumnRuleStyleProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("none", concrete.Value);
+            Assert.Equal("none", concrete.ValueText);
         }
 
         [Fact]
@@ -394,7 +394,7 @@
             var concrete = (ColumnRuleWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("2px", concrete.Value);
+            Assert.Equal("2px", concrete.ValueText);
         }
 
         [Fact]
@@ -408,7 +408,7 @@
             var concrete = (ColumnRuleWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("5px", concrete.Value);
+            Assert.Equal("5px", concrete.ValueText);
         }
 
         [Fact]
@@ -422,7 +422,7 @@
             var concrete = (ColumnRuleWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("3px", concrete.Value);
+            Assert.Equal("3px", concrete.ValueText);
         }
 
         [Fact]
@@ -436,7 +436,7 @@
             var concrete = (ColumnRuleWidthProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("1px", concrete.Value);
+            Assert.Equal("1px", concrete.ValueText);
         }
 
         [Fact]
@@ -450,7 +450,7 @@
             var concrete = (ColumnRuleProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("dotted", concrete.Value);
+            Assert.Equal("dotted", concrete.ValueText);
         }
 
         [Fact]
@@ -464,7 +464,7 @@
             var concrete = (ColumnRuleProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("rgb(0, 0, 255) solid", concrete.Value);
+            Assert.Equal("rgb(0, 0, 255) solid", concrete.ValueText);
         }
 
         [Fact]
@@ -478,7 +478,7 @@
             var concrete = (ColumnRuleProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("8px solid", concrete.Value);
+            Assert.Equal("8px solid", concrete.ValueText);
         }
 
         [Fact]
@@ -492,7 +492,7 @@
             var concrete = (ColumnRuleProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("rgb(0, 0, 255) 5px inset", concrete.Value);
+            Assert.Equal("rgb(0, 0, 255) 5px inset", concrete.ValueText);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationDurationProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("60ms", concrete.Value);
+            Assert.Equal("60ms", concrete.ValueText);
         }
 
         [Fact]
@@ -29,7 +29,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationDurationProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("1s, 2s, 3s, 4s", concrete.Value);
+            Assert.Equal("1s, 2s, 3s, 4s", concrete.ValueText);
         }
 
         [Fact]
@@ -43,7 +43,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationDelayProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("0ms", concrete.Value);
+            Assert.Equal("0ms", concrete.ValueText);
         }
 
         [Fact]
@@ -70,7 +70,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationDelayProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("0s, 0s, 1s, 20ms", concrete.Value);
+            Assert.Equal("0s, 0s, 1s, 20ms", concrete.ValueText);
         }
 
         [Fact]
@@ -84,7 +84,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationNameProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("-specific", concrete.Value);
+            Assert.Equal("-specific", concrete.ValueText);
         }
 
         [Fact]
@@ -98,7 +98,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationNameProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("sliding-vertically", concrete.Value);
+            Assert.Equal("sliding-vertically", concrete.ValueText);
         }
 
         [Fact]
@@ -112,7 +112,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationNameProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("test_05", concrete.Value);
+            Assert.Equal("test_05", concrete.ValueText);
         }
 
         [Fact]
@@ -139,7 +139,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationNameProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("my-animation, other-animation", concrete.Value);
+            Assert.Equal("my-animation, other-animation", concrete.ValueText);
         }
 
         [Fact]
@@ -153,7 +153,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationIterationCountProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("0", concrete.Value);
+            Assert.Equal("0", concrete.ValueText);
         }
 
         [Fact]
@@ -167,7 +167,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationIterationCountProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("infinite", concrete.Value);
+            Assert.Equal("infinite", concrete.ValueText);
         }
 
         [Fact]
@@ -181,7 +181,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationIterationCountProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("infinite", concrete.Value);
+            Assert.Equal("infinite", concrete.ValueText);
         }
 
         [Fact]
@@ -195,7 +195,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationIterationCountProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("2.3", concrete.Value);
+            Assert.Equal("2.3", concrete.ValueText);
         }
 
         [Fact]
@@ -209,7 +209,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationIterationCountProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("2, 0, infinite", concrete.Value);
+            Assert.Equal("2, 0, infinite", concrete.ValueText);
         }
 
         [Fact]
@@ -236,7 +236,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationTimingFunctionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("ease", concrete.Value);
+            Assert.Equal("ease", concrete.ValueText);
         }
 
         [Fact]
@@ -263,7 +263,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationTimingFunctionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("ease-in-out", concrete.Value);
+            Assert.Equal("ease-in-out", concrete.ValueText);
         }
 
         [Fact]
@@ -277,7 +277,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationTimingFunctionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("step-end", concrete.Value);
+            Assert.Equal("step-end", concrete.ValueText);
         }
 
         [Fact]
@@ -291,7 +291,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationTimingFunctionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("step-start, linear", concrete.Value);
+            Assert.Equal("step-start, linear", concrete.ValueText);
         }
 
         [Fact]
@@ -305,7 +305,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationTimingFunctionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("step-start, cubic-bezier(0, 1, 1, 1)", concrete.Value);
+            Assert.Equal("step-start, cubic-bezier(0, 1, 1, 1)", concrete.ValueText);
         }
 
         [Fact]
@@ -319,7 +319,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationPlayStateProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("running", concrete.Value);
+            Assert.Equal("running", concrete.ValueText);
         }
 
         [Fact]
@@ -333,7 +333,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationPlayStateProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("paused", concrete.Value);
+            Assert.Equal("paused", concrete.ValueText);
         }
 
         [Fact]
@@ -347,7 +347,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationPlayStateProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("paused, running, paused", concrete.Value);
+            Assert.Equal("paused, running, paused", concrete.ValueText);
         }
 
         [Fact]
@@ -361,7 +361,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationFillModeProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("none", concrete.Value);
+            Assert.Equal("none", concrete.ValueText);
         }
 
         [Fact]
@@ -388,7 +388,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationFillModeProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("backwards", concrete.Value);
+            Assert.Equal("backwards", concrete.ValueText);
         }
 
         [Fact]
@@ -402,7 +402,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationFillModeProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("forwards", concrete.Value);
+            Assert.Equal("forwards", concrete.ValueText);
         }
 
         [Fact]
@@ -416,7 +416,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationFillModeProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("both, backwards, forwards, none", concrete.Value);
+            Assert.Equal("both, backwards, forwards, none", concrete.ValueText);
         }
 
         [Fact]
@@ -430,7 +430,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationDirectionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("normal", concrete.Value);
+            Assert.Equal("normal", concrete.ValueText);
         }
 
         [Fact]
@@ -444,7 +444,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationDirectionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("reverse", concrete.Value);
+            Assert.Equal("reverse", concrete.ValueText);
         }
 
         [Fact]
@@ -471,7 +471,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationDirectionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("alternate-reverse", concrete.Value);
+            Assert.Equal("alternate-reverse", concrete.ValueText);
         }
 
         [Fact]
@@ -485,7 +485,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationDirectionProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("normal, alternate, reverse, alternate-reverse", concrete.Value);
+            Assert.Equal("normal, alternate, reverse, alternate-reverse", concrete.ValueText);
         }
 
         [Fact]
@@ -499,7 +499,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("5", concrete.Value);
+            Assert.Equal("5", concrete.ValueText);
         }
 
         [Fact]
@@ -513,7 +513,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("my-animation", concrete.Value);
+            Assert.Equal("my-animation", concrete.ValueText);
         }
 
         [Fact]
@@ -527,7 +527,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("2s 0.5s my-animation", concrete.Value);
+            Assert.Equal("2s 0.5s my-animation", concrete.ValueText);
         }
 
         [Fact]
@@ -541,7 +541,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("200ms ease 0.5s my-animation", concrete.Value);
+            Assert.Equal("200ms ease 0.5s my-animation", concrete.ValueText);
         }
 
         [Fact]
@@ -568,7 +568,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("200ms ease-in-out 2.5 my-animation", concrete.Value);
+            Assert.Equal("200ms ease-in-out 2.5 my-animation", concrete.ValueText);
         }
 
         [Fact]
@@ -582,7 +582,7 @@ namespace ExCSS.Tests
             var concrete = (AnimationProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("0s ease 10 my-animation, linear 5 other-animation, 0s step-start 1s 10 yet-another", concrete.Value);
+            Assert.Equal("0s ease 10 my-animation, linear 5 other-animation, 0s step-start 1s 10 yet-another", concrete.ValueText);
         }
     }
 }

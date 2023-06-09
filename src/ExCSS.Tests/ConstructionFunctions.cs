@@ -84,7 +84,7 @@ namespace ExCSS.Tests
             Assert.IsType<TProp>(property);
             var concrete = (TProp)property;
             Assert.True(concrete.HasValue);
-            Assert.Equal(value, concrete.Value);
+            Assert.Equal(value, concrete.ValueText);
         }
 
         internal static IEnumerable<string> GlobalKeywordTestValues

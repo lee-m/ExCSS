@@ -27,7 +27,7 @@ namespace ExCSS
 
             foreach (var filter in filtered)
             {
-                var value = filter.Value;
+                var value = filter.ValueText;
 
                 if (existing != null && value != existing) return null;
 

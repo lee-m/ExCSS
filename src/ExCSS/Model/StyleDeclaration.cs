@@ -134,7 +134,7 @@ namespace ExCSS
         public string GetPropertyValue(string propertyName)
         {
             var property = GetProperty(propertyName);
-            if (property != null) return property.Value;
+            if (property != null) return property.ValueText;
 
             if (!IsStrictMode || !PropertyFactory.Instance.IsShorthand(propertyName)) return string.Empty;
 
@@ -314,10 +314,10 @@ namespace ExCSS
             }
         }
 
-        public string AlignContent
+        public IProperty AlignContent
         {
-            get => GetPropertyValue(PropertyNames.AlignContent);
-            set => SetPropertyValue(PropertyNames.AlignContent, value);
+            get => GetProperty(PropertyNames.AlignContent);
+            set => SetProperty(PropertyNames.AlignContent, value.ValueText);
         }
 
         public string AlignItems

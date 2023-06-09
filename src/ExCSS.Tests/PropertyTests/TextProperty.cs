@@ -16,7 +16,7 @@
             var concrete = (WordSpacingProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("0", concrete.Value);
+            Assert.Equal("0", concrete.ValueText);
         }
 
         [Fact]
@@ -30,7 +30,7 @@
             var concrete = (WordSpacingProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("0.3rem", concrete.Value);
+            Assert.Equal("0.3rem", concrete.ValueText);
         }
 
         [Fact]
@@ -44,7 +44,7 @@
             var concrete = (WordSpacingProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("0.3em", concrete.Value);
+            Assert.Equal("0.3em", concrete.ValueText);
         }
 
         [Fact]
@@ -58,7 +58,7 @@
             var concrete = (WordSpacingProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("normal", concrete.Value);
+            Assert.Equal("normal", concrete.ValueText);
         }
 
         [Fact]
@@ -72,7 +72,7 @@
             Assert.IsType<TextShadowProperty>(property);
             var concrete = (TextShadowProperty)property;
             Assert.False(concrete.IsInherited);
-            Assert.Equal("inset 0 0 2px rgb(0, 0, 0)", concrete.Value);
+            Assert.Equal("inset 0 0 2px rgb(0, 0, 0)", concrete.ValueText);
         }
 
         [Fact]
@@ -86,7 +86,7 @@
             Assert.IsType<TextShadowProperty>(property);
             var concrete = (TextShadowProperty)property;
             Assert.False(concrete.IsInherited);
-            Assert.Equal("0 3px 3px rgba(255, 255, 255, 0.5)", concrete.Value);
+            Assert.Equal("0 3px 3px rgba(255, 255, 255, 0.5)", concrete.ValueText);
         }
 
         [Fact]
@@ -103,7 +103,7 @@
             Assert.IsType<TextShadowProperty>(property);
             var concrete = (TextShadowProperty)property;
             Assert.False(concrete.IsInherited);
-            Assert.Equal("0 3px 0 rgb(178, 169, 143), 0 14px 10px rgba(0, 0, 0, 0.15), 0 24px 2px rgba(0, 0, 0, 0.1), 0 34px 30px rgba(0, 0, 0, 0.1)", concrete.Value);
+            Assert.Equal("0 3px 0 rgb(178, 169, 143), 0 14px 10px rgba(0, 0, 0, 0.15), 0 24px 2px rgba(0, 0, 0, 0.1), 0 34px 30px rgba(0, 0, 0, 0.1)", concrete.ValueText);
         }
 
         [Fact]
@@ -117,7 +117,7 @@
             Assert.IsType<TextShadowProperty>(property);
             var concrete = (TextShadowProperty)property;
             Assert.False(concrete.IsInherited);
-            Assert.Equal("4px 3px 0 rgb(255, 255, 255), 9px 8px 0 rgba(0, 0, 0, 0.15)", concrete.Value);
+            Assert.Equal("4px 3px 0 rgb(255, 255, 255), 9px 8px 0 rgba(0, 0, 0, 0.15)", concrete.ValueText);
         }
 
         [Fact]
@@ -131,7 +131,7 @@
             Assert.IsType<TextShadowProperty>(property);
             var concrete = (TextShadowProperty)property;
             Assert.False(concrete.IsInherited);
-            Assert.Equal("2px 4px 3px rgba(0, 0, 0, 0.3)", concrete.Value);
+            Assert.Equal("2px 4px 3px rgba(0, 0, 0, 0.3)", concrete.ValueText);
         }
 
         [Fact]
@@ -145,7 +145,7 @@
             Assert.IsType<TextAlignProperty>(property);
             var concrete = (TextAlignProperty)property;
             Assert.False(concrete.IsInherited);
-            Assert.Equal("justify", concrete.Value);
+            Assert.Equal("justify", concrete.ValueText);
         }
 
         [Fact]
@@ -159,7 +159,7 @@
             Assert.IsType<TextIndentProperty>(property);
             var concrete = (TextIndentProperty)property;
             Assert.False(concrete.IsInherited);
-            Assert.Equal("3em", concrete.Value);
+            Assert.Equal("3em", concrete.ValueText);
         }
 
         [Fact]
@@ -173,7 +173,7 @@
             Assert.IsType<TextIndentProperty>(property);
             var concrete = (TextIndentProperty)property;
             Assert.False(concrete.IsInherited);
-            Assert.Equal("0", concrete.Value);
+            Assert.Equal("0", concrete.ValueText);
         }
 
         [Fact]
@@ -187,7 +187,7 @@
             Assert.IsType<TextIndentProperty>(property);
             var concrete = (TextIndentProperty)property;
             Assert.False(concrete.IsInherited);
-            Assert.Equal("10%", concrete.Value);
+            Assert.Equal("10%", concrete.ValueText);
         }
 
         [Fact]
@@ -226,7 +226,7 @@
             Assert.False(property.IsImportant);
             Assert.IsType<TextDecorationProperty>(property);
             var concrete = (TextDecorationProperty)property;
-            Assert.Equal("line-through", concrete.Value);
+            Assert.Equal("line-through", concrete.ValueText);
         }
 
         [Fact]
@@ -240,7 +240,7 @@
             Assert.False(property.IsInherited);
             Assert.False(property.IsImportant);
             var concrete = (TextDecorationProperty)property;
-            Assert.Equal("underline overline", concrete.Value);
+            Assert.Equal("underline overline", concrete.ValueText);
         }
 
         [Fact]
@@ -254,7 +254,7 @@
             Assert.False(property.IsImportant);
             Assert.IsType<TextDecorationColorProperty>(property);
             var concrete = (TextDecorationColorProperty)property;
-            Assert.Equal("rgb(255, 0, 0)", concrete.Value);
+            Assert.Equal("rgb(255, 0, 0)", concrete.ValueText);
         }
 
         [Fact]
@@ -268,7 +268,7 @@
             Assert.False(property.IsImportant);
             Assert.IsType<TextDecorationColorProperty>(property);
             var concrete = (TextDecorationColorProperty)property;
-            Assert.Equal("rgb(255, 0, 0)", concrete.Value);
+            Assert.Equal("rgb(255, 0, 0)", concrete.ValueText);
         }
 
         [Fact]
@@ -295,7 +295,7 @@
             Assert.False(property.IsImportant);
             Assert.IsType<TextDecorationLineProperty>(property);
             var concrete = (TextDecorationLineProperty)property;
-            Assert.Equal("none", concrete.Value);
+            Assert.Equal("none", concrete.ValueText);
         }
 
         [Fact]
@@ -309,7 +309,7 @@
             Assert.False(property.IsImportant);
             Assert.IsType<TextDecorationLineProperty>(property);
             var concrete = (TextDecorationLineProperty)property;
-            Assert.Equal("overline underline line-through", concrete.Value);
+            Assert.Equal("overline underline line-through", concrete.ValueText);
         }
 
         [Fact]
@@ -323,7 +323,7 @@
             Assert.False(property.IsImportant);
             Assert.IsType<TextDecorationStyleProperty>(property);
             var concrete = (TextDecorationStyleProperty)property;
-            Assert.Equal("wavy", concrete.Value);
+            Assert.Equal("wavy", concrete.ValueText);
         }
 
         [Fact]
@@ -360,7 +360,7 @@
 			Assert.False(property.IsImportant);
 			Assert.IsType<WordBreakProperty>(property);
 			var concrete = (WordBreakProperty)property;
-			Assert.Equal("normal", concrete.Value);
+			Assert.Equal("normal", concrete.ValueText);
 		}
 
 		[Fact]
@@ -374,7 +374,7 @@
 			Assert.False(property.IsImportant);
 			Assert.IsType<WordBreakProperty>(property);
 			var concrete = (WordBreakProperty)property;
-			Assert.Equal("break-all", concrete.Value);
+			Assert.Equal("break-all", concrete.ValueText);
 		}
 
 		[Fact]
@@ -388,7 +388,7 @@
 			Assert.False(property.IsImportant);
 			Assert.IsType<WordBreakProperty>(property);
 			var concrete = (WordBreakProperty)property;
-			Assert.Equal("keep-all", concrete.Value);
+			Assert.Equal("keep-all", concrete.ValueText);
 		}
 
 		[Fact]
@@ -413,7 +413,7 @@
 			Assert.IsType<TextAlignLastProperty>(property);
 			var concrete = (TextAlignLastProperty)property;
 			Assert.True(property.HasValue);
-			Assert.Equal("auto", concrete.Value);
+			Assert.Equal("auto", concrete.ValueText);
 		}
 
 		[Fact]
@@ -427,7 +427,7 @@
 			Assert.IsType<TextAlignLastProperty>(property);
 			var concrete = (TextAlignLastProperty)property;
 			Assert.True(property.HasValue);
-			Assert.Equal("start", concrete.Value);
+			Assert.Equal("start", concrete.ValueText);
 		}
 
 		[Fact]
@@ -441,7 +441,7 @@
 			Assert.IsType<TextAlignLastProperty>(property);
 			var concrete = (TextAlignLastProperty)property;
 			Assert.True(property.HasValue);
-			Assert.Equal("end", concrete.Value);
+			Assert.Equal("end", concrete.ValueText);
 		}
 
 		[Fact]
@@ -455,7 +455,7 @@
 			Assert.IsType<TextAlignLastProperty>(property);
 			var concrete = (TextAlignLastProperty)property;
 			Assert.True(property.HasValue);
-			Assert.Equal("right", concrete.Value);
+			Assert.Equal("right", concrete.ValueText);
 		}
 
 		[Fact]
@@ -469,7 +469,7 @@
 			Assert.IsType<TextAlignLastProperty>(property);
 			var concrete = (TextAlignLastProperty)property;
 			Assert.True(property.HasValue);
-			Assert.Equal("left", concrete.Value);
+			Assert.Equal("left", concrete.ValueText);
 		}
 
 		[Fact]
@@ -483,7 +483,7 @@
 			Assert.IsType<TextAlignLastProperty>(property);
 			var concrete = (TextAlignLastProperty)property;
 			Assert.True(property.HasValue);
-			Assert.Equal("center", concrete.Value);
+			Assert.Equal("center", concrete.ValueText);
 		}
 
 		[Fact]
@@ -497,7 +497,7 @@
 			Assert.IsType<TextAlignLastProperty>(property);
 			var concrete = (TextAlignLastProperty)property;
 			Assert.True(property.HasValue);
-			Assert.Equal("justify", concrete.Value);
+			Assert.Equal("justify", concrete.ValueText);
 		}
 
 		[Fact]
@@ -524,7 +524,7 @@
 			Assert.IsType<TextAnchorProperty>(property);
 			var concrete = (TextAnchorProperty)property;
 			Assert.True(property.HasValue);
-			Assert.Equal("start", concrete.Value);
+			Assert.Equal("start", concrete.ValueText);
 		}
 
 		[Fact]
@@ -538,7 +538,7 @@
 			Assert.IsType<TextAnchorProperty>(property);
 			var concrete = (TextAnchorProperty)property;
 			Assert.True(property.HasValue);
-			Assert.Equal("middle", concrete.Value);
+			Assert.Equal("middle", concrete.ValueText);
 		}
 
 		[Fact]
@@ -552,7 +552,7 @@
 			Assert.IsType<TextAnchorProperty>(property);
 			var concrete = (TextAnchorProperty)property;
 			Assert.True(property.HasValue);
-			Assert.Equal("end", concrete.Value);
+			Assert.Equal("end", concrete.ValueText);
 		}
 
 		[Fact]
@@ -579,7 +579,7 @@
 			Assert.IsType<TextJustifyProperty>(property);
 			var concrete = (TextJustifyProperty)property;
 			Assert.True(property.HasValue);
-			Assert.Equal("auto", concrete.Value);
+			Assert.Equal("auto", concrete.ValueText);
 		}
 
 		[Fact]
@@ -593,7 +593,7 @@
 			Assert.IsType<TextJustifyProperty>(property);
 			var concrete = (TextJustifyProperty)property;
 			Assert.True(property.HasValue);
-			Assert.Equal("distribute", concrete.Value);
+			Assert.Equal("distribute", concrete.ValueText);
 		}
 
 		[Fact]
@@ -607,7 +607,7 @@
 			Assert.IsType<TextJustifyProperty>(property);
 			var concrete = (TextJustifyProperty)property;
 			Assert.True(property.HasValue);
-			Assert.Equal("distribute-all-lines", concrete.Value);
+			Assert.Equal("distribute-all-lines", concrete.ValueText);
 		}
 
 		[Fact]
@@ -621,7 +621,7 @@
 			Assert.IsType<TextJustifyProperty>(property);
 			var concrete = (TextJustifyProperty)property;
 			Assert.True(property.HasValue);
-			Assert.Equal("distribute-center-last", concrete.Value);
+			Assert.Equal("distribute-center-last", concrete.ValueText);
 		}
 
 		[Fact]
@@ -635,7 +635,7 @@
 			Assert.IsType<TextJustifyProperty>(property);
 			var concrete = (TextJustifyProperty)property;
 			Assert.True(property.HasValue);
-			Assert.Equal("inter-cluster", concrete.Value);
+			Assert.Equal("inter-cluster", concrete.ValueText);
 		}
 
 		[Fact]
@@ -649,7 +649,7 @@
 			Assert.IsType<TextJustifyProperty>(property);
 			var concrete = (TextJustifyProperty)property;
 			Assert.True(property.HasValue);
-			Assert.Equal("inter-ideograph", concrete.Value);
+			Assert.Equal("inter-ideograph", concrete.ValueText);
 		}
 
 		[Fact]
@@ -663,7 +663,7 @@
 			Assert.IsType<TextJustifyProperty>(property);
 			var concrete = (TextJustifyProperty)property;
 			Assert.True(property.HasValue);
-			Assert.Equal("inter-word", concrete.Value);
+			Assert.Equal("inter-word", concrete.ValueText);
 		}
 
 		[Fact]
@@ -677,7 +677,7 @@
 			Assert.IsType<TextJustifyProperty>(property);
 			var concrete = (TextJustifyProperty)property;
 			Assert.True(property.HasValue);
-			Assert.Equal("kashida", concrete.Value);
+			Assert.Equal("kashida", concrete.ValueText);
 		}
 
 		[Fact]
@@ -691,7 +691,7 @@
 			Assert.IsType<TextJustifyProperty>(property);
 			var concrete = (TextJustifyProperty)property;
 			Assert.True(property.HasValue);
-			Assert.Equal("newspaper", concrete.Value);
+			Assert.Equal("newspaper", concrete.ValueText);
 		}
 
 		[Fact]
@@ -718,7 +718,7 @@
 			Assert.IsType<OverflowWrapProperty>(property);
 			var concrete = (OverflowWrapProperty)property;
 			Assert.True(property.HasValue);
-			Assert.Equal("normal", concrete.Value);
+			Assert.Equal("normal", concrete.ValueText);
 		}
 
 		[Fact]
@@ -732,7 +732,7 @@
 			Assert.IsType<OverflowWrapProperty>(property);
 			var concrete = (OverflowWrapProperty)property;
 			Assert.True(property.HasValue);
-			Assert.Equal("normal", concrete.Value);
+			Assert.Equal("normal", concrete.ValueText);
 		}
 
 		[Fact]
@@ -746,7 +746,7 @@
 			Assert.IsType<OverflowWrapProperty>(property);
 			var concrete = (OverflowWrapProperty)property;
 			Assert.True(property.HasValue);
-			Assert.Equal("break-word", concrete.Value);
+			Assert.Equal("break-word", concrete.ValueText);
 		}
 
 		[Fact]
@@ -760,7 +760,7 @@
 			Assert.IsType<OverflowWrapProperty>(property);
 			var concrete = (OverflowWrapProperty)property;
 			Assert.True(property.HasValue);
-			Assert.Equal("break-word", concrete.Value);
+			Assert.Equal("break-word", concrete.ValueText);
 		}
 
 		[Fact]

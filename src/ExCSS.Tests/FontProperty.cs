@@ -16,7 +16,7 @@
             var concrete = (FontFamilyProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("Gill Sans Extrabold, sans-serif", concrete.Value);
+            Assert.Equal("Gill Sans Extrabold, sans-serif", concrete.ValueText);
         }
 
         [Fact]
@@ -30,7 +30,7 @@
             var concrete = (FontFamilyProperty)property;
             Assert.True(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("initial", concrete.Value);
+            Assert.Equal("initial", concrete.ValueText);
         }
 
         [Fact]
@@ -44,7 +44,7 @@
             var concrete = (FontFamilyProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("Courier, \"Lucida Console\", monospace", concrete.Value);
+            Assert.Equal("Courier, \"Lucida Console\", monospace", concrete.ValueText);
         }
 
         [Fact]
@@ -58,7 +58,7 @@
             var concrete = (FontFamilyProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("\"Goudy Bookletter 1911\", sans-serif", concrete.Value);
+            Assert.Equal("\"Goudy Bookletter 1911\", sans-serif", concrete.ValueText);
         }
 
         [Fact]
@@ -163,7 +163,7 @@
             var concrete = (FontVariantProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("normal", concrete.Value);
+            Assert.Equal("normal", concrete.ValueText);
         }
 
         [Fact]
@@ -177,7 +177,7 @@
             var concrete = (FontVariantProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("small-caps", concrete.Value);
+            Assert.Equal("small-caps", concrete.ValueText);
         }
 
         [Fact]
@@ -204,7 +204,7 @@
             var concrete = (FontStyleProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("italic", concrete.Value);
+            Assert.Equal("italic", concrete.ValueText);
         }
 
         [Fact]
@@ -218,7 +218,7 @@
             var concrete = (FontStyleProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("oblique", concrete.Value);
+            Assert.Equal("oblique", concrete.ValueText);
         }
 
         [Fact]
@@ -232,7 +232,7 @@
             var concrete = (FontStyleProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("normal", concrete.Value);
+            Assert.Equal("normal", concrete.ValueText);
         }
 
         [Fact]
@@ -246,7 +246,7 @@
             var concrete = (FontSizeProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("xx-small", concrete.Value);
+            Assert.Equal("xx-small", concrete.ValueText);
         }
 
         [Fact]
@@ -260,7 +260,7 @@
             var concrete = (FontSizeProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("medium", concrete.Value);
+            Assert.Equal("medium", concrete.ValueText);
         }
 
         [Fact]
@@ -274,7 +274,7 @@
             var concrete = (FontSizeProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("large", concrete.Value);
+            Assert.Equal("large", concrete.ValueText);
         }
 
         [Fact]
@@ -288,7 +288,7 @@
             var concrete = (FontSizeProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("larger", concrete.Value);
+            Assert.Equal("larger", concrete.ValueText);
         }
 
         [Fact]
@@ -315,7 +315,7 @@
             var concrete = (FontSizeProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("120%", concrete.Value);
+            Assert.Equal("120%", concrete.ValueText);
         }
 
         [Fact]
@@ -329,7 +329,7 @@
             var concrete = (FontSizeProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("0", concrete.Value);
+            Assert.Equal("0", concrete.ValueText);
         }
 
         [Fact]
@@ -343,7 +343,7 @@
             var concrete = (FontSizeProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("3.5em", concrete.Value);
+            Assert.Equal("3.5em", concrete.ValueText);
         }
 
         [Fact]
@@ -383,7 +383,7 @@
             var concrete = (FontWeightProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("bolder", concrete.Value);
+            Assert.Equal("bolder", concrete.ValueText);
         }
 
         [Fact]
@@ -397,7 +397,7 @@
             var concrete = (FontWeightProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("bold", concrete.Value);
+            Assert.Equal("bold", concrete.ValueText);
         }
 
         [Fact]
@@ -411,7 +411,7 @@
             var concrete = (FontWeightProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("400", concrete.Value);
+            Assert.Equal("400", concrete.ValueText);
         }
 
         [Fact]
@@ -425,7 +425,7 @@
             var concrete = (FontStretchProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("normal", concrete.Value);
+            Assert.Equal("normal", concrete.ValueText);
         }
 
         [Fact]
@@ -439,7 +439,7 @@
             var concrete = (FontStretchProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("extra-condensed", concrete.Value);
+            Assert.Equal("extra-condensed", concrete.ValueText);
         }
 
         [Fact]
@@ -466,7 +466,7 @@
             var concrete = (FontProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("12px / 14px sans-serif", concrete.Value);
+            Assert.Equal("12px / 14px sans-serif", concrete.ValueText);
         }
 
         [Fact]
@@ -480,7 +480,7 @@
             var concrete = (FontProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("80% sans-serif", concrete.Value);
+            Assert.Equal("80% sans-serif", concrete.ValueText);
         }
 
         [Fact]
@@ -494,7 +494,7 @@
             var concrete = (FontProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("italic bold large serif", concrete.Value);
+            Assert.Equal("italic bold large serif", concrete.ValueText);
         }
 
         [Fact]
@@ -508,7 +508,7 @@
             var concrete = (FontProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("status-bar", concrete.Value);
+            Assert.Equal("status-bar", concrete.ValueText);
         }
 
         [Fact]
@@ -522,7 +522,7 @@
             var concrete = (FontProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("15px arial, sans-serif", concrete.Value);
+            Assert.Equal("15px arial, sans-serif", concrete.ValueText);
         }
 
         [Fact]
@@ -536,7 +536,7 @@
             var concrete = (FontProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("italic bold 12px / 30px Georgia, serif", concrete.Value);
+            Assert.Equal("italic bold 12px / 30px Georgia, serif", concrete.ValueText);
         }
 
         [Fact]
@@ -550,7 +550,7 @@
             var concrete = (LetterSpacingProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("3px", concrete.Value);
+            Assert.Equal("3px", concrete.ValueText);
         }
 
         [Fact]
@@ -564,7 +564,7 @@
             var concrete = (LetterSpacingProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("0.3px", concrete.Value);
+            Assert.Equal("0.3px", concrete.ValueText);
         }
 
         [Fact]
@@ -578,7 +578,7 @@
             var concrete = (LetterSpacingProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("0.3em", concrete.Value);
+            Assert.Equal("0.3em", concrete.ValueText);
         }
 
         [Fact]
@@ -592,7 +592,7 @@
             var concrete = (LetterSpacingProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("normal", concrete.Value);
+            Assert.Equal("normal", concrete.ValueText);
         }
 
         [Fact]
@@ -606,7 +606,7 @@
             var concrete = (FontSizeAdjustProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("none", concrete.Value);
+            Assert.Equal("none", concrete.ValueText);
         }
 
         [Fact]
@@ -620,7 +620,7 @@
             var concrete = (FontSizeAdjustProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("0.5", concrete.Value);
+            Assert.Equal("0.5", concrete.ValueText);
         }
 
         [Fact]
@@ -647,7 +647,7 @@
             var concrete = (FontProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("12pt / 14pt sans-serif", concrete.Value);
+            Assert.Equal("12pt / 14pt sans-serif", concrete.ValueText);
         }
 
         [Fact]
@@ -661,7 +661,7 @@
             var concrete = (FontProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("80% sans-serif", concrete.Value);
+            Assert.Equal("80% sans-serif", concrete.ValueText);
         }
 
         [Fact]
@@ -675,7 +675,7 @@
             var concrete = (FontProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("x-large / 110% \"New Century Schoolbook\", serif", concrete.Value);
+            Assert.Equal("x-large / 110% \"New Century Schoolbook\", serif", concrete.ValueText);
         }
 
         [Fact]
@@ -689,7 +689,7 @@
             var concrete = (FontProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("italic bold large Palatino, serif", concrete.Value);
+            Assert.Equal("italic bold large Palatino, serif", concrete.ValueText);
         }
 
         [Fact]
@@ -703,7 +703,7 @@
             var concrete = (FontProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("normal small-caps 120% / 120% fantasy", concrete.Value);
+            Assert.Equal("normal small-caps 120% / 120% fantasy", concrete.ValueText);
         }
 
         [Fact]
@@ -717,7 +717,7 @@
             var concrete = (FontProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("oblique condensed 12pt \"Helvetica Neue\", serif", concrete.Value);
+            Assert.Equal("oblique condensed 12pt \"Helvetica Neue\", serif", concrete.ValueText);
         }
 
         [Fact]
@@ -731,7 +731,7 @@
             var concrete = (FontProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("status-bar", concrete.Value);
+            Assert.Equal("status-bar", concrete.ValueText);
         }
 
         [Fact]
@@ -781,7 +781,7 @@
             var concrete = (FontProperty)property;
             Assert.False(concrete.IsInherited);
             Assert.True(concrete.HasValue);
-            Assert.Equal("italic bold 12px / 30px Georgia, serif", concrete.Value);
+            Assert.Equal("italic bold 12px / 30px Georgia, serif", concrete.ValueText);
             //Assert.Equal(new Length(30f, Length.Unit.Px), concrete.Height);
             //Assert.Equal(new Length(12f, Length.Unit.Px), concrete.Size);
             //Assert.Equal(FontStyle.Italic, concrete.Style);

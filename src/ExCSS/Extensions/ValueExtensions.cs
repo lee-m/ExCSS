@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
+using ExCSS.New.Values;
 
 namespace ExCSS
 {
@@ -433,5 +435,30 @@ namespace ExCSS
 
             return null;
         }
+
+        public static PropertyValue<Color> ToColorPropertyValue(this IEnumerable<Token> value)
+        {
+            var element = value.OnlyOrDefault();
+
+            if (element != null && element.Type == TokenType.Ident)
+            {
+                var namedColor = Color.FromName(element.Data);
+
+                if (namedColor != null)
+                    return new ColorValue(new TokenValue(value), namedColor.Value);
+
+                return null;
+            }
+
+            if (element != null && element.Type == TokenType.Color && !((ColorToken)element).IsValid)
+            {
+                return new ColorValue(new TokenValue(value), Color.FromHex(element.Data));
+            }
+
+            return null;
+        }
+
+        public static T As<T>(this IValue value)
+            => (value as PropertyValue<T>).Value;
     }
 }
