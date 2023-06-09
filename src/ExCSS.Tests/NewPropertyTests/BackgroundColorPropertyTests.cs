@@ -1,4 +1,5 @@
 ﻿using ExCSS.New;
+
 using Xunit;
 
 namespace ExCSS.Tests.NewPropertyTests
@@ -147,12 +148,7 @@ namespace ExCSS.Tests.NewPropertyTests
         }
 
         [Theory]
-        [InlineData("inherit")]
-        [InlineData("initial")]
-        [InlineData("unset")]
-        [InlineData("revert")]
-        [InlineData("revert-layer")]
-
+        [MemberData(nameof(WideKeywordTestValues))]
         public void BackgroundColorPropertyAcceptsWideKeywords(string value)
         {
             var property = ParseDeclaration($"background-color: {value}");

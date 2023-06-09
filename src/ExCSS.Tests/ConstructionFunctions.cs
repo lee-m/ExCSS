@@ -102,6 +102,21 @@ namespace ExCSS.Tests
             }
         }
 
+        public static IEnumerable<object[]> WideKeywordTestValues
+        {
+            get
+            {
+                return new[]
+                {
+                    new object[] { Keywords.Inherit },
+                    new object[] { Keywords.Initial },
+                    new object[] { Keywords.Revert },
+                    new object[] { Keywords.RevertLayer },
+                    new object[] { Keywords.Unset }
+                };
+            }
+        }
+
         public static IEnumerable<object[]> LengthOrPercentOrGlobalTestValues
         {
             get
