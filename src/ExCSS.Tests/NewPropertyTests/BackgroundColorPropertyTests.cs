@@ -24,6 +24,7 @@ namespace ExCSS.Tests.NewPropertyTests
 
             Assert.False(concrete.IsInherited);
             Assert.Equal(ValueKind.Color, concrete.Value.Kind);
+            Assert.Equal(value, concrete.Original);
 
             var color = concrete.Value.As<Color>();
             Assert.True(Color.FromHex(value.TrimStart('#')).Equals(color));
@@ -45,6 +46,7 @@ namespace ExCSS.Tests.NewPropertyTests
 
             Assert.False(concrete.IsInherited);
             Assert.Equal(ValueKind.Color, concrete.Value.Kind);
+            Assert.Equal(value, concrete.Original);
 
             var color = concrete.Value.As<Color>();
             Assert.True(Color.FromName(value).Equals(color));
@@ -73,6 +75,7 @@ namespace ExCSS.Tests.NewPropertyTests
             Assert.False(concrete.IsInherited);
             Assert.NotNull(concrete.Value);
             Assert.Equal(ValueKind.Color, concrete.Value.Kind);
+            Assert.Equal(value, concrete.Original);
 
             var color = concrete.Value.As<Color>();
 
@@ -108,6 +111,7 @@ namespace ExCSS.Tests.NewPropertyTests
             Assert.False(concrete.IsInherited);
             Assert.NotNull(concrete.Value);
             Assert.Equal(ValueKind.Color, concrete.Value.Kind);
+            Assert.Equal(value, concrete.Original);
 
             var color = concrete.Value.As<Color>();
 
@@ -134,6 +138,7 @@ namespace ExCSS.Tests.NewPropertyTests
             Assert.False(concrete.IsInherited);
             Assert.NotNull(concrete.Value);
             Assert.Equal(ValueKind.Color, concrete.Value.Kind);
+            Assert.Equal(value, concrete.Original);
 
             var color = concrete.Value.As<Color>();
 
@@ -161,6 +166,7 @@ namespace ExCSS.Tests.NewPropertyTests
             Assert.False(concrete.IsInherited);
             Assert.NotNull(concrete.Value);
             Assert.Equal(ValueKind.Keyword, concrete.Value.Kind);
+            Assert.Equal(value, concrete.Original);
 
             var keyword = concrete.Value.As<string>();
 
@@ -183,6 +189,7 @@ namespace ExCSS.Tests.NewPropertyTests
             Assert.False(concrete.IsInherited);
             Assert.NotNull(concrete.Value);
             Assert.Equal(ValueKind.Keyword, concrete.Value.Kind);
+            Assert.Equal(value, concrete.Original);
 
             var keyword = concrete.Value.As<string>();
 

@@ -33,7 +33,7 @@ namespace ExCSS
 
         public string ValueText => DeclaredValue != null ? DeclaredValue.CssText : Keywords.Initial;
 
-        public string Original => DeclaredValue != null ? DeclaredValue.Original.Text : Keywords.Initial;
+        public string Original => Value?.Original;
 
         public bool IsInherited => (_flags & PropertyFlags.Inherited) == PropertyFlags.Inherited && IsInitial ||
                                    DeclaredValue != null && DeclaredValue.CssText.Is(Keywords.Inherit);

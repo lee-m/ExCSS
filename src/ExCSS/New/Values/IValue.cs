@@ -1,9 +1,8 @@
-﻿using ExCSS.New;
-
-namespace ExCSS.New.Values
+﻿namespace ExCSS.New.Values
 {
     public interface IValue
     {
         ValueKind Kind { get; }
+        string Original { get; }
     }
 }
