@@ -1,9 +1,9 @@
 ﻿using ExCSS.New.ValueConverters;
 using ExCSS.New.Values;
 
-namespace ExCSS
+namespace ExCSS.New.StyleProperties.Background
 {
-    internal sealed class BackgroundColorProperty : Property
+    public sealed class BackgroundColorProperty : Property
     {
         private static readonly IValueConverter StyleConverter = Converters.CurrentColorConverter.OrDefault();
 

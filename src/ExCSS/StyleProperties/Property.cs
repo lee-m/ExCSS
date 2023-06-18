@@ -31,7 +31,7 @@ namespace ExCSS
         protected virtual IValue CoerceValue(TokenValue newTokenValue)
             => null;
 
-        public string ValueText => DeclaredValue != null ? DeclaredValue.CssText : Keywords.Initial;
+        public string ValueText => Value?.ToString();
 
         public string Original => Value?.Original;
 
@@ -42,7 +42,7 @@ namespace ExCSS
 
         public bool IsInitial => DeclaredValue == null || DeclaredValue.CssText.Is(Keywords.Initial);
 
-        internal bool HasValue => DeclaredValue != null;
+        internal bool HasValue => Value != null;
 
         internal bool CanBeHashless => (_flags & PropertyFlags.Hashless) == PropertyFlags.Hashless;
 

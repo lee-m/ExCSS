@@ -1,6 +1,7 @@
 ﻿namespace ExCSS.Tests
 {
     using ExCSS;
+    using ExCSS.New.StyleProperties.Background;
     using Xunit;
 
     public class BackgroundPropertyTests : CssConstructionFunctions
