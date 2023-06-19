@@ -38,11 +38,6 @@ namespace ExCSS.Tests
             => TestForLegalValue<FlexShrinkProperty>(PropertyNames.FlexShrink, value);
 
         [Theory]
-        [MemberData(nameof(AlignContentTestDataValues))]
-        public void AlignContentLegalValues(string value)
-            => TestForLegalValue<AlignContentProperty>(PropertyNames.AlignContent, value);
-
-        [Theory]
         [MemberData(nameof(AlignItemsTestDataValues))]
         public void AlignItemsLegalValues(string value)
             => TestForLegalValue<AlignItemsProperty>(PropertyNames.AlignItems, value);
@@ -66,16 +61,6 @@ namespace ExCSS.Tests
         [MemberData(nameof(FlexTestDataValues))]
         public void FlexLegalValues(string value)
             => TestForLegalValue<FlexProperty>(PropertyNames.Flex, value);
-
-        [Theory]
-        [MemberData(nameof(AlignContentInvalidPrefixTestDataValues))]
-        public void AlignContentIllegalPrefixValues(string value)
-        {
-            var snippet = $"align-content: {value}";
-            var property = ParseDeclaration(snippet);
-            Assert.Equal("align-content", property.Name);
-            Assert.False(property.HasValue);
-        }
 
         [Theory]
         [MemberData(nameof(AlignItemsInvalidPrefixTestDataValues))]
@@ -239,31 +224,6 @@ namespace ExCSS.Tests
             }
         }
 
-        public static IEnumerable<object[]> AlignContentTestDataValues
-        {
-            get
-            {
-                return new[]
-                {
-                    new object[] { Keywords.Center },
-                    new object[] { Keywords.Start },
-                    new object[] { Keywords.End },
-                    new object[] { Keywords.FlexStart },
-                    new object[] { Keywords.FlexEnd },
-                    new object[] { Keywords.Normal },
-                    new object[] { Keywords.Baseline },
-                    new object[] { $"{Keywords.First} {Keywords.Baseline}" },
-                    new object[] { $"{Keywords.Last} {Keywords.Baseline}" },
-                    new object[] { Keywords.SpaceBetween },
-                    new object[] { Keywords.SpaceAround },
-                    new object[] { Keywords.SpaceEvenly },
-                    new object[] { Keywords.Stretch },
-                    new object[] { $"{Keywords.Safe} {Keywords.Center}" },
-                    new object[] { $"{Keywords.Unsafe} {Keywords.Center}" },
-                }.Union(GlobalKeywordTestValues.ToObjectArray());
-            }
-        }
-
         public static IEnumerable<object[]> AlignSelfTestDataValues
         {
             get
@@ -332,36 +292,6 @@ namespace ExCSS.Tests
                     new object[] { $"{Keywords.Safe} {Keywords.Center}" },
                     new object[] { $"{Keywords.Unsafe} {Keywords.Center}" },
                 }.Union(GlobalKeywordTestValues.ToObjectArray());
-            }
-        }
-
-
-        public static IEnumerable<object[]> AlignContentInvalidPrefixTestDataValues
-        {
-            get
-            {
-                return new[]
-                {
-                    new object[] { $"{Keywords.Safe} {Keywords.Start}" },
-                    new object[] { $"{Keywords.Safe} {Keywords.End}" },
-                    new object[] { $"{Keywords.Safe} {Keywords.FlexStart}" },
-                    new object[] { $"{Keywords.Safe} {Keywords.FlexEnd}" },
-
-                    new object[] { $"{Keywords.Unsafe} {Keywords.Start}" },
-                    new object[] { $"{Keywords.Unsafe} {Keywords.End}" },
-                    new object[] { $"{Keywords.Unsafe} {Keywords.FlexStart}" },
-                    new object[] { $"{Keywords.Unsafe} {Keywords.FlexEnd}" },
-
-                    new object[] { $"{Keywords.First} {Keywords.Start}" },
-                    new object[] { $"{Keywords.First} {Keywords.End}" },
-                    new object[] { $"{Keywords.First} {Keywords.FlexStart}" },
-                    new object[] { $"{Keywords.First} {Keywords.FlexEnd}" },
-                
-                    new object[] { $"{Keywords.Last} {Keywords.Start}" },
-                    new object[] { $"{Keywords.Last} {Keywords.End}" },
-                    new object[] { $"{Keywords.Last} {Keywords.FlexStart}" },
-                    new object[] { $"{Keywords.Last} {Keywords.FlexEnd}" },
-                };
             }
         }
 

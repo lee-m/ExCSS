@@ -1,11 +1,13 @@
-﻿using ExCSS.New;
-
+﻿using ExCSS.New.StyleProperties.Background;
 using Xunit;
 
 namespace ExCSS.Tests.NewPropertyTests
 {
-    public class BackgroundColorPropertyTests : CssConstructionFunctions
+    public class BackgroundColorPropertyTests : BasePropertyTest<BackgroundColorProperty>
     {
+        public BackgroundColorPropertyTests() : base(PropertyNames.BackgroundColor)
+        { }
+
         [Theory]
         [InlineData("#bbff00")]
         [InlineData("#bf0")]
@@ -14,44 +16,14 @@ namespace ExCSS.Tests.NewPropertyTests
         [InlineData("#11ffeeff")]
         [InlineData("#1fef")]
         public void BackgroundColorPropertyAcceptsHexColours(string value)
-        {
-            var property = ParseDeclaration($"background-color: {value}");
-
-            Assert.Equal("background-color", property.Name);
-            Assert.False(property.IsImportant);
-            Assert.IsType<BackgroundColorProperty>(property);
-
-            var concrete = (BackgroundColorProperty)property;
-
-            Assert.False(concrete.IsInherited);
-            Assert.Equal(ValueKind.Color, concrete.Value.Kind);
-            Assert.Equal(value, concrete.Original);
-
-            var color = concrete.Value.As<Color>();
-            Assert.True(Color.FromHex(value.TrimStart('#')).Equals(color));
-        }
+            => TestAcceptsColor(value, Color.FromHex(value.TrimStart('#')));
 
         [Theory]
         [InlineData("red")]
         [InlineData("indigo")]
         [InlineData("transparent")]
         public void BackgroundColorPropertyAcceptsNamedColours(string value)
-        {
-            var property = ParseDeclaration($"background-color: {value}");
-
-            Assert.Equal("background-color", property.Name);
-            Assert.False(property.IsImportant);
-            Assert.IsType<BackgroundColorProperty>(property);
-
-            var concrete = (BackgroundColorProperty)property;
-
-            Assert.False(concrete.IsInherited);
-            Assert.Equal(ValueKind.Color, concrete.Value.Kind);
-            Assert.Equal(value, concrete.Original);
-
-            var color = concrete.Value.As<Color>();
-            Assert.True(Color.FromName(value).Equals(color));
-        }
+            => TestAcceptsColor(value, Color.FromName(value).GetValueOrDefault());
 
         [Theory]
         [InlineData("rgb(255, 255, 128)", 255, 255, 128, 1)]
@@ -64,25 +36,7 @@ namespace ExCSS.Tests.NewPropertyTests
                                                                    byte expectedGreen,
                                                                    byte expectedBlue,
                                                                    float expectedAlpha)
-        {
-            var property = ParseDeclaration($"background-color: {value}");
-
-            Assert.Equal("background-color", property.Name);
-            Assert.False(property.IsImportant);
-            Assert.IsType<BackgroundColorProperty>(property);
-
-            var concrete = (BackgroundColorProperty)property;
-
-            Assert.False(concrete.IsInherited);
-            Assert.NotNull(concrete.Value);
-            Assert.Equal(ValueKind.Color, concrete.Value.Kind);
-            Assert.Equal(value, concrete.Original);
-
-            var color = concrete.Value.As<Color>();
-
-            Assert.NotNull(color);
-            Assert.True(Color.FromRgba(expectedRed, expectedGreen, expectedBlue, expectedAlpha).Equals(color));
-        }
+            => TestAcceptsColor(value, Color.FromRgba(expectedRed, expectedGreen, expectedBlue, expectedAlpha));
 
         [Theory]
         [InlineData("hsl(147, 50%, 47%)", 147, 50, 47, 1f)]
@@ -100,25 +54,7 @@ namespace ExCSS.Tests.NewPropertyTests
                                                                    float expectedSaturation,
                                                                    float expectedLightness,
                                                                    float expectedAlpha)
-        {
-            var property = ParseDeclaration($"background-color: {value}");
-
-            Assert.Equal("background-color", property.Name);
-            Assert.False(property.IsImportant);
-            Assert.IsType<BackgroundColorProperty>(property);
-
-            var concrete = (BackgroundColorProperty)property;
-
-            Assert.False(concrete.IsInherited);
-            Assert.NotNull(concrete.Value);
-            Assert.Equal(ValueKind.Color, concrete.Value.Kind);
-            Assert.Equal(value, concrete.Original);
-
-            var color = concrete.Value.As<Color>();
-
-            Assert.NotNull(color);
-            Assert.True(Color.FromHsla(expectedHue, expectedSaturation, expectedLightness, expectedAlpha).Equals(color));
-        }
+            => TestAcceptsColor(value, Color.FromHsla(expectedHue, expectedSaturation, expectedLightness, expectedAlpha));
 
         [Theory]
         [InlineData("hwb(120, 0%, 0%)", 120, 0, 0)]
@@ -127,71 +63,17 @@ namespace ExCSS.Tests.NewPropertyTests
                                                                    float expectedHue,
                                                                    float expectedWhiteness,
                                                                    float expectedBlackness)
-        {
-            var property = ParseDeclaration($"background-color: {value}");
-
-            Assert.Equal("background-color", property.Name);
-            Assert.False(property.IsImportant);
-            Assert.IsType<BackgroundColorProperty>(property);
-
-            var concrete = (BackgroundColorProperty)property;
-
-            Assert.False(concrete.IsInherited);
-            Assert.NotNull(concrete.Value);
-            Assert.Equal(ValueKind.Color, concrete.Value.Kind);
-            Assert.Equal(value, concrete.Original);
-
-            var color = concrete.Value.As<Color>();
-
-            Assert.NotNull(color);
-            Assert.True(Color.FromHwb(expectedHue, expectedWhiteness, expectedBlackness).Equals(color));
-        }
+            => TestAcceptsColor(value, Color.FromHwb(expectedHue, expectedWhiteness, expectedBlackness));
 
         [Theory]
         [MemberData(nameof(WideKeywordTestValues))]
         public void BackgroundColorPropertyAcceptsWideKeywords(string value)
-        {
-            var property = ParseDeclaration($"background-color: {value}");
-
-            Assert.Equal("background-color", property.Name);
-            Assert.False(property.IsImportant);
-            Assert.IsType<BackgroundColorProperty>(property);
-
-            var concrete = (BackgroundColorProperty)property;
-
-            Assert.False(concrete.IsInherited);
-            Assert.NotNull(concrete.Value);
-            Assert.Equal(ValueKind.Keyword, concrete.Value.Kind);
-            Assert.Equal(value, concrete.Original);
-
-            var keyword = concrete.Value.As<string>();
-
-            Assert.NotNull(keyword);
-            Assert.Equal(value, keyword);
-        }
+            => TestAcceptsKeyword(value);
 
         [Theory]
         [InlineData("currentcolor")]
         public void BackgroundColorPropertyAcceptsSpecialKeywordColours(string value)
-        {
-            var property = ParseDeclaration($"background-color: {value}");
-
-            Assert.Equal("background-color", property.Name);
-            Assert.False(property.IsImportant);
-            Assert.IsType<BackgroundColorProperty>(property);
-
-            var concrete = (BackgroundColorProperty)property;
-
-            Assert.False(concrete.IsInherited);
-            Assert.NotNull(concrete.Value);
-            Assert.Equal(ValueKind.Keyword, concrete.Value.Kind);
-            Assert.Equal(value, concrete.Original);
-
-            var keyword = concrete.Value.As<string>();
-
-            Assert.NotNull(keyword);
-            Assert.Equal(value, keyword);
-        }
+            => TestAcceptsKeyword(value);
 
         [Theory]
         [InlineData("rgb()")]
@@ -222,17 +104,6 @@ namespace ExCSS.Tests.NewPropertyTests
         [InlineData("#XXYYZZUU")]
         [InlineData("#AABBCCDDEEFF")]
         public void BackgroundColorPropertyInvalidValue(string value)
-        {
-            var property = ParseDeclaration($"background-color: {value}");
-
-            Assert.Equal("background-color", property.Name);
-            Assert.False(property.IsImportant);
-            Assert.IsType<BackgroundColorProperty>(property);
-
-            var concrete = (BackgroundColorProperty)property;
-
-            Assert.False(concrete.IsInherited);
-            Assert.Null(concrete.Value);
-        }
+            => TestInvalidValue(value);
     }
 }

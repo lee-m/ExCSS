@@ -1,5 +1,7 @@
 ﻿using System.Linq;
 
+using ExCSS.New;
+
 namespace ExCSS.Tests
 {
     using System.Collections.Generic;
@@ -98,21 +100,6 @@ namespace ExCSS.Tests
                     Keywords.Revert,
                     Keywords.RevertLayer,
                     Keywords.Unset
-                };
-            }
-        }
-
-        public static IEnumerable<object[]> WideKeywordTestValues
-        {
-            get
-            {
-                return new[]
-                {
-                    new object[] { Keywords.Inherit },
-                    new object[] { Keywords.Initial },
-                    new object[] { Keywords.Revert },
-                    new object[] { Keywords.RevertLayer },
-                    new object[] { Keywords.Unset }
                 };
             }
         }

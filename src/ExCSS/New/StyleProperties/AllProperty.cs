@@ -1,9 +1,9 @@
 ﻿using ExCSS.New.ValueConverters;
 using ExCSS.New.Values;
 
-namespace ExCSS
+namespace ExCSS.New.StyleProperties
 {
-    internal sealed class AllProperty : Property
+    public sealed class AllProperty : Property
     {
         internal AllProperty()
             : base(PropertyNames.All)

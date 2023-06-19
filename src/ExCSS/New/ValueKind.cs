@@ -5,9 +5,10 @@
         Color,
         Dimension,
         Keyword,
-        ValueFunction,
         Number,
         Percent,
-        Angle
+        Angle,
+        BaselinePosition,
+        ContentPosition
     }
 }
