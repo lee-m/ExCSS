@@ -9,6 +9,9 @@ namespace ExCSS.New.ValueConverters
     {
         public IValue Convert(IEnumerable<Token> value)
         {
+            if (value == null)
+                return null;
+
             var tokens = new List<Token>(value);
 
             if (tokens.Count == 0)

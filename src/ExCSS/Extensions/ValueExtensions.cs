@@ -19,16 +19,19 @@ namespace ExCSS
         {
             var result = default(Token);
 
-            foreach (var item in value)
+            if (value != null)
             {
-                if (result == null)
+                foreach (var item in value)
                 {
-                    result = item;
-                    continue;
-                }
+                    if (result == null)
+                    {
+                        result = item;
+                        continue;
+                    }
 
-                result = default;
-                break;
+                    result = default;
+                    break;
+                }
             }
 
             return result;
