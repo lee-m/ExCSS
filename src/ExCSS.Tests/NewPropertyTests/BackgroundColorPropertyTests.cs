@@ -76,6 +76,7 @@ namespace ExCSS.Tests.NewPropertyTests
             => TestAcceptsKeyword(value);
 
         [Theory]
+        [InlineData("")]
         [InlineData("rgb()")]
         [InlineData("rgb(117)")]
         [InlineData("rgba(117, 190)")]

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+
 using ExCSS.New.Values;
 
 namespace ExCSS.New.ValueConverters
@@ -12,6 +13,9 @@ namespace ExCSS.New.ValueConverters
 
         public IValue Convert(IEnumerable<Token> value)
         {
+            if (value == null)
+                return null;
+
             var function = value.FirstOrDefault() as FunctionToken;
 
             if (function == null || !function.IsColorFunction)

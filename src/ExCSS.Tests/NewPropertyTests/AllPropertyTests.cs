@@ -9,9 +9,14 @@ namespace ExCSS.Tests.NewPropertyTests
         { }
 
         [Theory]
-
         [MemberData(nameof(WideKeywordTestValues))]
         public void AllPropertyAcceptsWideKeywords(string value)
             => TestAcceptsKeyword(value);
+
+        [Theory]
+        [InlineData("")]
+        [InlineData("random value")]
+        public void AllPropertyInvalidValue(string value)
+            => TestInvalidValue(value);
     }
 }
