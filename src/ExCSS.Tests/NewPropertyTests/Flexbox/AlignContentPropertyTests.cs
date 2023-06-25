@@ -1,6 +1,7 @@
 ﻿using ExCSS.New;
+using ExCSS.New.Enumerations;
 using ExCSS.New.StyleProperties.Flexbox;
-using ExCSS.Values;
+using ExCSS.New.Values;
 
 using Xunit;
 
@@ -12,20 +13,20 @@ namespace ExCSS.Tests.NewPropertyTests.Flexbox
         { }
 
         [Fact]
-        public void AlignContentAcceptsNormalKeyword()
+        public void AlignContentPropertyAcceptsNormalKeyword()
             => TestAcceptsKeyword(Keywords.Normal);
 
         [Theory]
         [InlineData("first baseline", true, null)]
         [InlineData("last baseline", null, true)]
         [InlineData("baseline", null, null)]
-        public void AlignContentAcceptsBaselinePosition(string value, bool? first, bool? last)
+        public void AlignContentPropertyAcceptsBaselinePosition(string value, bool? first, bool? last)
         {
             TestAcceptsValue(value, prop =>
             {
                 Assert.Equal(prop.Value.Kind, ValueKind.BaselinePosition);
 
-                var baselinePosition = prop.Value.As<BaselinePosition>();
+                var baselinePosition = prop.Value.As<BaselinePositionValue>();
 
                 Assert.Equal(first, baselinePosition.First);
                 Assert.Equal(last, baselinePosition.Last);
@@ -39,16 +40,24 @@ namespace ExCSS.Tests.NewPropertyTests.Flexbox
         [InlineData("baseline baseline")]
         [InlineData("first baseline last")]
         [InlineData("last baseline first")]
-        public void AlignContentInvalidBaselinePosition(string value)
+        public void AlignContentPropertyInvalidBaselinePosition(string value)
             => TestInvalidValue(value);
 
         [Theory]
-        [InlineData("space-around")]
-        [InlineData("space-between")]
-        [InlineData("space-evenly")]
-        [InlineData("stretch")]
-        public void AlignContentAcceptsContentDistribution(string value)
-            => TestAcceptsKeyword(value);
+        [InlineData("space-around", ContentDistributionKeyword.SpaceAround)]
+        [InlineData("space-between", ContentDistributionKeyword.SpaceBetween)]
+        [InlineData("space-evenly", ContentDistributionKeyword.SpaceEvenly)]
+        [InlineData("stretch", ContentDistributionKeyword.Stretch)]
+        public void AlignContentPropertyAcceptsContentDistribution(string value, ContentDistributionKeyword expectedKeyword)
+        {
+            TestAcceptsValue(value, prop =>
+            {
+                Assert.Equal(prop.Value.Kind, ValueKind.ContentDistribution);
+
+                var contentDistribution = prop.Value.As<ContentDistributionValue>();
+                Assert.Equal(expectedKeyword, contentDistribution.Keyword);
+            });
+        }
 
         [Theory]
         [InlineData("safe center", true, null)]
@@ -61,13 +70,13 @@ namespace ExCSS.Tests.NewPropertyTests.Flexbox
         [InlineData("unsafe end", null, true)]
         [InlineData("unsafe flex-start", null, true)]
         [InlineData("unsafe flex-end", null, true)]
-        public void AlignContentAcceptsOverflowPosition(string value, bool? safe, bool? notSafe)
+        public void AlignContentPropertyAcceptsOverflowPosition(string value, bool? safe, bool? notSafe)
         {
             TestAcceptsValue(value, prop =>
             {
                 Assert.Equal(prop.Value.Kind, ValueKind.ContentPosition);
 
-                var contentPosition = prop.Value.As<ContentPosition>();
+                var contentPosition = prop.Value.As<ContentPositionValue>();
 
                 Assert.Equal(safe, contentPosition.Overflow.Safe);
                 Assert.Equal(notSafe, contentPosition.Overflow.Unsafe);
@@ -82,26 +91,31 @@ namespace ExCSS.Tests.NewPropertyTests.Flexbox
         [InlineData("unsafe unsafe center")]
         [InlineData("unsafe start start")]
         [InlineData("unsafe")]
-        public void AlignContentInvalidOverflowPosition(string value)
+        public void AlignContentPropertyInvalidOverflowPosition(string value)
             => TestInvalidValue(value);
 
         [Theory]
-        [InlineData("center")]
-        [InlineData("start")]
-        [InlineData("end")]
-        [InlineData("flex-start")]
-        [InlineData("flex-end")]
-        public void AlignContentAcceptsContentPosition(string value)
+        [InlineData("center", ContentPositionKeyword.Center)]
+        [InlineData("start", ContentPositionKeyword.Start)]
+        [InlineData("end", ContentPositionKeyword.End)]
+        [InlineData("flex-start", ContentPositionKeyword.FlexStart)]
+        [InlineData("flex-end", ContentPositionKeyword.FlexEnd)]
+        public void AlignContentPropertyAcceptsContentPosition(string value, ContentPositionKeyword expectedKeyword)
         {
             TestAcceptsValue(value, prop =>
             {
                 Assert.Equal(prop.Value.Kind, ValueKind.ContentPosition);
 
-                var contentPosition = prop.Value.As<ContentPosition>();
+                var contentPosition = prop.Value.As<ContentPositionValue>();
 
                 Assert.Null(contentPosition.Overflow);
-                Assert.Equal(value, contentPosition.Value);
+                Assert.Equal(expectedKeyword, contentPosition.Keyword);
             });
         }
+
+        [Theory]
+        [MemberData(nameof(WideKeywordTestValues))]
+        public void AlignContentPropertyAcceptsWideKeywords(string value, WideKeyword expected)
+            => TestAcceptsWideKeyword(value, expected);
     }
 }

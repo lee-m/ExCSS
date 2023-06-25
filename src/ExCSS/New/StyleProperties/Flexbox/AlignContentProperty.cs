@@ -11,18 +11,19 @@ namespace ExCSS.New.StyleProperties.Flexbox
             : base(PropertyNames.AlignContent)
         { }
 
-
         protected override IValue CoerceValue(TokenValue newTokenValue)
         {
             var normalConverter = new AllowedKeywordsValueConverter(Keywords.Normal);
-            var contentDistributionConverter = new AllowedKeywordsValueConverter(Keywords.SpaceBetween, Keywords.SpaceAround, Keywords.SpaceEvenly, Keywords.Stretch);
+            var contentDistributionConverter = new ContentDistributionValueConverter();
             var baselinePositionConverter = new BaselinePositionValueConverter();
             var contentPositionConverter = new ContentPositionValueConverter();
+            var wideKeywordConverter = new WideKeywordValueConverter();
 
             return normalConverter.Convert(newTokenValue)
                    ?? contentDistributionConverter.Convert(newTokenValue)
                    ?? contentPositionConverter.Convert(newTokenValue)
-                   ?? baselinePositionConverter.Convert(newTokenValue);
+                   ?? baselinePositionConverter.Convert(newTokenValue)
+                   ?? wideKeywordConverter.Convert(newTokenValue);
         }
 
         internal override IValueConverter Converter => StyleConverter;

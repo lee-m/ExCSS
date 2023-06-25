@@ -19,7 +19,7 @@ namespace ExCSS.New.StyleProperties.Background
             var wideKeywordConverter = new WideKeywordValueConverter();
             var specialColourKeywordsConverter = new AllowedKeywordsValueConverter(Keywords.CurrentColor);
 
-            return newTokenValue.ToColorPropertyValue()
+            return newTokenValue.ToColor()
                    ?? colorFunction.Convert(newTokenValue)
                    ?? wideKeywordConverter.Convert(newTokenValue)
                    ?? specialColourKeywordsConverter.Convert(newTokenValue);

@@ -1,26 +1,23 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
+﻿using ExCSS.New.Enumerations;
 using ExCSS.New.Values;
 
 namespace ExCSS.New.ValueConverters
 {
     internal sealed class AngleValueConverter : IValueConverter2
     {
-        public IValue Convert(IEnumerable<Token> value)
+        public IValue Convert(TokenValue value)
         {
-            var enumerable = value as Token[] ?? value.ToArray();
-            var angle = enumerable.ToAngle();
+            var angle = value.ToAngle();
 
-            if (angle.HasValue)
-                return new AngleValue(value, angle.Value);
+            if (angle != null)
+                return angle;
 
-            var number = enumerable.ToSingle();
+            var number = value.ToSingle();
 
             if (!number.HasValue)
                 return null;
 
-            return new AngleValue(value, new Angle(number.Value, Angle.Unit.Deg));
+            return new AngleValue(value, number.Value, AngleUnit.Deg);
         }
     }
 }

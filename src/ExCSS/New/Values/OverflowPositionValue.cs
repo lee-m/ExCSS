@@ -1,6 +1,6 @@
-﻿namespace ExCSS.Values
+﻿namespace ExCSS.New.Values
 {
-    public record OverflowPosition
+    public sealed class OverflowPositionValue
     {
         public bool? Safe { get; set; }
         public bool? Unsafe { get; set; }

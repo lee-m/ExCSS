@@ -1,4 +1,6 @@
-﻿using ExCSS.New.StyleProperties.Background;
+﻿using ExCSS.New.Enumerations;
+using ExCSS.New.StyleProperties.Background;
+using ExCSS.New.Values;
 using Xunit;
 
 namespace ExCSS.Tests.NewPropertyTests
@@ -16,14 +18,14 @@ namespace ExCSS.Tests.NewPropertyTests
         [InlineData("#11ffeeff")]
         [InlineData("#1fef")]
         public void BackgroundColorPropertyAcceptsHexColours(string value)
-            => TestAcceptsColor(value, Color.FromHex(value.TrimStart('#')));
+            => TestAcceptsColor(value, ColorValue.FromHex(TokenValue.FromString(value), value.TrimStart('#')));
 
         [Theory]
         [InlineData("red")]
         [InlineData("indigo")]
         [InlineData("transparent")]
         public void BackgroundColorPropertyAcceptsNamedColours(string value)
-            => TestAcceptsColor(value, Color.FromName(value).GetValueOrDefault());
+            => TestAcceptsColor(value, ColorValue.FromName(TokenValue.FromString(value), value));
 
         [Theory]
         [InlineData("rgb(255, 255, 128)", 255, 255, 128, 1)]
@@ -36,7 +38,8 @@ namespace ExCSS.Tests.NewPropertyTests
                                                                    byte expectedGreen,
                                                                    byte expectedBlue,
                                                                    float expectedAlpha)
-            => TestAcceptsColor(value, Color.FromRgba(expectedRed, expectedGreen, expectedBlue, expectedAlpha));
+            => TestAcceptsColor(value, ColorValue.FromRgba(TokenValue.FromString(value), 
+                                                           expectedRed, expectedGreen, expectedBlue, expectedAlpha));
 
         [Theory]
         [InlineData("hsl(147, 50%, 47%)", 147, 50, 47, 1f)]
@@ -54,7 +57,8 @@ namespace ExCSS.Tests.NewPropertyTests
                                                                    float expectedSaturation,
                                                                    float expectedLightness,
                                                                    float expectedAlpha)
-            => TestAcceptsColor(value, Color.FromHsla(expectedHue, expectedSaturation, expectedLightness, expectedAlpha));
+            => TestAcceptsColor(value, ColorValue.FromHsla(TokenValue.FromString(value),
+                                                           expectedHue, expectedSaturation, expectedLightness, expectedAlpha));
 
         [Theory]
         [InlineData("hwb(120, 0%, 0%)", 120, 0, 0)]
@@ -63,12 +67,13 @@ namespace ExCSS.Tests.NewPropertyTests
                                                                    float expectedHue,
                                                                    float expectedWhiteness,
                                                                    float expectedBlackness)
-            => TestAcceptsColor(value, Color.FromHwb(expectedHue, expectedWhiteness, expectedBlackness));
+            => TestAcceptsColor(value, ColorValue.FromHwb(TokenValue.FromString(value),
+                                                          expectedHue, expectedWhiteness, expectedBlackness));
 
         [Theory]
         [MemberData(nameof(WideKeywordTestValues))]
-        public void BackgroundColorPropertyAcceptsWideKeywords(string value)
-            => TestAcceptsKeyword(value);
+        public void BackgroundColorPropertyAcceptsWideKeywords(string value, WideKeyword expected)
+            => TestAcceptsWideKeyword(value, expected);
 
         [Theory]
         [InlineData("currentcolor")]

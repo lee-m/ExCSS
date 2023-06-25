@@ -9,6 +9,8 @@
         Percent,
         Angle,
         BaselinePosition,
-        ContentPosition
+        ContentPosition,
+        WideKeyword,
+        ContentDistribution
     }
 }

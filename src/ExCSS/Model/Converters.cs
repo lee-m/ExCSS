@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using ExCSS.New.Values;
 
 namespace ExCSS
 {
@@ -43,17 +44,11 @@ namespace ExCSS
         public static readonly IValueConverter
             BinaryConverter = new StructValueConverter<int>(ValueExtensions.ToBinary);
 
-        public static readonly IValueConverter
-            AngleConverter = new StructValueConverter<Angle>(ValueExtensions.ToAngle);
-
         public static readonly IValueConverter NumberConverter =
             new StructValueConverter<float>(ValueExtensions.ToSingle);
 
         public static readonly IValueConverter NaturalNumberConverter =
             new StructValueConverter<float>(ValueExtensions.ToNaturalSingle);
-
-        public static readonly IValueConverter PercentConverter =
-            new StructValueConverter<Percent>(ValueExtensions.ToPercent);
 
         public static readonly IValueConverter RgbComponentConverter =
             new StructValueConverter<byte>(ValueExtensions.ToRgbComponent);
@@ -61,14 +56,11 @@ namespace ExCSS
         public static readonly IValueConverter AlphaValueConverter =
             new StructValueConverter<float>(ValueExtensions.ToAlphaValue);
 
-        public static readonly IValueConverter PureColorConverter =
-            new StructValueConverter<Color>(ValueExtensions.ToColor);
+        //public static readonly IValueConverter PureColorConverter =
+        //    new StructValueConverter<Color>(ValueExtensions.ToColor);
 
         public static readonly IValueConverter LengthOrPercentConverter =
             new StructValueConverter<Length>(ValueExtensions.ToDistance);
-
-        public static readonly IValueConverter AngleNumberConverter =
-            new StructValueConverter<Angle>(ValueExtensions.ToAngleNumber);
 
         public static readonly IValueConverter SideOrCornerConverter = WithAny(
             Assign(Keywords.Left, -1.0).Or(Keywords.Right, 1.0).Option(0.0),
@@ -151,17 +143,19 @@ namespace ExCSS
 
         public static readonly IValueConverter HslColorConverter = Construct(() =>
         {
-            var hue = AngleNumberConverter.Required();
-            var percent = PercentConverter.Required();
-            return new FunctionValueConverter(FunctionNames.Hsl, WithArgs(hue, percent, percent));
+            //var hue = AngleNumberConverter.Required();
+            //var percent = PercentConverter.Required();
+            //return new FunctionValueConverter(FunctionNames.Hsl, WithArgs(hue, percent, percent));
+            return null;
         });
 
         public static readonly IValueConverter HslaColorConverter = Construct(() =>
         {
-            var hue = AngleNumberConverter.Required();
-            var percent = PercentConverter.Required();
-            var alpha = AlphaValueConverter.Required();
-            return new FunctionValueConverter(FunctionNames.Hsla, WithArgs(hue, percent, percent, alpha));
+            //var hue = AngleNumberConverter.Required();
+            //var percent = PercentConverter.Required();
+            //var alpha = AlphaValueConverter.Required();
+            //return new FunctionValueConverter(FunctionNames.Hsla, WithArgs(hue, percent, percent, alpha));
+            return null;
         });
 
         public static readonly IValueConverter GrayColorConverter = Construct(() =>
@@ -173,10 +167,11 @@ namespace ExCSS
 
         public static readonly IValueConverter HwbColorConverter = Construct(() =>
         {
-            var hue = AngleNumberConverter.Required();
-            var percent = PercentConverter.Required();
-            var alpha = AlphaValueConverter.Option(1f);
-            return new FunctionValueConverter(FunctionNames.Hwb, WithArgs(hue, percent, percent, alpha));
+            //var hue = AngleNumberConverter.Required();
+            //var percent = PercentConverter.Required();
+            //var alpha = AlphaValueConverter.Option(1f);
+            //return new FunctionValueConverter(FunctionNames.Hwb, WithArgs(hue, percent, percent, alpha));
+            return null;
         });
 
         public static readonly IValueConverter PerspectiveConverter =
@@ -210,21 +205,23 @@ namespace ExCSS
 
         public static readonly IValueConverter RotateTransformConverter = Construct(() =>
         {
-            var number = NumberConverter.Required();
-            return new FunctionValueConverter(FunctionNames.Rotate, WithArgs(AngleConverter)).Or(
-                new FunctionValueConverter(FunctionNames.Rotate3d,
-                    WithArgs(number, number, number, AngleConverter.Required()))).Or(
-                new FunctionValueConverter(FunctionNames.RotateX, WithArgs(AngleConverter))).Or(
-                new FunctionValueConverter(FunctionNames.RotateY, WithArgs(AngleConverter))).Or(
-                new FunctionValueConverter(FunctionNames.RotateZ, WithArgs(AngleConverter)));
+            //var number = NumberConverter.Required();
+            //return new FunctionValueConverter(FunctionNames.Rotate, WithArgs(AngleConverter)).Or(
+            //    new FunctionValueConverter(FunctionNames.Rotate3d,
+            //        WithArgs(number, number, number, AngleConverter.Required()))).Or(
+            //    new FunctionValueConverter(FunctionNames.RotateX, WithArgs(AngleConverter))).Or(
+            //    new FunctionValueConverter(FunctionNames.RotateY, WithArgs(AngleConverter))).Or(
+            //    new FunctionValueConverter(FunctionNames.RotateZ, WithArgs(AngleConverter)));
+            return null;
         });
 
         public static readonly IValueConverter SkewTransformConverter = Construct(() =>
         {
-            var angle = AngleConverter.Required();
-            return new FunctionValueConverter(FunctionNames.Skew, WithArgs(angle, angle)).Or(
-                new FunctionValueConverter(FunctionNames.SkewX, WithArgs(AngleConverter))).Or(
-                new FunctionValueConverter(FunctionNames.SkewY, WithArgs(AngleConverter)));
+            //var angle = AngleConverter.Required();
+            //return new FunctionValueConverter(FunctionNames.Skew, WithArgs(angle, angle)).Or(
+            //    new FunctionValueConverter(FunctionNames.SkewX, WithArgs(AngleConverter))).Or(
+            //    new FunctionValueConverter(FunctionNames.SkewY, WithArgs(AngleConverter)));
+            return null;
         });
 
         public static readonly IValueConverter DefaultFontFamiliesConverter = Map.DefaultFontFamilies.ToConverter();
@@ -369,7 +366,7 @@ namespace ExCSS
         public static readonly IValueConverter LineHeightConverter =
             LengthOrPercentConverter.Or(NumberConverter).Or(Keywords.Normal);
 
-        public static readonly IValueConverter BorderSliceConverter = PercentConverter.Or(NumberConverter);
+        public static readonly IValueConverter BorderSliceConverter = null;
 
         public static readonly IValueConverter ImageBorderWidthConverter =
             LengthOrPercentConverter.Or(NumberConverter).Or(Keywords.Auto);
@@ -386,10 +383,10 @@ namespace ExCSS
             .Or(SkewTransformConverter)
             .Or(PerspectiveConverter);
 
-        public static readonly IValueConverter ColorConverter = PureColorConverter
-            .Or(RgbColorConverter.Or(RgbaColorConverter))
-            .Or(HslColorConverter.Or(HslaColorConverter))
-            .Or(GrayColorConverter.Or(HwbColorConverter));
+        public static readonly IValueConverter ColorConverter =
+            RgbColorConverter.Or(RgbaColorConverter)
+                             .Or(HslColorConverter.Or(HslaColorConverter))
+                             .Or(GrayColorConverter.Or(HwbColorConverter));
 
         public static readonly IValueConverter CurrentColorConverter = ColorConverter.WithCurrentColor();
         public static readonly IValueConverter InvertedColorConverter = CurrentColorConverter.Or(Keywords.Invert);
@@ -408,7 +405,7 @@ namespace ExCSS
         public static readonly IValueConverter ShadowConverter = WithAny(
             Assign(Keywords.Inset, true).Option(false),
             LengthConverter.Many(2, 4).Required(),
-            ColorConverter.WithCurrentColor().Option(Color.Black));
+            ColorConverter.WithCurrentColor().Option(ColorValue.Black));
 
         public static readonly IValueConverter MultipleShadowConverter = ShadowConverter.FromList().OrNone();
         public static readonly IValueConverter ImageSourceConverter = UrlConverter.Or(GradientConverter);

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ExCSS.New.Values;
 
 namespace ExCSS
 {
@@ -426,7 +427,7 @@ namespace ExCSS
 
         public KeyframeSelector CreateKeyframeSelector(ref Token token)
         {
-            var keys = new List<Percent>();
+            var keys = new List<PercentValue>();
             var valid = true;
             var start = token.Position;
             ParseComments(ref token);
@@ -447,13 +448,13 @@ namespace ExCSS
                 switch (token.Type)
                 {
                     case TokenType.Percentage:
-                        keys.Add(new Percent(((UnitToken) token).Value));
+                        keys.Add(new PercentValue(new[] { token }, ((UnitToken) token).Value));
                         break;
                     case TokenType.Ident when token.Data.Is(Keywords.From):
-                        keys.Add(Percent.Zero);
+                        keys.Add(PercentValue.Zero);
                         break;
                     case TokenType.Ident when token.Data.Is(Keywords.To):
-                        keys.Add(Percent.Hundred);
+                        keys.Add(PercentValue.Hundred);
                         break;
                     default:
                         valid = false;

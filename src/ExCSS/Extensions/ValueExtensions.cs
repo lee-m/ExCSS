@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.AccessControl;
+
+using ExCSS.New.Enumerations;
 using ExCSS.New.Values;
 
 namespace ExCSS
@@ -57,8 +59,8 @@ namespace ExCSS
             var enumerable = value as Token[] ?? value.ToArray();
             var percent = enumerable.ToPercent();
 
-            return percent.HasValue
-                ? new Length(percent.Value.Value, Length.Unit.Percent)
+            return percent != null
+                ? new Length(percent.Value, Length.Unit.Percent)
                 : enumerable.ToLength();
         }
 
@@ -87,12 +89,12 @@ namespace ExCSS
             }
         }
 
-        public static Percent? ToPercent(this IEnumerable<Token> value)
+        public static PercentValue ToPercent(this IEnumerable<Token> value)
         {
             var element = value.OnlyOrDefault();
 
             if (element != null && element.Type == TokenType.Percentage)
-                return new Percent(((UnitToken) element).Value);
+                return new PercentValue(value, ((UnitToken) element).Value);
 
             return null;
         }
@@ -230,37 +232,41 @@ namespace ExCSS
 
             var percent = enumerable.ToPercent();
 
-            if (!percent.HasValue) return null;
+            if (percent == null)
+                return null;
 
-            return (byte) (255f * percent.Value.NormalizedValue);
+            return (byte) (255f * percent.NormalizedValue);
         }
 
-        public static Angle? ToAngle(this IEnumerable<Token> value)
+        public static AngleValue ToAngle(this IEnumerable<Token> value)
         {
             var element = value.OnlyOrDefault();
 
             if (element == null || element.Type != TokenType.Dimension) return null;
 
             var token = (UnitToken) element;
-            var unit = Angle.GetUnit(token.Unit);
+            var unit = AngleValue.GetUnit(token.Unit);
 
-            if (unit != Angle.Unit.None) return new Angle(token.Value, unit);
+            if (unit != AngleUnit.None) 
+                return new AngleValue(value, token.Value, unit);
 
             return null;
         }
 
-        public static Angle? ToAngleNumber(this IEnumerable<Token> value)
+        public static AngleValue ToAngleNumber(this IEnumerable<Token> value)
         {
             var enumerable = value as Token[] ?? value.ToArray();
             var angle = enumerable.ToAngle();
 
-            if (angle.HasValue) return angle.Value;
+            if (angle != null) 
+                return angle;
 
             var number = enumerable.ToSingle();
 
-            if (!number.HasValue) return null;
+            if (!number.HasValue) 
+                return null;
 
-            return new Angle(number.Value, Angle.Unit.Deg);
+            return new AngleValue(value, number.Value, AngleUnit.Deg);
         }
 
         public static Length? ToLength(this IEnumerable<Token> value)
@@ -425,43 +431,22 @@ namespace ExCSS
             return string.Join(string.Empty, value.Select(m => m.ToValue()));
         }
 
-        public static Color? ToColor(this IEnumerable<Token> value)
+        public static ColorValue ToColor(this TokenValue value)
         {
             var element = value.OnlyOrDefault();
 
-            if (element != null && element.Type == TokenType.Ident) return Color.FromName(element.Data);
+            if (element != null && element.Type == TokenType.Ident) 
+                return ColorValue.FromName(new TokenValue(value), element.Data);
 
             if (element != null && element.Type == TokenType.Color && !((ColorToken) element).IsValid)
             {
-                return Color.FromHex(element.Data);
-            }
-
-            return null;
-        }
-
-        public static PropertyValue<Color> ToColorPropertyValue(this IEnumerable<Token> value)
-        {
-            var element = value.OnlyOrDefault();
-
-            if (element != null && element.Type == TokenType.Ident)
-            {
-                var namedColor = Color.FromName(element.Data);
-
-                if (namedColor != null)
-                    return new ColorValue(new TokenValue(value), namedColor.Value);
-
-                return null;
-            }
-
-            if (element != null && element.Type == TokenType.Color && !((ColorToken)element).IsValid)
-            {
-                return new ColorValue(new TokenValue(value), Color.FromHex(element.Data));
+                return ColorValue.FromHex(new TokenValue(value), element.Data);
             }
 
             return null;
         }
 
         public static T As<T>(this IValue value)
-            => (value as PropertyValue<T>).Value;
+            => (T)value;
     }
 }

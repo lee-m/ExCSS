@@ -15,7 +15,7 @@ namespace ExCSS.New.ValueConverters
             _allowedKeywords = allowedKeywords.ToList();
         }
 
-        public IValue Convert(IEnumerable<Token> value)
+        public IValue Convert(TokenValue value)
         {
             var keyword = value.OnlyOrDefault();
 

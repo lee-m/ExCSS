@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using ExCSS.New.Values;
 
 namespace ExCSS
 {
@@ -176,7 +177,7 @@ namespace ExCSS
 
         public static IValueConverter WithCurrentColor(this IValueConverter converter)
         {
-            return converter.Or(Keywords.CurrentColor, Color.Transparent);
+            return converter.Or(Keywords.CurrentColor, ColorValue.Transparent);
         }
 
         public static IValueConverter WithFallback(this IValueConverter converter, int defaultValue)

@@ -11,7 +11,7 @@ namespace ExCSS.New.ValueConverters
         internal ColorFunctionValueConverter()
         { }
 
-        public IValue Convert(IEnumerable<Token> value)
+        public IValue Convert(TokenValue value)
         {
             if (value == null)
                 return null;
@@ -27,16 +27,14 @@ namespace ExCSS.New.ValueConverters
 
             for (var i = 0; i < arguments.Length; i++)
             {
-                var item = i < items.Count ? items[i] : Enumerable.Empty<Token>();
+                var item = i < items.Count ? new TokenValue(items[i]) : TokenValue.Empty;
                 var convertedArg = arguments[i].Convert(item);
 
                 if (convertedArg != null)
                     args.Add(convertedArg);
             }
 
-            var color = GetColor(function.Data, args);
-
-            return color == null ? null : new ColorValue(value, color.Value);
+            return GetColor(value, function.Data, args);
         }
 
         private IValueConverter2[] GetArgumentConverters(string functionName)
@@ -63,7 +61,7 @@ namespace ExCSS.New.ValueConverters
             }
         }
 
-        private Color? GetColor(string functionName, List<IValue> arguments)
+        private ColorValue GetColor(TokenValue parsedValue, string functionName, List<IValue> arguments)
         {
             if (arguments.Count < 3)
                 return null;
@@ -73,43 +71,43 @@ namespace ExCSS.New.ValueConverters
                 case FunctionNames.Rgb:
                 case FunctionNames.Rgba:
                 {
-                    var r = (byte)arguments[0].As<Number>().Value;
-                    var g = (byte)arguments[1].As<Number>().Value;
-                    var b = (byte)arguments[2].As<Number>().Value;
+                    var r = (byte)arguments[0].As<NumberValue>().Value;
+                    var g = (byte)arguments[1].As<NumberValue>().Value;
+                    var b = (byte)arguments[2].As<NumberValue>().Value;
                     var a = 1f;
 
                     //Might have an alpha channel value that is a percentage or a number
                     if (arguments.Count == 4)
                     {
                         a = arguments[3].Kind == ValueKind.Number
-                                ? arguments[3].As<Number>().Value
-                                : arguments[3].As<Percent>().Value / 100f;
+                                ? arguments[3].As<NumberValue>().Value
+                                : arguments[3].As<PercentValue>().Value / 100f;
                     }
 
-                    return Color.FromRgba(r, g, b, a);
+                    return ColorValue.FromRgba(parsedValue, r, g, b, a);
                 }
 
                 case FunctionNames.Hsl:
                 case FunctionNames.Hsla:
                 case FunctionNames.Hwb:
                 {
-                    var h = arguments[0].As<Angle>().Value;
-                    var saturation_whiteness = arguments[1].As<Percent>().Value;
-                    var luminosity_blackness = arguments[2].As<Percent>().Value;
+                    var h = arguments[0].As<AngleValue>().Value;
+                    var saturation_whiteness = arguments[1].As<PercentValue>().Value;
+                    var luminosity_blackness = arguments[2].As<PercentValue>().Value;
                     var a = 1f;
 
                     //Might have an alpha channel value that is a percentage or a number
                     if (arguments.Count == 4)
                     {
                         a = arguments[3].Kind == ValueKind.Number
-                                ? arguments[3].As<Number>().Value
-                                : arguments[3].As<Percent>().Value / 100f;
+                                ? arguments[3].As<NumberValue>().Value
+                                : arguments[3].As<PercentValue>().Value / 100f;
                     }
 
                     if (functionName == FunctionNames.Hwb)
-                        return Color.FromHwb(h, saturation_whiteness, luminosity_blackness);
+                        return ColorValue.FromHwb(parsedValue, h, saturation_whiteness, luminosity_blackness);
                     
-                    return Color.FromHsla(h, saturation_whiteness, luminosity_blackness, a);
+                    return ColorValue.FromHsla(parsedValue, h, saturation_whiteness, luminosity_blackness, a);
                 }
 
                 default:

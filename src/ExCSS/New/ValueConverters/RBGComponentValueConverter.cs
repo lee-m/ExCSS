@@ -1,26 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using ExCSS.New.Enumerations;
 using ExCSS.New.Values;
 
 namespace ExCSS.New.ValueConverters
 {
     internal sealed class RBGComponentValueConverter : IValueConverter2
     {
-        public IValue Convert(IEnumerable<Token> value)
+        public IValue Convert(TokenValue value)
         {
-            var enumerable = value as Token[] ?? value.ToArray();
-            var element = enumerable.ToNaturalInteger();
+            var element = value.ToNaturalInteger();
 
             if (element.HasValue)
-                return new NumberValue(enumerable, new Number(Math.Min(element.Value, 255), Number.Unit.Integer));
+                return new NumberValue(value, Math.Min(element.Value, 255), NumberUnit.Integer);
 
-            var percent = enumerable.ToPercent();
+            var percent = value.ToPercent();
 
-            if (!percent.HasValue)
+            if (percent == null)
                 return null;
 
-            return new NumberValue(enumerable, new Number(255f * percent.Value.NormalizedValue, Number.Unit.Integer));
+            return new NumberValue(value, 255f * percent.NormalizedValue, NumberUnit.Integer);
         }
     }
 }

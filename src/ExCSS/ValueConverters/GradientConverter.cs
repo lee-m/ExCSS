@@ -133,12 +133,12 @@ namespace ExCSS
 
     internal sealed class LinearGradientConverter : GradientConverter
     {
-        private readonly IValueConverter _converter;
+        private readonly IValueConverter _converter = null;
 
         public LinearGradientConverter()
         {
-            _converter = AngleConverter.Or(
-                SideOrCornerConverter.StartsWithKeyword(Keywords.To));
+            //_converter = AngleConverter.Or(
+            //    SideOrCornerConverter.StartsWithKeyword(Keywords.To));
         }
 
         protected override IPropertyValue ConvertFirstArgument(IEnumerable<Token> value)

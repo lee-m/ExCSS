@@ -1,4 +1,5 @@
-﻿using ExCSS.New.StyleProperties;
+﻿using ExCSS.New.Enumerations;
+using ExCSS.New.StyleProperties;
 using Xunit;
 
 namespace ExCSS.Tests.NewPropertyTests
@@ -10,8 +11,8 @@ namespace ExCSS.Tests.NewPropertyTests
 
         [Theory]
         [MemberData(nameof(WideKeywordTestValues))]
-        public void AllPropertyAcceptsWideKeywords(string value)
-            => TestAcceptsKeyword(value);
+        public void AllPropertyAcceptsWideKeywords(string value, WideKeyword expected)
+            => TestAcceptsWideKeyword(value, expected);
 
         [Theory]
         [InlineData("")]

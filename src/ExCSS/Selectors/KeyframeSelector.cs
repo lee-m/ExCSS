@@ -1,15 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using ExCSS.New.Values;
 
 namespace ExCSS
 {
     public sealed class KeyframeSelector : StylesheetNode
     {
-        private readonly List<Percent> _stops;
+        private readonly List<PercentValue> _stops;
 
-        public KeyframeSelector(IEnumerable<Percent> stops)
+        public KeyframeSelector(IEnumerable<PercentValue> stops)
         {
-            _stops = new List<Percent>(stops);
+            _stops = new List<PercentValue>(stops);
         }
 
         public override void ToCss(TextWriter writer, IStyleFormatter formatter)
@@ -24,7 +25,7 @@ namespace ExCSS
             }
         }
 
-        public IEnumerable<Percent> Stops => _stops;
+        public IEnumerable<PercentValue> Stops => _stops;
         public string Text => this.ToCss();
     }
 

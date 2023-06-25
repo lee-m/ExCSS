@@ -2,11 +2,14 @@
 
 namespace ExCSS.New.Values
 {
-    public class KeywordValue : PropertyValue<string>
+    public class KeywordValue : BaseValue
     {
-        internal KeywordValue(IEnumerable<Token> parsedValue, string value) : base(parsedValue, value)
-        { }
+        internal KeywordValue(IEnumerable<Token> parsedValue, string value) : base(parsedValue)
+        {
+            Keyword = value;
+        }
 
+        public string Keyword { get; }
         public override ValueKind Kind => ValueKind.Keyword;
     }
 }

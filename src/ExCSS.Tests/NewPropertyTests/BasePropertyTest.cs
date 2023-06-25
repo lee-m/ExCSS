@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 
 using ExCSS.New;
+using ExCSS.New.Enumerations;
+using ExCSS.New.Values;
 
 using Xunit;
 
@@ -39,21 +41,37 @@ namespace ExCSS.Tests.NewPropertyTests
             {
                 Assert.Equal(ValueKind.Keyword, prop.Value.Kind);
 
-                var keyword = prop.Value.As<string>();
+                var keyword = prop.Value.As<KeywordValue>();
 
                 Assert.NotNull(keyword);
-                Assert.Equal(value, keyword);
+                Assert.Equal(value, keyword.Keyword);
+                Assert.Equal(value, keyword.Original);
             });
         }
 
-        protected void TestAcceptsColor(string value, Color expected)
+        protected void TestAcceptsWideKeyword(string value, WideKeyword expected)
+        {
+            TestAcceptsValue(value, prop =>
+            {
+                Assert.Equal(ValueKind.WideKeyword, prop.Value.Kind);
+
+                var keyword = prop.Value.As<WideKeywordValue>();
+
+                Assert.NotNull(keyword);
+                Assert.Equal(expected, keyword.Keyword);
+                Assert.Equal(value, keyword.Original);
+            });
+        }
+
+        protected void TestAcceptsColor(string value, ColorValue expected)
         {
             TestAcceptsValue(value, prop =>
             {
                 Assert.Equal(ValueKind.Color, prop.Value.Kind);
 
-                var color = prop.Value.As<Color>();
+                var color = prop.Value.As<ColorValue>();
                 Assert.True(expected.Equals(color));
+                Assert.Equal(value, color.Original);
             });
         }
 
@@ -89,11 +107,11 @@ namespace ExCSS.Tests.NewPropertyTests
             {
                 return new[]
                 {
-                    new object[] { Keywords.Inherit },
-                    new object[] { Keywords.Initial },
-                    new object[] { Keywords.Revert },
-                    new object[] { Keywords.RevertLayer },
-                    new object[] { Keywords.Unset }
+                    new object[] { Keywords.Inherit, WideKeyword.Inherit },
+                    new object[] { Keywords.Initial, WideKeyword.Initial },
+                    new object[] { Keywords.Revert, WideKeyword.Revert },
+                    new object[] { Keywords.RevertLayer, WideKeyword.RevertLayer },
+                    new object[] { Keywords.Unset, WideKeyword.Unset }
                 };
             }
         }

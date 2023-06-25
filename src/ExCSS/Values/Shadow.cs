@@ -1,8 +1,10 @@
-﻿namespace ExCSS
+﻿using ExCSS.New.Values;
+
+namespace ExCSS
 {
     public sealed class Shadow
     {
-        public Shadow(bool inset, Length offsetX, Length offsetY, Length blurRadius, Length spreadRadius, Color color)
+        public Shadow(bool inset, Length offsetX, Length offsetY, Length blurRadius, Length spreadRadius, ColorValue color)
         {
             IsInset = inset;
             OffsetX = offsetX;
@@ -12,7 +14,7 @@
             Color = color;
         }
 
-        public Color Color { get; }
+        public ColorValue Color { get; }
         public Length OffsetX { get; }
         public Length OffsetY { get; }
         public Length BlurRadius { get; }
