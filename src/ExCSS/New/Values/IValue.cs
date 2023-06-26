@@ -1,4 +1,6 @@
-﻿namespace ExCSS.New.Values
+﻿using ExCSS.New.Enumerations;
+
+namespace ExCSS.New.Values
 {
     public interface IValue
     {

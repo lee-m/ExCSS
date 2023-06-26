@@ -1,4 +1,4 @@
-﻿namespace ExCSS.New
+﻿namespace ExCSS.New.Enumerations
 {
     public enum ValueKind
     {
@@ -11,6 +11,7 @@
         BaselinePosition,
         ContentPosition,
         WideKeyword,
-        ContentDistribution
+        ContentDistribution,
+        SelfPosition
     }
 }

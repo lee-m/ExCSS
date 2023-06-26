@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-
-using ExCSS.New;
 using ExCSS.New.Enumerations;
 using ExCSS.New.Values;
 
@@ -49,13 +47,13 @@ namespace ExCSS.Tests.NewPropertyTests
             });
         }
 
-        protected void TestAcceptsWideKeyword(string value, WideKeyword expected)
+        protected void TestAcceptsEnumKeyword<TEnum, TValue>(string value, ValueKind expectedValueKind, TEnum expected) where TEnum: unmanaged where TValue: EnumKeywordValue<TEnum>
         {
             TestAcceptsValue(value, prop =>
             {
-                Assert.Equal(ValueKind.WideKeyword, prop.Value.Kind);
+                Assert.Equal(expectedValueKind, prop.Value.Kind);
 
-                var keyword = prop.Value.As<WideKeywordValue>();
+                var keyword = prop.Value.As<TValue>();
 
                 Assert.NotNull(keyword);
                 Assert.Equal(expected, keyword.Keyword);
@@ -101,6 +99,19 @@ namespace ExCSS.Tests.NewPropertyTests
             Assert.Null(concrete.Value);
         }
 
+        protected void TestAcceptsBaselineValue(string value, bool? first, bool? last)
+        {
+            TestAcceptsValue(value, prop =>
+            {
+                Assert.Equal(prop.Value.Kind, ValueKind.BaselinePosition);
+
+                var baselinePosition = prop.Value.As<BaselinePositionValue>();
+
+                Assert.Equal(first, baselinePosition.First);
+                Assert.Equal(last, baselinePosition.Last);
+            });
+        }
+
         public static IEnumerable<object[]> WideKeywordTestValues
         {
             get
@@ -112,6 +123,35 @@ namespace ExCSS.Tests.NewPropertyTests
                     new object[] { Keywords.Revert, WideKeyword.Revert },
                     new object[] { Keywords.RevertLayer, WideKeyword.RevertLayer },
                     new object[] { Keywords.Unset, WideKeyword.Unset }
+                };
+            }
+        }
+
+        public static IEnumerable<object[]> ValidBaselinePropertyValues
+        {
+            get
+            {
+                return new[]
+                {
+                    new object[] { "first baseline", true, null },
+                    new object[] { "last baseline", null, true },
+                    new object[] { "baseline", null, null }
+                };
+            }
+        }
+
+        public static IEnumerable<object[]> InvalidBaselinePropertyValues
+        {
+            get
+            {
+                return new[]
+                {
+                    new object[] { "" },
+                    new object[] { "first first baseline" },
+                    new object[] { "last last baseline" },
+                    new object[] { "baseline baseline" },
+                    new object[] { "first baseline last" },
+                    new object[] { "last baseline first" }
                 };
             }
         }

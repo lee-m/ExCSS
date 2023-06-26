@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-
+using ExCSS.New.StyleProperties.Flexbox;
 using Xunit;
 
 namespace ExCSS.Tests
@@ -38,11 +38,6 @@ namespace ExCSS.Tests
             => TestForLegalValue<FlexShrinkProperty>(PropertyNames.FlexShrink, value);
 
         [Theory]
-        [MemberData(nameof(AlignItemsTestDataValues))]
-        public void AlignItemsLegalValues(string value)
-            => TestForLegalValue<AlignItemsProperty>(PropertyNames.AlignItems, value);
-
-        [Theory]
         [MemberData(nameof(AlignSelfTestDataValues))]
         public void AlignSelfLegalValues(string value)
             => TestForLegalValue<AlignSelfProperty>(PropertyNames.AlignSelf, value);
@@ -61,16 +56,6 @@ namespace ExCSS.Tests
         [MemberData(nameof(FlexTestDataValues))]
         public void FlexLegalValues(string value)
             => TestForLegalValue<FlexProperty>(PropertyNames.Flex, value);
-
-        [Theory]
-        [MemberData(nameof(AlignItemsInvalidPrefixTestDataValues))]
-        public void AlignItemsIllegalPrefixValues(string value)
-        {
-            var snippet = $"align-items: {value}";
-            var property = ParseDeclaration(snippet);
-            Assert.Equal("align-items", property.Name);
-            Assert.False(property.HasValue);
-        }
 
         [Theory]
         [MemberData(nameof(JustifyContentInvalidPrefixTestDataValues))]
@@ -271,66 +256,7 @@ namespace ExCSS.Tests
             }
         }
 
-        public static IEnumerable<object[]> AlignItemsTestDataValues
-        {
-            get
-            {
-                return new[]
-                {
-                    new object[] { Keywords.Normal },
-                    new object[] { Keywords.Stretch },
-                    new object[] { Keywords.Center },
-                    new object[] { Keywords.Start },
-                    new object[] { Keywords.End },
-                    new object[] { Keywords.FlexStart },
-                    new object[] { Keywords.FlexEnd },
-                    new object[] { Keywords.SelfStart },
-                    new object[] { Keywords.SelfEnd },
-                    new object[] { Keywords.Baseline },
-                    new object[] { $"{Keywords.First} {Keywords.Baseline}" },
-                    new object[] { $"{Keywords.Last} {Keywords.Baseline}" },
-                    new object[] { $"{Keywords.Safe} {Keywords.Center}" },
-                    new object[] { $"{Keywords.Unsafe} {Keywords.Center}" },
-                }.Union(GlobalKeywordTestValues.ToObjectArray());
-            }
-        }
-
-        public static IEnumerable<object[]> AlignItemsInvalidPrefixTestDataValues
-        {
-            get
-            {
-                return new[]
-                {
-                    new object[] { $"{Keywords.Safe} {Keywords.Start}" },
-                    new object[] { $"{Keywords.Safe} {Keywords.End}" },
-                    new object[] { $"{Keywords.Safe} {Keywords.FlexStart}" },
-                    new object[] { $"{Keywords.Safe} {Keywords.FlexEnd}" },
-                    new object[] { $"{Keywords.Safe} {Keywords.SelfStart}" },
-                    new object[] { $"{Keywords.Safe} {Keywords.SelfEnd}" },
-
-                    new object[] { $"{Keywords.Unsafe} {Keywords.Start}" },
-                    new object[] { $"{Keywords.Unsafe} {Keywords.End}" },
-                    new object[] { $"{Keywords.Unsafe} {Keywords.FlexStart}" },
-                    new object[] { $"{Keywords.Unsafe} {Keywords.FlexEnd}" },
-                    new object[] { $"{Keywords.Unsafe} {Keywords.SelfStart}" },
-                    new object[] { $"{Keywords.Unsafe} {Keywords.SelfEnd}" },
-
-                    new object[] { $"{Keywords.First} {Keywords.Start}" },
-                    new object[] { $"{Keywords.First} {Keywords.End}" },
-                    new object[] { $"{Keywords.First} {Keywords.FlexStart}" },
-                    new object[] { $"{Keywords.First} {Keywords.FlexEnd}" },
-                    new object[] { $"{Keywords.First} {Keywords.SelfStart}" },
-                    new object[] { $"{Keywords.First} {Keywords.SelfEnd}" },
-
-                    new object[] { $"{Keywords.Last} {Keywords.Start}" },
-                    new object[] { $"{Keywords.Last} {Keywords.End}" },
-                    new object[] { $"{Keywords.Last} {Keywords.FlexStart}" },
-                    new object[] { $"{Keywords.Last} {Keywords.FlexEnd}" },
-                    new object[] { $"{Keywords.Last} {Keywords.SelfStart}" },
-                    new object[] { $"{Keywords.Last} {Keywords.SelfEnd}" }
-                };
-            }
-        }
+        
 
         public static IEnumerable<object[]> JustifyContentInvalidPrefixTestDataValues
         {

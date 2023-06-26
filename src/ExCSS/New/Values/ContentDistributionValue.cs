@@ -4,16 +4,10 @@ using ExCSS.New.Enumerations;
 
 namespace ExCSS.New.Values
 {
-    public sealed class ContentDistributionValue : BaseValue
+    public sealed class ContentDistributionValue : EnumKeywordValue<ContentDistributionKeyword>
     {        
         internal ContentDistributionValue(IEnumerable<Token> parsedValue, ContentDistributionKeyword keyword) 
-            : base(parsedValue)
-        {
-            Keyword = keyword;
-        }
-
-        public ContentDistributionKeyword Keyword { get; }
-
-        public override ValueKind Kind => ValueKind.ContentDistribution;
+            : base(parsedValue, ValueKind.ContentDistribution, keyword)
+        { }
     }
 }
