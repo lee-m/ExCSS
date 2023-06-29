@@ -5,13 +5,11 @@ namespace ExCSS.New.StyleProperties.Background
 {
     public sealed class BackgroundColorProperty : Property
     {
-        private static readonly IValueConverter StyleConverter = Converters.CurrentColorConverter.OrDefault();
-
         internal BackgroundColorProperty()
             : base(PropertyNames.BackgroundColor, PropertyFlags.Hashless | PropertyFlags.Animatable)
         { }
 
-        internal override IValueConverter Converter => StyleConverter;
+        internal override IValueConverter Converter => null;
 
         protected override IValue CoerceValue(TokenValue newTokenValue)
         {

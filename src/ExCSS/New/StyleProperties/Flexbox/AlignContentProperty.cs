@@ -5,8 +5,6 @@ namespace ExCSS.New.StyleProperties.Flexbox
 {
     public sealed class AlignContentProperty : Property
     {
-        private static readonly IValueConverter StyleConverter = Converters.AlignContentConverter;
-
         internal AlignContentProperty()
             : base(PropertyNames.AlignContent)
         { }
@@ -26,6 +24,6 @@ namespace ExCSS.New.StyleProperties.Flexbox
                    ?? wideKeywordConverter.Convert(newTokenValue);
         }
 
-        internal override IValueConverter Converter => StyleConverter;
+        internal override IValueConverter Converter => null;
     }
 }
