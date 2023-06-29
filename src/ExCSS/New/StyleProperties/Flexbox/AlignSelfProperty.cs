@@ -3,20 +3,20 @@ using ExCSS.New.Values;
 
 namespace ExCSS.New.StyleProperties.Flexbox
 {
-    public sealed class AlignItemsProperty : Property
+    public sealed class AlignSelfProperty : Property
     {
-        internal AlignItemsProperty()
-            : base(PropertyNames.AlignItems)
+        internal AlignSelfProperty()
+            : base(PropertyNames.AlignSelf)
         { }
 
         protected override IValue CoerceValue(TokenValue newTokenValue)
         {
-            var normalStretchConverter = new AllowedKeywordsValueConverter(Keywords.Normal, Keywords.Stretch);
+            var keywordsConverter = new AllowedKeywordsValueConverter(Keywords.Auto, Keywords.Normal, Keywords.Stretch);
             var selfPositionConverter = new SelfPositionValueConverter();
             var baselinePositionConverter = new BaselinePositionValueConverter();
             var wideKeywordConverter = new WideKeywordValueConverter();
 
-            return normalStretchConverter.Convert(newTokenValue)
+            return keywordsConverter.Convert(newTokenValue)
                    ?? selfPositionConverter.Convert(newTokenValue)
                    ?? baselinePositionConverter.Convert(newTokenValue)
                    ?? wideKeywordConverter.Convert(newTokenValue);

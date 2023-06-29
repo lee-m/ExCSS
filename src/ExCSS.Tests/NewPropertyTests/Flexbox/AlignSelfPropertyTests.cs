@@ -6,43 +6,42 @@ using Xunit;
 
 namespace ExCSS.Tests.NewPropertyTests.Flexbox
 {
-    public class AlignItemsPropertyTests : BasePropertyTest<AlignItemsProperty>
+    public class AlignSelfPropertyTests : BasePropertyTest<AlignSelfProperty>
     {
-        public AlignItemsPropertyTests() : base(PropertyNames.AlignItems)
+        public AlignSelfPropertyTests() : base(PropertyNames.AlignSelf)
         { }
 
         [Fact]
-        public void AlignItemsPropertyAcceptsNormalKeyword()
+        public void AlignSelfPropertyAcceptsAutoKeyword()
+            => TestAcceptsKeyword(Keywords.Auto);
+
+        [Fact]
+        public void AlignSelfPropertyAcceptsNormalKeyword()
             => TestAcceptsKeyword(Keywords.Normal);
 
         [Fact]
-        public void AlignItemsPropertyAcceptsStretchKeyword()
+        public void AlignSelfPropertyAcceptsStretchKeyword()
             => TestAcceptsKeyword(Keywords.Stretch);
 
         [Theory]
         [MemberData(nameof(ValidBaselinePropertyValues))]
-        public void AlignItemsPropertyAcceptsBaselinePosition(string value, bool? first, bool? last)
+        public void AlignSelfPropertyAcceptsBaselinePosition(string value, bool? first, bool? last)
             => TestAcceptsBaselineValue(value, first, last);
 
         [Theory]
         [MemberData(nameof(InvalidBaselinePropertyValues))]
-        public void AlignItemsPropertyInvalidBaselinePosition(string value)
+        public void AlignSelfPropertyInvalidBaselinePosition(string value)
             => TestInvalidValue(value);
 
         [Theory]
-        [MemberData(nameof(WideKeywordTestValues))]
-        public void AlignItemsPropertyAcceptsWideKeywords(string value, WideKeyword expected)
-            => TestAcceptsEnumKeyword<WideKeyword, WideKeywordValue>(value, ValueKind.WideKeyword, expected);
-
-        [Theory]
         [MemberData(nameof(SelfPositionKeywordValues))]
-        public void AlignItemsPropertyAcceptsSelfPositionKeywords(string value, SelfPositionKeyword expected)
+        public void AlignSelfPropertyAcceptsSelfPositionKeywords(string value, SelfPositionKeyword expected)
             => TestAcceptsEnumKeyword<SelfPositionKeyword, SelfPositionValue>(value, ValueKind.SelfPosition, expected);
 
         [Theory]
         [MemberData(nameof(OverflowSelfPositionKeywordValues))]
-        public void AlignItemsPropertyAcceptsOverflowSelfPositionKeywords(string value, SelfPositionKeyword keyword, bool? safe, bool? notSafe)
-        { 
+        public void AlignSelfPropertyAcceptsOverflowSelfPositionKeywords(string value, SelfPositionKeyword keyword, bool? safe, bool? notSafe)
+        {
             TestAcceptsValue(value, prop =>
             {
                 Assert.Equal(prop.Value.Kind, ValueKind.SelfPosition);
