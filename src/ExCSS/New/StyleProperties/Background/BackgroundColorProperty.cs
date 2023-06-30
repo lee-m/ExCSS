@@ -13,14 +13,10 @@ namespace ExCSS.New.StyleProperties.Background
 
         protected override IValue CoerceValue(TokenValue newTokenValue)
         {
-            var colorFunction = new ColorFunctionValueConverter();
-            var wideKeywordConverter = new WideKeywordValueConverter();
-            var specialColourKeywordsConverter = new AllowedKeywordsValueConverter(Keywords.CurrentColor);
-
             return newTokenValue.ToColor()
-                   ?? colorFunction.Convert(newTokenValue)
-                   ?? wideKeywordConverter.Convert(newTokenValue)
-                   ?? specialColourKeywordsConverter.Convert(newTokenValue);
+                   ?? TryConvert<ColorFunctionValueConverter>(newTokenValue)
+                   ?? TryConvert<WideKeywordValueConverter>(newTokenValue)
+                   ?? TryConvert<CurrentColorKeywordValueConverter>(newTokenValue);
         }
     }
 }

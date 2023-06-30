@@ -8,7 +8,7 @@ namespace ExCSS.New.ValueConverters
 {
     internal sealed class ColorFunctionValueConverter : IValueConverter2
     {
-        internal ColorFunctionValueConverter()
+        public ColorFunctionValueConverter()
         { }
 
         public IValue Convert(TokenValue value)

@@ -1,14 +1,21 @@
-﻿using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using ExCSS.New;
 using ExCSS.New.Values;
-
-// ReSharper disable UnusedMember.Global
 
 namespace ExCSS
 {
     public abstract class Property : StylesheetNode, IProperty
     {
         private readonly PropertyFlags _flags;
+
+        private static Dictionary<Type, IValueConverter2> _cachedValueConverters;
+
+        static Property()
+        {
+            _cachedValueConverters = new Dictionary<Type, IValueConverter2>();
+        }
 
         internal Property(string name, PropertyFlags flags = PropertyFlags.None)
         {
@@ -30,6 +37,17 @@ namespace ExCSS
 
         protected virtual IValue CoerceValue(TokenValue newTokenValue)
             => null;
+
+        internal IValue TryConvert<TConverter>(TokenValue value) where TConverter : IValueConverter2, new()
+        {
+            if(!_cachedValueConverters.TryGetValue(typeof(TConverter), out var converter))
+            {
+                converter = new TConverter();
+                _cachedValueConverters.Add(typeof(TConverter), converter);
+            }
+
+            return converter.Convert(value);
+        }
 
         public string ValueText => Value?.ToString();
 

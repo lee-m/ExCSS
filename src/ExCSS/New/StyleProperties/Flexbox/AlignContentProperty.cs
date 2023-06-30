@@ -11,17 +11,11 @@ namespace ExCSS.New.StyleProperties.Flexbox
 
         protected override IValue CoerceValue(TokenValue newTokenValue)
         {
-            var normalConverter = new AllowedKeywordsValueConverter(Keywords.Normal);
-            var contentDistributionConverter = new ContentDistributionValueConverter();
-            var baselinePositionConverter = new BaselinePositionValueConverter();
-            var contentPositionConverter = new ContentPositionValueConverter();
-            var wideKeywordConverter = new WideKeywordValueConverter();
-
-            return normalConverter.Convert(newTokenValue)
-                   ?? contentDistributionConverter.Convert(newTokenValue)
-                   ?? contentPositionConverter.Convert(newTokenValue)
-                   ?? baselinePositionConverter.Convert(newTokenValue)
-                   ?? wideKeywordConverter.Convert(newTokenValue);
+            return TryConvert<NormalKeywordValueConverter>(newTokenValue)
+                   ?? TryConvert<ContentDistributionValueConverter>(newTokenValue)
+                   ?? TryConvert<BaselinePositionValueConverter>(newTokenValue)
+                   ?? TryConvert<ContentPositionValueConverter>(newTokenValue)
+                   ?? TryConvert<WideKeywordValueConverter>(newTokenValue);
         }
 
         internal override IValueConverter Converter => null;

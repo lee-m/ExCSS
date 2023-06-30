@@ -6,11 +6,11 @@ using ExCSS.New.Values;
 
 namespace ExCSS.New.ValueConverters
 {
-    internal sealed class AllowedKeywordsValueConverter : IValueConverter2
+    internal abstract class AllowedKeywordsValueConverter : IValueConverter2
     {
         private readonly List<string> _allowedKeywords;
 
-        public AllowedKeywordsValueConverter(params string[] allowedKeywords)
+        protected AllowedKeywordsValueConverter(params string[] allowedKeywords)
         {
             _allowedKeywords = allowedKeywords.ToList();
         }
@@ -27,5 +27,17 @@ namespace ExCSS.New.ValueConverters
 
             return null;
         }
+    }
+
+    internal sealed class CurrentColorKeywordValueConverter : AllowedKeywordsValueConverter
+    {
+        public CurrentColorKeywordValueConverter() : base(Keywords.CurrentColor)
+        { }
+    }
+
+    internal sealed class NormalKeywordValueConverter : AllowedKeywordsValueConverter
+    {
+        public NormalKeywordValueConverter() : base(Keywords.Normal)
+        { }
     }
 }

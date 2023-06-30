@@ -5,21 +5,23 @@ namespace ExCSS.New.StyleProperties.Flexbox
 {
     public sealed class AlignItemsProperty : Property
     {
+        internal class AlignItemsAllowedKeywordsValueConverter : AllowedKeywordsValueConverter
+        {
+            public AlignItemsAllowedKeywordsValueConverter()
+                : base(Keywords.Normal, Keywords.Stretch)
+            { }
+        }
+
         internal AlignItemsProperty()
             : base(PropertyNames.AlignItems)
         { }
 
         protected override IValue CoerceValue(TokenValue newTokenValue)
         {
-            var normalStretchConverter = new AllowedKeywordsValueConverter(Keywords.Normal, Keywords.Stretch);
-            var selfPositionConverter = new SelfPositionValueConverter();
-            var baselinePositionConverter = new BaselinePositionValueConverter();
-            var wideKeywordConverter = new WideKeywordValueConverter();
-
-            return normalStretchConverter.Convert(newTokenValue)
-                   ?? selfPositionConverter.Convert(newTokenValue)
-                   ?? baselinePositionConverter.Convert(newTokenValue)
-                   ?? wideKeywordConverter.Convert(newTokenValue);
+            return TryConvert<AlignItemsAllowedKeywordsValueConverter>(newTokenValue)
+                   ?? TryConvert<SelfPositionValueConverter>(newTokenValue)
+                   ?? TryConvert<BaselinePositionValueConverter>(newTokenValue)
+                   ?? TryConvert<WideKeywordValueConverter>(newTokenValue);
         }
 
         internal override IValueConverter Converter => null;
