@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using ExCSS.New.StyleProperties;
+using Xunit;
 
 namespace ExCSS.Tests
 {

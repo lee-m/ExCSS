@@ -12,6 +12,7 @@
         ContentPosition,
         WideKeyword,
         ContentDistribution,
-        SelfPosition
+        SelfPosition,
+        IdentList
     }
 }

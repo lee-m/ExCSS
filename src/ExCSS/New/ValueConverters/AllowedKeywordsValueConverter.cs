@@ -40,4 +40,10 @@ namespace ExCSS.New.ValueConverters
         public NormalKeywordValueConverter() : base(Keywords.Normal)
         { }
     }
+
+    internal sealed class NoneKeywordValueConverter : AllowedKeywordsValueConverter
+    {
+        public NoneKeywordValueConverter() : base(Keywords.None)
+        { }
+    }
 }
