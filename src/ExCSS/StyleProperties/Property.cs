@@ -10,7 +10,7 @@ namespace ExCSS
     {
         private readonly PropertyFlags _flags;
 
-        private static Dictionary<Type, IValueConverter2> _cachedValueConverters;
+        private static readonly Dictionary<Type, IValueConverter2> _cachedValueConverters;
 
         static Property()
         {
