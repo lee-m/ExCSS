@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+
 using ExCSS.New.Enumerations;
 using ExCSS.New.Values;
 
@@ -8,9 +9,6 @@ namespace ExCSS.New.ValueConverters
 {
     internal sealed class ColorFunctionValueConverter : IValueConverter2
     {
-        public ColorFunctionValueConverter()
-        { }
-
         public IValue Convert(TokenValue value)
         {
             if (value == null)
