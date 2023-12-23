@@ -9,7 +9,5 @@
             : base(PropertyNames.FontStretch, PropertyFlags.Inherited | PropertyFlags.Animatable)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

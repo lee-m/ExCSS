@@ -8,7 +8,5 @@
             : base(PropertyNames.ColumnSpan)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

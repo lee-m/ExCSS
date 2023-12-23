@@ -11,7 +11,5 @@
             : base(PropertyNames.VerticalAlign, PropertyFlags.Animatable)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

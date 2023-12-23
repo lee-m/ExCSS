@@ -8,7 +8,5 @@
             : base(PropertyNames.TextDecorationLine)
         {
         }
-
-        internal override IValueConverter Converter => ListConverter;
     }
 }

@@ -9,7 +9,5 @@
             : base(PropertyNames.BackgroundAttachment)
         {
         }
-
-        internal override IValueConverter Converter => AttachmentConverter;
     }
 }

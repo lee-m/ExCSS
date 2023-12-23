@@ -8,7 +8,5 @@
             : base(PropertyNames.TableLayout)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

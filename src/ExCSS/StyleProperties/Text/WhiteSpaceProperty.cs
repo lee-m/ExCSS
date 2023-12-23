@@ -9,7 +9,5 @@
             : base(PropertyNames.WhiteSpace, PropertyFlags.Inherited)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

@@ -8,7 +8,5 @@
             : base(PropertyNames.Float)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

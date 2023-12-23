@@ -8,7 +8,5 @@
             : base(PropertyNames.ColumnRuleWidth, PropertyFlags.Animatable)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

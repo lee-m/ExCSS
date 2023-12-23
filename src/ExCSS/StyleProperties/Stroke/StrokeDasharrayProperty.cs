@@ -8,7 +8,5 @@
             : base(PropertyNames.StrokeDasharray, PropertyFlags.Animatable | PropertyFlags.Unitless)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

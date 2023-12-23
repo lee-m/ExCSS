@@ -9,7 +9,5 @@
             : base(PropertyNames.BorderImageOutset)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

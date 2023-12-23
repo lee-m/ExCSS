@@ -9,7 +9,5 @@
             : base(PropertyNames.BreakBefore)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

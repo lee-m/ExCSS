@@ -9,7 +9,5 @@
             : base(PropertyNames.OutlineStyle)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

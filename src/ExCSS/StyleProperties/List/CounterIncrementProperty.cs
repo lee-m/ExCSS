@@ -11,7 +11,5 @@
             : base(PropertyNames.CounterIncrement)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

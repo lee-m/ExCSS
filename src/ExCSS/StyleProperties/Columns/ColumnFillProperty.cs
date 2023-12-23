@@ -8,7 +8,5 @@
             : base(PropertyNames.ColumnFill)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

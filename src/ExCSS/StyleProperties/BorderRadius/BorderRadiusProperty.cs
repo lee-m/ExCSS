@@ -8,7 +8,5 @@
             : base(PropertyNames.BorderRadius, PropertyFlags.Animatable)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

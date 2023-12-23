@@ -9,7 +9,7 @@
 
         public string Stringify(Property[] properties)
         {
-            return Converter.Construct(properties)?.CssText;
+            return ""; //Converter.Construct(properties)?.CssText;
         }
 
         public void Export(Property[] properties)

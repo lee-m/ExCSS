@@ -6,7 +6,5 @@
             : base(name)
         {
         }
-
-        internal override IValueConverter Converter => Converters.Any;
     }
 }

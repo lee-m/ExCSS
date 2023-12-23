@@ -8,7 +8,5 @@
             : base(PropertyNames.EmptyCells, PropertyFlags.Inherited)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

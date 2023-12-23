@@ -17,7 +17,5 @@
             : base(PropertyNames.BorderImageSlice)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

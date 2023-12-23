@@ -7,7 +7,5 @@
         internal FlexDirectionProperty()
             : base(PropertyNames.FlexDirection)
         { }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

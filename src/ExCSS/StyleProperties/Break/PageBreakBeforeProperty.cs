@@ -9,7 +9,5 @@
             : base(PropertyNames.PageBreakBefore)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

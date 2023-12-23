@@ -9,7 +9,5 @@
             : base(PropertyNames.TextIndent, PropertyFlags.Inherited | PropertyFlags.Animatable)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

@@ -11,7 +11,5 @@
             : base(PropertyNames.Padding)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

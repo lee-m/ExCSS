@@ -8,7 +8,5 @@
             : base(PropertyNames.BoxShadow, PropertyFlags.Animatable)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

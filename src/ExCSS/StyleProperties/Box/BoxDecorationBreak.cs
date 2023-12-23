@@ -8,7 +8,5 @@
             : base(PropertyNames.BoxDecorationBreak)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

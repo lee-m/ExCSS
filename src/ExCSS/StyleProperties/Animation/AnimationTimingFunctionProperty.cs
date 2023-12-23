@@ -9,7 +9,5 @@
             : base(PropertyNames.AnimationTimingFunction)
         {
         }
-
-        internal override IValueConverter Converter => ListConverter;
     }
 }

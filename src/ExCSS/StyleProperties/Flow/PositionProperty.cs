@@ -9,7 +9,5 @@
             : base(PropertyNames.Position)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

@@ -9,7 +9,5 @@
             : base(PropertyNames.BackgroundOrigin)
         {
         }
-
-        internal override IValueConverter Converter => ListConverter;
     }
 }

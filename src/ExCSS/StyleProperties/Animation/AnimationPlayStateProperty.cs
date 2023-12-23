@@ -9,7 +9,5 @@
             : base(PropertyNames.AnimationPlayState)
         {
         }
-
-        internal override IValueConverter Converter => ListConverter;
     }
 }

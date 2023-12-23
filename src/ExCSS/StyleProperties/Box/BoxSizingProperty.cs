@@ -7,7 +7,5 @@
         public BoxSizingProperty() 
             : base(PropertyNames.BoxSizing, PropertyFlags.None)
         { }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

@@ -9,7 +9,5 @@
         internal OrderProperty()
             : base(PropertyNames.Order)
         { }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

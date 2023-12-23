@@ -14,7 +14,5 @@
             : base(PropertyNames.Transition)
         {
         }
-
-        internal override IValueConverter Converter => ListConverter;
     }
 }

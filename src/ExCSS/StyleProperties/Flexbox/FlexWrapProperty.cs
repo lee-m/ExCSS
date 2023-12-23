@@ -7,7 +7,5 @@
         internal FlexWrapProperty()
             : base(PropertyNames.FlexWrap)
         { }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

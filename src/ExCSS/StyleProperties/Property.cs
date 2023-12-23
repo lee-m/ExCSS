@@ -78,8 +78,6 @@ namespace ExCSS
 
         public string CssText => this.ToCss();
 
-        internal abstract IValueConverter Converter { get; }
-
         internal IPropertyValue DeclaredValue { get; set; }
     }
 }

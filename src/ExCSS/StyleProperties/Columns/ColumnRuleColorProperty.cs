@@ -10,7 +10,5 @@ namespace ExCSS
             : base(PropertyNames.ColumnRuleColor, PropertyFlags.Animatable)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

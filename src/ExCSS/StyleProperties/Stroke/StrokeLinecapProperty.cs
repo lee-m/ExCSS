@@ -9,7 +9,5 @@
             : base(PropertyNames.StrokeLinecap, PropertyFlags.Animatable)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

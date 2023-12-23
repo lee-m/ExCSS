@@ -9,7 +9,5 @@
             : base(PropertyNames.ObjectFit)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

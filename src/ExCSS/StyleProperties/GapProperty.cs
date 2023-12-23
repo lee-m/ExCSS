@@ -9,7 +9,5 @@
         internal GapProperty()
             : base(PropertyNames.Gap, PropertyFlags.Animatable)
         { }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

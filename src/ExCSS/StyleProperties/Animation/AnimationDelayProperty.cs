@@ -9,7 +9,5 @@
             : base(PropertyNames.AnimationDelay)
         {
         }
-
-        internal override IValueConverter Converter => ListConverter;
     }
 }

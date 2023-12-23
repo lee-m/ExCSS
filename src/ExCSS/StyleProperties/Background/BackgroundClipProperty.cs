@@ -9,7 +9,5 @@
             : base(PropertyNames.BackgroundClip)
         {
         }
-
-        internal override IValueConverter Converter => ListConverter;
     }
 }

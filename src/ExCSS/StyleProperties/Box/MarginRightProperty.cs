@@ -9,7 +9,5 @@
             : base(PropertyNames.MarginRight, PropertyFlags.Unitless | PropertyFlags.Animatable)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

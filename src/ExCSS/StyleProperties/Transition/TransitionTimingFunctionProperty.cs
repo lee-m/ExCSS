@@ -9,7 +9,5 @@
             : base(PropertyNames.TransitionTimingFunction)
         {
         }
-
-        internal override IValueConverter Converter => ListConverter;
     }
 }

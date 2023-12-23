@@ -7,7 +7,5 @@
         internal FlexShrinkProperty()
             : base(PropertyNames.FlexShrink)
         { }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

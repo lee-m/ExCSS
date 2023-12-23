@@ -10,7 +10,5 @@ namespace ExCSS
             : base(PropertyNames.TextDecorationColor, PropertyFlags.Animatable)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

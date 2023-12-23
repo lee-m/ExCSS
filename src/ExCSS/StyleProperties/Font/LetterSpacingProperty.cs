@@ -8,7 +8,5 @@
             : base(PropertyNames.LetterSpacing, PropertyFlags.Inherited | PropertyFlags.Unitless)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

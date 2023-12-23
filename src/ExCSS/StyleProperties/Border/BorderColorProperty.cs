@@ -10,7 +10,5 @@
             : base(PropertyNames.BorderColor, PropertyFlags.Hashless | PropertyFlags.Animatable)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

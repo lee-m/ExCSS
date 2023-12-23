@@ -8,7 +8,5 @@
             : base(PropertyNames.BackfaceVisibility)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

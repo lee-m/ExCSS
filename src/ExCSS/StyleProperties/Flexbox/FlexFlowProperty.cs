@@ -7,7 +7,5 @@
         internal FlexFlowProperty()
             : base(PropertyNames.FlexFlow)
         { }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

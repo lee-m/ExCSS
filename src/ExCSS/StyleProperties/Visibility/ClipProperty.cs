@@ -8,7 +8,5 @@
             : base(PropertyNames.Clip, PropertyFlags.Animatable)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

@@ -9,8 +9,6 @@
         {
         }
 
-        internal override IValueConverter Converter => StyleConverter;
-
         private static readonly IValueConverter NormalLayerConverter = WithAny(
             OptionalImageSourceConverter.Option().For(PropertyNames.BackgroundImage),
             WithOrder(

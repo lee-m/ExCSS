@@ -9,7 +9,5 @@
             : base(PropertyNames.LineHeight, PropertyFlags.Inherited | PropertyFlags.Animatable)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

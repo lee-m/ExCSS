@@ -9,7 +9,5 @@
             : base(PropertyNames.ListStyleType, PropertyFlags.Inherited)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

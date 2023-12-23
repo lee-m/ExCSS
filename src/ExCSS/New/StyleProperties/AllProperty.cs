@@ -9,8 +9,6 @@ namespace ExCSS.New.StyleProperties
             : base(PropertyNames.All)
         { }
 
-        internal override IValueConverter Converter => null;
-
         protected override IValue CoerceValue(TokenValue newTokenValue)
         {
             var converter = new WideKeywordValueConverter();

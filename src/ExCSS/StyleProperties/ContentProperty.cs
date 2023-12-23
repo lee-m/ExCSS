@@ -11,8 +11,6 @@ namespace ExCSS
         {
         }
 
-        internal override IValueConverter Converter => StyleConverter;
-
         private static readonly Dictionary<string, ContentMode> ContentModes =
             new(StringComparer.OrdinalIgnoreCase)
             {

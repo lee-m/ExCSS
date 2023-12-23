@@ -11,7 +11,5 @@ namespace ExCSS
             : base(PropertyNames.BorderBottomColor)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

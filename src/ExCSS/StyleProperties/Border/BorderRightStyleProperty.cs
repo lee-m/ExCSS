@@ -9,7 +9,5 @@
             : base(PropertyNames.BorderRightStyle)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

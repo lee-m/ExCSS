@@ -8,7 +8,5 @@
             : base(PropertyNames.OverflowWrap)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

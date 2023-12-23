@@ -8,7 +8,5 @@
             : base(PropertyNames.TextAnchor)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

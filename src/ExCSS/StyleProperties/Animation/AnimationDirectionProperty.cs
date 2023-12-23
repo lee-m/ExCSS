@@ -9,7 +9,5 @@
             : base(PropertyNames.AnimationDirection)
         {
         }
-
-        internal override IValueConverter Converter => ListConverter;
     }
 }

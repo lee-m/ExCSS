@@ -8,7 +8,5 @@
             : base(PropertyNames.StrokeDashoffset, PropertyFlags.Animatable)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

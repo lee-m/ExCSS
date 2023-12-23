@@ -9,7 +9,5 @@
             : base(PropertyNames.Perspective, PropertyFlags.Animatable)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

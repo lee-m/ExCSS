@@ -9,7 +9,5 @@
             : base(PropertyNames.BackgroundPosition, PropertyFlags.Animatable)
         {
         }
-
-        internal override IValueConverter Converter => ListConverter;
     }
 }

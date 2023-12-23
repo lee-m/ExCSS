@@ -17,7 +17,5 @@
         internal AnimationProperty() : base(PropertyNames.Animation)
         {
         }
-
-        internal override IValueConverter Converter => ListConverter;
     }
 }

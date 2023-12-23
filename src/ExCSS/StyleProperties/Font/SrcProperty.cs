@@ -6,7 +6,5 @@
             : base(PropertyNames.Src)
         {
         }
-
-        internal override IValueConverter Converter => Converters.Any;
     }
 }

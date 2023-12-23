@@ -8,7 +8,5 @@
             : base(PropertyNames.Orphans, PropertyFlags.Inherited)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

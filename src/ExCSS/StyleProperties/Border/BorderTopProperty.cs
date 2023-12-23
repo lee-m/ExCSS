@@ -14,7 +14,5 @@
             : base(PropertyNames.BorderTop, PropertyFlags.Animatable)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

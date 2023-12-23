@@ -9,7 +9,5 @@
             : base(PropertyNames.AnimationIterationCount)
         {
         }
-
-        internal override IValueConverter Converter => ListConverter;
     }
 }

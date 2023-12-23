@@ -9,7 +9,5 @@
             : base(PropertyNames.MaxWidth, PropertyFlags.Animatable)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

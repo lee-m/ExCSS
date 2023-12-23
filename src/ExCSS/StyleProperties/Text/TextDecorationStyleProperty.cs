@@ -9,7 +9,5 @@
             : base(PropertyNames.TextDecorationStyle)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

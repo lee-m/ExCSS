@@ -20,7 +20,5 @@
             : base(PropertyNames.BorderImage)
         {
         }
-
-        internal override IValueConverter Converter => ImageConverter;
     }
 }

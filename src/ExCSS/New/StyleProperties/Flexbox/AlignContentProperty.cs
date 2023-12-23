@@ -17,7 +17,5 @@ namespace ExCSS.New.StyleProperties.Flexbox
                    ?? TryConvert<ContentPositionValueConverter>(newTokenValue)
                    ?? TryConvert<WideKeywordValueConverter>(newTokenValue);
         }
-
-        internal override IValueConverter Converter => null;
     }
 }

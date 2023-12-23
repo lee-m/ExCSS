@@ -25,7 +25,5 @@
             : base(PropertyNames.PerspectiveOrigin, PropertyFlags.Animatable)
         {
         }
-
-        internal override IValueConverter Converter => PerspectiveConverter;
     }
 }

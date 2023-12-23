@@ -11,7 +11,5 @@ namespace ExCSS
             : base(PropertyNames.OutlineColor, PropertyFlags.Animatable)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

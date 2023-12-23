@@ -6,7 +6,5 @@
             : base(PropertyNames.UnicodeRange)
         {
         }
-
-        internal override IValueConverter Converter => Converters.Any;
     }
 }

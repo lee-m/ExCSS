@@ -11,7 +11,5 @@
             : base(PropertyNames.FontWeight, PropertyFlags.Inherited | PropertyFlags.Animatable)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

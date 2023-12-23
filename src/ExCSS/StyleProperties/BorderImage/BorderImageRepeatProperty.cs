@@ -9,7 +9,5 @@
             : base(PropertyNames.BorderImageRepeat)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

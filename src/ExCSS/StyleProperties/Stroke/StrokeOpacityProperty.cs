@@ -8,7 +8,5 @@
             : base(PropertyNames.StrokeOpacity, PropertyFlags.Animatable)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

@@ -11,7 +11,5 @@
             : base(PropertyNames.Margin)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

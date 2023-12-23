@@ -9,7 +9,5 @@
             : base(PropertyNames.TransitionDelay)
         {
         }
-
-        internal override IValueConverter Converter => ListConverter;
     }
 }

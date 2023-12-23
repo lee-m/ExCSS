@@ -7,7 +7,5 @@
         internal FlexGrowProperty()
             : base(PropertyNames.FlexGrow)
         { }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

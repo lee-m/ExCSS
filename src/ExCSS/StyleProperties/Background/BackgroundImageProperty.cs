@@ -8,7 +8,5 @@
             : base(PropertyNames.BackgroundImage)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

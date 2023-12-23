@@ -8,7 +8,5 @@
         internal AnimationDurationProperty() : base(PropertyNames.AnimationDuration)
         {
         }
-
-        internal override IValueConverter Converter => ListConverter;
     }
 }

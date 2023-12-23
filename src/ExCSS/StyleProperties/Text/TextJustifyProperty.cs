@@ -8,7 +8,5 @@
             : base(PropertyNames.TextJustify)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

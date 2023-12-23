@@ -7,7 +7,5 @@
         internal FlexBasisProperty()
             : base(PropertyNames.FlexBasis)
         { }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

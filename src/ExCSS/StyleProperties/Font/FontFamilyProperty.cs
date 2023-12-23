@@ -10,8 +10,6 @@
         {
         }
 
-        internal override IValueConverter Converter => StyleConverter;
-
         //private enum SystemFonts : byte
         //{
         //    /// <summary>

@@ -7,7 +7,5 @@
         internal JustifyContentProperty()
             : base(PropertyNames.JustifyContent)
         { }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

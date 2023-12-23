@@ -7,7 +7,5 @@
         internal CaptionSideProperty() : base(PropertyNames.CaptionSide)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

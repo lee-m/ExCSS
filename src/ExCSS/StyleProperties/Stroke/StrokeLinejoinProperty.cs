@@ -8,7 +8,5 @@
             : base(PropertyNames.StrokeLinejoin, PropertyFlags.Animatable)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

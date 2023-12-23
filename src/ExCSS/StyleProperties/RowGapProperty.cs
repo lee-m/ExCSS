@@ -9,7 +9,5 @@
         internal RowGapProperty()
             : base(PropertyNames.RowGap, PropertyFlags.Animatable)
         { }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

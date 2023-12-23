@@ -8,7 +8,5 @@
             : base(PropertyNames.ZIndex, PropertyFlags.Animatable)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

@@ -15,7 +15,5 @@
             : base(PropertyNames.Cursor, PropertyFlags.Inherited)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

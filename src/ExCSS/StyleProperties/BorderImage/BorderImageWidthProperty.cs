@@ -9,7 +9,5 @@
             : base(PropertyNames.BorderImageWidth)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

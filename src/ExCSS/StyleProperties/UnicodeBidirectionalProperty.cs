@@ -9,7 +9,5 @@
             : base(PropertyNames.UnicodeBidirectional)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

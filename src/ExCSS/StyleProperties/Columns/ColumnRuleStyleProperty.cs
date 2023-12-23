@@ -9,7 +9,5 @@
             : base(PropertyNames.ColumnRuleStyle)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }

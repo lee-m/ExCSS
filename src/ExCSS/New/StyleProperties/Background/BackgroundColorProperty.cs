@@ -9,8 +9,6 @@ namespace ExCSS.New.StyleProperties.Background
             : base(PropertyNames.BackgroundColor, PropertyFlags.Hashless | PropertyFlags.Animatable)
         { }
 
-        internal override IValueConverter Converter => null;
-
         protected override IValue CoerceValue(TokenValue newTokenValue)
         {
             return newTokenValue.ToColor()

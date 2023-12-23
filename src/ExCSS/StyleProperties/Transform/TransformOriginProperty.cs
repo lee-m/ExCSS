@@ -29,7 +29,5 @@
             : base(PropertyNames.TransformOrigin, PropertyFlags.Animatable)
         {
         }
-
-        internal override IValueConverter Converter => StyleConverter;
     }
 }
