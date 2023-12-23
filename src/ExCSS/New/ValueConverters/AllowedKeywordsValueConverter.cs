@@ -28,16 +28,4 @@ namespace ExCSS.New.ValueConverters
             return null;
         }
     }
-
-    internal sealed class CurrentColorKeywordValueConverter : AllowedKeywordsValueConverter
-    {
-        public CurrentColorKeywordValueConverter() : base(Keywords.CurrentColor)
-        { }
-    }
-
-    internal sealed class NormalKeywordValueConverter : AllowedKeywordsValueConverter
-    {
-        public NormalKeywordValueConverter() : base(Keywords.Normal)
-        { }
-    }
 }
