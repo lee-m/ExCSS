@@ -73,7 +73,7 @@ namespace ExCSS.Tests.NewPropertyTests
         [Theory]
         [MemberData(nameof(WideKeywordTestValues))]
         public void BackgroundColorPropertyAcceptsWideKeywords(string value, WideKeyword expected)
-            => TestAcceptsEnumKeyword<WideKeyword, WideKeywordValue>(value, ValueKind.WideKeyword, expected);
+            => TestAcceptsEnumKeyword(value, expected);
 
         [Theory]
         [InlineData("currentcolor")]

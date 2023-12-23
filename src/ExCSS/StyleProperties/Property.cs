@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+
 using ExCSS.New;
 using ExCSS.New.Values;
 
@@ -27,7 +28,6 @@ namespace ExCSS
         {
             writer.Write(formatter.Declaration(Name, ValueText, IsImportant));
         }
-
 
         internal bool TrySetValue(TokenValue newTokenValue)
         {
@@ -58,7 +58,8 @@ namespace ExCSS
 
         public bool IsAnimatable => (_flags & PropertyFlags.Animatable) == PropertyFlags.Animatable;
 
-        public bool IsInitial => DeclaredValue == null || DeclaredValue.CssText.Is(Keywords.Initial);
+        public bool IsInitial
+            => Value.As<KeywordValue>()?.Keyword == Keywords.Initial;
 
         internal bool HasValue => Value != null;
 

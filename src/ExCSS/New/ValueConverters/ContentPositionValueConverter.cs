@@ -5,21 +5,16 @@ using ExCSS.New.Values;
 
 namespace ExCSS.New.ValueConverters
 {
-    public class ContentPositionValueConverter : IValueConverter2
+    internal sealed class ContentPositionValueConverter : IValueConverter2
     {
-        private readonly Dictionary<string, ContentPositionKeyword> _keywordMapping;
-
-        public ContentPositionValueConverter()
+        private readonly Dictionary<string, ContentPositionKeyword> _keywordMapping = new()
         {
-            _keywordMapping = new Dictionary<string, ContentPositionKeyword>
-            {
-                { Keywords.Center, ContentPositionKeyword.Center },
-                { Keywords.Start, ContentPositionKeyword.Start },
-                { Keywords.End, ContentPositionKeyword.End },
-                { Keywords.FlexStart, ContentPositionKeyword.FlexStart },
-                { Keywords.FlexEnd, ContentPositionKeyword.FlexEnd }
-            };
-        }
+            { Keywords.Center, ContentPositionKeyword.Center },
+            { Keywords.Start, ContentPositionKeyword.Start },
+            { Keywords.End, ContentPositionKeyword.End },
+            { Keywords.FlexStart, ContentPositionKeyword.FlexStart },
+            { Keywords.FlexEnd, ContentPositionKeyword.FlexEnd }
+        };
 
         public IValue Convert(TokenValue value)
         {
@@ -53,15 +48,10 @@ namespace ExCSS.New.ValueConverters
                     continue;
                 }
 
-                if (token.Type == TokenType.Ident
-                    && (token.Data == Keywords.Center
-                        || token.Data == Keywords.Start
-                        || token.Data == Keywords.End
-                        || token.Data == Keywords.FlexStart
-                        || token.Data == Keywords.FlexEnd))
+                if (token.Type == TokenType.Ident && _keywordMapping.TryGetValue(token.Data, out var keywordLookup))
                 {
                     //Anything else after this is an error
-                    keyword = _keywordMapping[token.Data];
+                    keyword = keywordLookup;
                 }
             }
 

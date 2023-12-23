@@ -32,12 +32,22 @@ namespace ExCSS.Tests.NewPropertyTests.Flexbox
         [Theory]
         [MemberData(nameof(WideKeywordTestValues))]
         public void AlignItemsPropertyAcceptsWideKeywords(string value, WideKeyword expected)
-            => TestAcceptsEnumKeyword<WideKeyword, WideKeywordValue>(value, ValueKind.WideKeyword, expected);
+            => TestAcceptsEnumKeyword(value, expected);
 
         [Theory]
         [MemberData(nameof(SelfPositionKeywordValues))]
         public void AlignItemsPropertyAcceptsSelfPositionKeywords(string value, SelfPositionKeyword expected)
-            => TestAcceptsEnumKeyword<SelfPositionKeyword, SelfPositionValue>(value, ValueKind.SelfPosition, expected);
+        {
+            TestAcceptsValue(value, prop =>
+            {
+                Assert.Equal(prop.Value.Kind, ValueKind.SelfPosition);
+
+                var selfPosition = prop.Value.As<SelfPositionValue>();
+
+                Assert.Equal(expected, selfPosition.Keyword);
+                Assert.Null(selfPosition.Overflow);
+            });
+        }
 
         [Theory]
         [MemberData(nameof(OverflowSelfPositionKeywordValues))]

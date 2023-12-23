@@ -47,14 +47,13 @@ namespace ExCSS.Tests.NewPropertyTests
             });
         }
 
-        protected void TestAcceptsEnumKeyword<TEnum, TValue>(string value, ValueKind expectedValueKind, TEnum expected) where TEnum : unmanaged
-                                                                                                                        where TValue : EnumKeywordValue<TEnum>
+        protected void TestAcceptsEnumKeyword<TEnum>(string value, TEnum expected) where TEnum : unmanaged
         {
             TestAcceptsValue(value, prop =>
             {
-                Assert.Equal(expectedValueKind, prop.Value.Kind);
+                Assert.Equal(ValueKind.EnumKeyword, prop.Value.Kind);
 
-                var keyword = prop.Value.As<TValue>();
+                var keyword = prop.Value.As<EnumKeywordValue<TEnum>>();
 
                 Assert.NotNull(keyword);
                 Assert.Equal(expected, keyword.Keyword);

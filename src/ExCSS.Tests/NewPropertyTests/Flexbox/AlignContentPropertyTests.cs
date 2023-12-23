@@ -31,7 +31,7 @@ namespace ExCSS.Tests.NewPropertyTests.Flexbox
         [InlineData("space-evenly", ContentDistributionKeyword.SpaceEvenly)]
         [InlineData("stretch", ContentDistributionKeyword.Stretch)]
         public void AlignContentPropertyAcceptsContentDistribution(string value, ContentDistributionKeyword expectedKeyword)
-            => TestAcceptsEnumKeyword<ContentDistributionKeyword, ContentDistributionValue>(value, ValueKind.ContentDistribution, expectedKeyword);
+            => TestAcceptsEnumKeyword(value, expectedKeyword);
 
         [Theory]
         [InlineData("safe center", true, null)]
@@ -75,11 +75,11 @@ namespace ExCSS.Tests.NewPropertyTests.Flexbox
         [InlineData("flex-start", ContentPositionKeyword.FlexStart)]
         [InlineData("flex-end", ContentPositionKeyword.FlexEnd)]
         public void AlignContentPropertyAcceptsContentPosition(string value, ContentPositionKeyword expectedKeyword)
-            => TestAcceptsEnumKeyword<ContentPositionKeyword, ContentPositionValue>(value, ValueKind.ContentPosition, expectedKeyword);
+            => TestAcceptsEnumKeyword(value, expectedKeyword);
 
         [Theory]
         [MemberData(nameof(WideKeywordTestValues))]
         public void AlignContentPropertyAcceptsWideKeywords(string value, WideKeyword expected)
-            => TestAcceptsEnumKeyword<WideKeyword, WideKeywordValue>(value, ValueKind.WideKeyword, expected);
+            => TestAcceptsEnumKeyword(value, expected);
     }
 }

@@ -14,7 +14,7 @@ namespace ExCSS.Tests.NewPropertyTests
         [Theory]
         [MemberData(nameof(WideKeywordTestValues))]
         public void AllPropertyAcceptsWideKeywords(string value, WideKeyword expected)
-            => TestAcceptsEnumKeyword<WideKeyword, WideKeywordValue>(value, ValueKind.WideKeyword, expected);
+            => TestAcceptsEnumKeyword<WideKeyword>(value, expected);
 
         [Theory]
         [InlineData("")]

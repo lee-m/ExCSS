@@ -10,8 +10,7 @@
         Angle,
         BaselinePosition,
         ContentPosition,
-        WideKeyword,
-        ContentDistribution,
-        SelfPosition
+        SelfPosition,
+        EnumKeyword
     }
 }

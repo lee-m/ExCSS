@@ -2,7 +2,7 @@
 
 namespace ExCSS.New.ValueConverters
 {
-    public class BaselinePositionValueConverter : IValueConverter2
+    internal sealed class BaselinePositionValueConverter : IValueConverter2
     {
         public IValue Convert(TokenValue value)
         {

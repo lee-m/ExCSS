@@ -7,21 +7,16 @@ namespace ExCSS.New.ValueConverters
 {
     public class SelfPositionValueConverter : IValueConverter2
     {
-        private readonly Dictionary<string, SelfPositionKeyword> _keywordMapping;
-
-        public SelfPositionValueConverter()
+        private readonly Dictionary<string, SelfPositionKeyword> _keywordMapping = new()
         {
-            _keywordMapping = new Dictionary<string, SelfPositionKeyword>
-            {
-                { Keywords.Center, SelfPositionKeyword.Center },
-                { Keywords.Start, SelfPositionKeyword.Start },
-                { Keywords.End, SelfPositionKeyword.End },
-                { Keywords.SelfStart, SelfPositionKeyword.SelfStart },
-                { Keywords.SelfEnd, SelfPositionKeyword.SelfEnd },
-                { Keywords.FlexStart, SelfPositionKeyword.FlexStart },
-                { Keywords.FlexEnd, SelfPositionKeyword.FlexEnd },
-            };
-        }
+            { Keywords.Center, SelfPositionKeyword.Center },
+            { Keywords.Start, SelfPositionKeyword.Start },
+            { Keywords.End, SelfPositionKeyword.End },
+            { Keywords.SelfStart, SelfPositionKeyword.SelfStart },
+            { Keywords.SelfEnd, SelfPositionKeyword.SelfEnd },
+            { Keywords.FlexStart, SelfPositionKeyword.FlexStart },
+            { Keywords.FlexEnd, SelfPositionKeyword.FlexEnd },
+        };
 
         public IValue Convert(TokenValue value)
         {

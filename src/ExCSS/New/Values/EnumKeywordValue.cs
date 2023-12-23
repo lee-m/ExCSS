@@ -4,14 +4,14 @@ using ExCSS.New.Enumerations;
 
 namespace ExCSS.New.Values
 {
-    public abstract class EnumKeywordValue<T> : BaseValue where T: unmanaged
+    public class EnumKeywordValue<T> : BaseValue where T: unmanaged
     {
-        protected EnumKeywordValue(IEnumerable<Token> parsedValue, ValueKind valueKind, T enumKeyword) : base(parsedValue)
+        internal EnumKeywordValue(IEnumerable<Token> parsedValue, T enumKeyword) : base(parsedValue)
         {
             Keyword = enumKeyword;
-            Kind = valueKind;
         }
+
         public T Keyword { get; }
-        public override ValueKind Kind { get; }
+        public override ValueKind Kind => ValueKind.EnumKeyword;
     }
 }
