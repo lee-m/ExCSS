@@ -73,75 +73,7 @@ namespace ExCSS.Tests
             Assert.Equal("0s, 0s, 1s, 20ms", concrete.ValueText);
         }
 
-        [Fact]
-        public void AnimationNameDashSpecificLegal()
-        {
-            var snippet = "animation-name : -specific";
-            var property = ParseDeclaration(snippet);
-            Assert.Equal("animation-name", property.Name);
-            Assert.False(property.IsImportant);
-            Assert.IsType<AnimationNameProperty>(property);
-            var concrete = (AnimationNameProperty)property;
-            Assert.False(concrete.IsInherited);
-            Assert.True(concrete.HasValue);
-            Assert.Equal("-specific", concrete.ValueText);
-        }
-
-        [Fact]
-        public void AnimationNameSlidingVerticallyLegal()
-        {
-            var snippet = "animation-name : sliding-vertically";
-            var property = ParseDeclaration(snippet);
-            Assert.Equal("animation-name", property.Name);
-            Assert.False(property.IsImportant);
-            Assert.IsType<AnimationNameProperty>(property);
-            var concrete = (AnimationNameProperty)property;
-            Assert.False(concrete.IsInherited);
-            Assert.True(concrete.HasValue);
-            Assert.Equal("sliding-vertically", concrete.ValueText);
-        }
-
-        [Fact]
-        public void AnimationNameTest05Legal()
-        {
-            var snippet = "animation-name : test_05";
-            var property = ParseDeclaration(snippet);
-            Assert.Equal("animation-name", property.Name);
-            Assert.False(property.IsImportant);
-            Assert.IsType<AnimationNameProperty>(property);
-            var concrete = (AnimationNameProperty)property;
-            Assert.False(concrete.IsInherited);
-            Assert.True(concrete.HasValue);
-            Assert.Equal("test_05", concrete.ValueText);
-        }
-
-        [Fact]
-        public void AnimationNameNumberIllegal()
-        {
-            var snippet = "animation-name : 42";
-            var property = ParseDeclaration(snippet);
-            Assert.Equal("animation-name", property.Name);
-            Assert.False(property.IsImportant);
-            Assert.IsType<AnimationNameProperty>(property);
-            var concrete = (AnimationNameProperty)property;
-            Assert.False(concrete.IsInherited);
-            Assert.False(concrete.HasValue);
-        }
-
-        [Fact]
-        public void AnimationNameMyAnimationOtherAnimationLegal()
-        {
-            var snippet = "animation-name : my-animation, other-animation";
-            var property = ParseDeclaration(snippet);
-            Assert.Equal("animation-name", property.Name);
-            Assert.False(property.IsImportant);
-            Assert.IsType<AnimationNameProperty>(property);
-            var concrete = (AnimationNameProperty)property;
-            Assert.False(concrete.IsInherited);
-            Assert.True(concrete.HasValue);
-            Assert.Equal("my-animation, other-animation", concrete.ValueText);
-        }
-
+        
         [Fact]
         public void AnimationIterationCountZeroLegal()
         {

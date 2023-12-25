@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using ExCSS.New.StyleProperties;
+using ExCSS.New.StyleProperties.Animation;
 using ExCSS.New.StyleProperties.Background;
 using ExCSS.New.StyleProperties.Flexbox;
 

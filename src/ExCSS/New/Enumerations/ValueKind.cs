@@ -11,6 +11,8 @@
         BaselinePosition,
         ContentPosition,
         SelfPosition,
-        EnumKeyword
+        EnumKeyword,
+        Identifier,
+        IdentifierList
     }
 }
