@@ -4,6 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
+using ExCSS.New.StyleProperties;
+using ExCSS.New.StyleProperties.Animation;
+using ExCSS.New.StyleProperties.Background;
+using ExCSS.New.StyleProperties.Flexbox;
+
 // ReSharper disable UnusedMember.Global
 
 namespace ExCSS
@@ -314,28 +319,28 @@ namespace ExCSS
             }
         }
 
-        public IProperty All
+        public AllProperty All
         {
-            get => GetProperty(PropertyNames.All);
+            get => (AllProperty)GetProperty(PropertyNames.All);
             set => SetProperty(PropertyNames.All, value.ValueText);
         }
 
-        public IProperty AlignContent
+        public AlignContentProperty AlignContent
         {
-            get => GetProperty(PropertyNames.AlignContent);
+            get => (AlignContentProperty)GetProperty(PropertyNames.AlignContent);
             set => SetProperty(PropertyNames.AlignContent, value.ValueText);
         }
 
-        public string AlignItems
+        public AlignItemsProperty AlignItems
         {
-            get => GetPropertyValue(PropertyNames.AlignItems);
-            set => SetPropertyValue(PropertyNames.AlignItems, value);
+            get => (AlignItemsProperty)GetProperty(PropertyNames.AlignItems);
+            set => SetProperty(PropertyNames.AlignItems, value.ValueText);
         }
 
-        public string AlignSelf
+        public AlignSelfProperty AlignSelf
         {
-            get => GetPropertyValue(PropertyNames.AlignSelf);
-            set => SetPropertyValue(PropertyNames.AlignSelf, value);
+            get => (AlignSelfProperty)GetProperty(PropertyNames.AlignSelf);
+            set => SetProperty(PropertyNames.AlignSelf, value.ValueText);
         }
 
         public string Accelerator
@@ -386,10 +391,10 @@ namespace ExCSS
             set => SetPropertyValue(PropertyNames.AnimationIterationCount, value);
         }
 
-        public string AnimationName
+        public AnimationNameProperty AnimationName
         {
-            get => GetPropertyValue(PropertyNames.AnimationName);
-            set => SetPropertyValue(PropertyNames.AnimationName, value);
+            get => (AnimationNameProperty)GetProperty(PropertyNames.AnimationName);
+            set => SetProperty(PropertyNames.AnimationName, value.ValueText);
         }
 
         public string AnimationPlayState
@@ -428,10 +433,10 @@ namespace ExCSS
             set => SetPropertyValue(PropertyNames.BackgroundClip, value);
         }
 
-        public string BackgroundColor
+        public BackgroundColorProperty BackgroundColor
         {
-            get => GetPropertyValue(PropertyNames.BackgroundColor);
-            set => SetPropertyValue(PropertyNames.BackgroundColor, value);
+            get => (BackgroundColorProperty)GetProperty(PropertyNames.BackgroundColor);
+            set => SetProperty(PropertyNames.BackgroundColor, value.ValueText);
         }
 
         public string BackgroundImage
