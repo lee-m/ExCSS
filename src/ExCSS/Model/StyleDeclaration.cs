@@ -373,10 +373,10 @@ namespace ExCSS
             set => SetPropertyValue(PropertyNames.AnimationDirection, value);
         }
 
-        public string AnimationDuration
+        public AnimationDurationProperty AnimationDuration
         {
-            get => GetPropertyValue(PropertyNames.AnimationDuration);
-            set => SetPropertyValue(PropertyNames.AnimationDuration, value);
+            get => (AnimationDurationProperty)GetProperty(PropertyNames.AnimationDuration);
+            set => SetProperty(PropertyNames.AnimationDuration, value.ValueText);
         }
 
         public string AnimationFillMode

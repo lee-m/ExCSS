@@ -1,36 +1,12 @@
-﻿using Xunit;
+﻿using ExCSS.New.StyleProperties.Animation;
+
+using Xunit;
 
 namespace ExCSS.Tests
 {
     public class AnimationPropertyTests : CssConstructionFunctions
     {
-        [Fact]
-        public void AnimationDurationMillisecondsLegal()
-        {
-            var snippet = "animation-duration : 60ms";
-            var property = ParseDeclaration(snippet);
-            Assert.Equal("animation-duration", property.Name);
-            Assert.False(property.IsImportant);
-            Assert.IsType<AnimationDurationProperty>(property);
-            var concrete = (AnimationDurationProperty)property;
-            Assert.False(concrete.IsInherited);
-            Assert.True(concrete.HasValue);
-            Assert.Equal("60ms", concrete.ValueText);
-        }
-
-        [Fact]
-        public void AnimationDurationMultipleSecondsLegal()
-        {
-            var snippet = "animation-duration : 1s  , 2s  , 3s  , 4s";
-            var property = ParseDeclaration(snippet);
-            Assert.Equal("animation-duration", property.Name);
-            Assert.False(property.IsImportant);
-            Assert.IsType<AnimationDurationProperty>(property);
-            var concrete = (AnimationDurationProperty)property;
-            Assert.False(concrete.IsInherited);
-            Assert.True(concrete.HasValue);
-            Assert.Equal("1s, 2s, 3s, 4s", concrete.ValueText);
-        }
+        
 
         [Fact]
         public void AnimationDelayMillisecondsLegal()

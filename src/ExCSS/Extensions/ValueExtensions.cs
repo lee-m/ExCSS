@@ -307,20 +307,6 @@ namespace ExCSS
             return null;
         }
 
-        public static Time? ToTime(this IEnumerable<Token> value)
-        {
-            var element = value.OnlyOrDefault();
-
-            if (element == null || element.Type != TokenType.Dimension) return null;
-
-            var token = (UnitToken) element;
-            var unit = Time.GetUnit(token.Unit);
-
-            if (unit != Time.Unit.None) return new Time(token.Value, unit);
-
-            return null;
-        }
-
         public static Length? ToBorderWidth(this IEnumerable<Token> value)
         {
             var enumerable = value as Token[] ?? value.ToArray();

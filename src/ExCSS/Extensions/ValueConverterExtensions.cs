@@ -122,8 +122,9 @@ namespace ExCSS
 
         public static IValueConverter Or<T>(this IValueConverter primary, string keyword, T value)
         {
-            var identifier = new IdentifierValueConverter<T>(keyword, value);
-            return new OrValueConverter(primary, identifier);
+            return primary;
+            //var identifier = new IdentifierValueConverter<T>(keyword, value);
+            //return new OrValueConverter(primary, identifier);
         }
 
         public static IValueConverter OrNone(this IValueConverter primary)

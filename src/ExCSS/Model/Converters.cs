@@ -15,19 +15,18 @@ namespace ExCSS
         public static readonly IValueConverter ResolutionConverter =
             new StructValueConverter<Resolution>(ValueExtensions.ToResolution);
         
-        public static readonly IValueConverter TimeConverter = new StructValueConverter<Time>(ValueExtensions.ToTime);
         public static readonly IValueConverter UrlConverter = new UrlValueConverter();
         public static readonly IValueConverter StringConverter = new StringValueConverter();
         public static readonly IValueConverter EvenStringsConverter = new StringsValueConverter();
 
-        public static readonly IValueConverter LiteralsConverter =
-            new IdentifierValueConverter(ValueExtensions.ToLiterals);
+        public static readonly IValueConverter LiteralsConverter = null;
+        //new IdentifierValueConverter(ValueExtensions.ToLiterals);
 
-        public static readonly IValueConverter IdentifierConverter =
-            new IdentifierValueConverter(ValueExtensions.ToIdentifier);
+        public static readonly IValueConverter IdentifierConverter = null;
+        //new IdentifierValueConverter(ValueExtensions.ToIdentifier);
 
-        public static readonly IValueConverter AnimatableConverter =
-            new IdentifierValueConverter(ValueExtensions.ToAnimatableIdentifier);
+        public static readonly IValueConverter AnimatableConverter = null;
+            //new IdentifierValueConverter(ValueExtensions.ToAnimatableIdentifier);
 
         public static readonly IValueConverter IntegerConverter =
             new StructValueConverter<int>(ValueExtensions.ToInteger);
@@ -449,7 +448,7 @@ namespace ExCSS
 
         public static IValueConverter Assign<T>(string identifier, T result)
         {
-            return new IdentifierValueConverter<T>(identifier, result);
+            return null; //new IdentifierValueConverter<T>(identifier, result);
         }
 
         public static IValueConverter Toggle(string on, string off)

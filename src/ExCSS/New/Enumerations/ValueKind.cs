@@ -13,6 +13,7 @@
         SelfPosition,
         EnumKeyword,
         Identifier,
-        IdentifierList
+        Time,
+        List
     }
 }

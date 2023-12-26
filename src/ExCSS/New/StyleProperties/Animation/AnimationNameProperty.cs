@@ -12,7 +12,7 @@ namespace ExCSS.New.StyleProperties.Animation
         {
             return TryConvert<NoneKeywordValueConverter>(newTokenValue)
                 ?? TryConvert<WideKeywordValueConverter>(newTokenValue)
-                ?? TryConvert<ValueConverters.IdentifierValueConverter>(newTokenValue)
+                ?? TryConvert<IdentifierValueConverter>(newTokenValue)
                 ?? TryConvert<IdentifierListValueConverter>(newTokenValue);
         }
     }

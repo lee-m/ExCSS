@@ -4,16 +4,11 @@ using ExCSS.New.Enumerations;
 
 namespace ExCSS.New.Values
 {
-    public sealed class IdentifierListValue : BaseValue
+    public sealed class IdentifierListValue : ListValue<IdentifierValue>
     {
         internal IdentifierListValue(IEnumerable<Token> parsedValue,
                                      IList<IdentifierValue> identifiers)
-            : base(parsedValue)
-        {
-            Identifiers = identifiers;
-        }
-
-        public override ValueKind Kind => ValueKind.IdentifierList;
-        public IList<IdentifierValue> Identifiers { get; }
+            : base(parsedValue, ValueKind.List, identifiers)
+        { }
     }
 }

@@ -5,9 +5,9 @@
     internal sealed class AnimationProperty : ShorthandProperty
     {
         private static readonly IValueConverter ListConverter = WithAny(
-            TimeConverter.Option().For(PropertyNames.AnimationDuration),
+            //TimeConverter.Option().For(PropertyNames.AnimationDuration),
             TransitionConverter.Option().For(PropertyNames.AnimationTimingFunction),
-            TimeConverter.Option().For(PropertyNames.AnimationDelay),
+            //TimeConverter.Option().For(PropertyNames.AnimationDelay),
             PositiveOrInfiniteNumberConverter.Option().For(PropertyNames.AnimationIterationCount),
             AnimationDirectionConverter.Option().For(PropertyNames.AnimationDirection),
             AnimationFillStyleConverter.Option().For(PropertyNames.AnimationFillMode),

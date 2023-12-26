@@ -40,13 +40,16 @@ namespace ExCSS
 
         internal IValue TryConvert<TConverter>(TokenValue value) where TConverter : IValueConverter2, new()
         {
-            if(!_cachedValueConverters.TryGetValue(typeof(TConverter), out var converter))
+            lock (_cachedValueConverters)
             {
-                converter = new TConverter();
-                _cachedValueConverters.Add(typeof(TConverter), converter);
-            }
+                if (!_cachedValueConverters.TryGetValue(typeof(TConverter), out var converter))
+                {
+                    converter = new TConverter();
+                    _cachedValueConverters.Add(typeof(TConverter), converter);
+                }
 
-            return converter.Convert(value);
+                return converter.Convert(value);
+            }
         }
 
         public string ValueText => Value?.ToString();

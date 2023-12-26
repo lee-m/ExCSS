@@ -46,13 +46,13 @@ namespace ExCSS.Tests.NewPropertyTests.Animation
         {
             TestAcceptsValue("my-animation, other-animation", prop =>
             {
-                Assert.Equal(prop.Value.Kind, ValueKind.IdentifierList);
+                Assert.Equal(prop.Value.Kind, ValueKind.List);
 
                 var identifierList = prop.Value.As<IdentifierListValue>();
 
-                Assert.Equal(2, identifierList.Identifiers.Count);
-                Assert.Equal("my-animation", identifierList.Identifiers[0].Identifier);
-                Assert.Equal("other-animation", identifierList.Identifiers[1].Identifier);
+                Assert.Equal(2, identifierList.Values.Count);
+                Assert.Equal("my-animation", identifierList.Values[0].Identifier);
+                Assert.Equal("other-animation", identifierList.Values[1].Identifier);
             });
         }
 

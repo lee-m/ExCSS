@@ -1,19 +1,23 @@
 ﻿using System;
 
-namespace ExCSS
-{
-    public struct Time : IEquatable<Time>, IComparable<Time>, IFormattable
-    {
-        public static readonly Time Zero = new(0f, Unit.Ms);
+using ExCSS.New.Enumerations;
 
-        public Time(float value, Unit unit)
+namespace ExCSS.New.Values
+{
+    public class TimeValue : BaseValue, IEquatable<TimeValue>, IComparable<TimeValue>, IFormattable
+    {
+        public static readonly TimeValue Zero = new(TokenValue.Empty, 0f, TimeUnit.Ms);
+
+        public TimeValue(TokenValue parsedValue, float value, TimeUnit unit)
+            : base(parsedValue)
         {
             Value = value;
             Type = unit;
         }
 
         public float Value { get; }
-        public Unit Type { get; }
+        public TimeUnit Type { get; }
+        public override ValueKind Kind => ValueKind.Time;
 
         public string UnitString
         {
@@ -21,8 +25,8 @@ namespace ExCSS
             {
                 return Type switch
                 {
-                    Unit.Ms => UnitNames.Ms,
-                    Unit.S => UnitNames.S,
+                    TimeUnit.Ms => UnitNames.Ms,
+                    TimeUnit.S => UnitNames.S,
                     _ => string.Empty
                 };
             }
@@ -31,7 +35,7 @@ namespace ExCSS
         /// <summary>
         ///     Compares the magnitude of two times.
         /// </summary>
-        public static bool operator >=(Time a, Time b)
+        public static bool operator >=(TimeValue a, TimeValue b)
         {
             var result = a.CompareTo(b);
             return result == 0 || result == 1;
@@ -40,7 +44,7 @@ namespace ExCSS
         /// <summary>
         ///     Compares the magnitude of two times.
         /// </summary>
-        public static bool operator >(Time a, Time b)
+        public static bool operator >(TimeValue a, TimeValue b)
         {
             return a.CompareTo(b) == 1;
         }
@@ -48,7 +52,7 @@ namespace ExCSS
         /// <summary>
         ///     Compares the magnitude of two times.
         /// </summary>
-        public static bool operator <=(Time a, Time b)
+        public static bool operator <=(TimeValue a, TimeValue b)
         {
             var result = a.CompareTo(b);
             return result == 0 || result == -1;
@@ -57,51 +61,43 @@ namespace ExCSS
         /// <summary>
         ///     Compares the magnitude of two times.
         /// </summary>
-        public static bool operator <(Time a, Time b)
+        public static bool operator <(TimeValue a, TimeValue b)
         {
             return a.CompareTo(b) == -1;
         }
 
-        public int CompareTo(Time other)
+        public int CompareTo(TimeValue other)
         {
             return ToMilliseconds().CompareTo(other.ToMilliseconds());
         }
 
-       
-        public static Unit GetUnit(string s)
+        public static TimeUnit GetUnit(string s)
         {
             switch (s)
             {
                 case "s":
-                    return Unit.S;
+                    return TimeUnit.S;
                 case "ms":
-                    return Unit.Ms;
+                    return TimeUnit.Ms;
                 default:
-                    return Unit.None;
+                    return TimeUnit.None;
             }
         }
 
         public float ToMilliseconds()
         {
-            return Type == Unit.S ? Value * 1000f : Value;
+            return Type == TimeUnit.S ? Value * 1000f : Value;
         }
 
-        public bool Equals(Time other)
+        public bool Equals(TimeValue other)
         {
             return ToMilliseconds() == other.ToMilliseconds();
-        }
-
-        public enum Unit : byte
-        {
-            None,
-            Ms,
-            S
         }
 
         /// <summary>
         ///     Checks for equality of two times.
         /// </summary>
-        public static bool operator ==(Time a, Time b)
+        public static bool operator ==(TimeValue a, TimeValue b)
         {
             return a.Equals(b);
         }
@@ -109,7 +105,7 @@ namespace ExCSS
         /// <summary>
         ///     Checks for inequality of two times.
         /// </summary>
-        public static bool operator !=(Time a, Time b)
+        public static bool operator !=(TimeValue a, TimeValue b)
         {
             return !a.Equals(b);
         }
@@ -121,7 +117,8 @@ namespace ExCSS
         /// <returns>True if the two objects are equal, otherwise false.</returns>
         public override bool Equals(object obj)
         {
-            if (obj is Time other) return Equals(other);
+            if (obj is TimeValue other) 
+                return Equals(other);
 
             return false;
         }

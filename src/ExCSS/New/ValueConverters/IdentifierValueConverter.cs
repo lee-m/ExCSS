@@ -1,8 +1,11 @@
-﻿using ExCSS.New.Values;
+﻿using System.Collections.Generic;
+using System.Linq;
+
+using ExCSS.New.Values;
 
 namespace ExCSS.New.ValueConverters
 {
-    public class IdentifierValueConverter : IValueConverter2
+    internal sealed class IdentifierValueConverter : IValueConverter2
     {
         public IValue Convert(TokenValue value)
         {
@@ -13,5 +16,11 @@ namespace ExCSS.New.ValueConverters
 
             return null;
         }
+    }
+
+    internal sealed class IdentifierListValueConverter : ListValueConverter<IdentifierValueConverter, IdentifierValue>
+    {
+        protected override ListValue<IdentifierValue> CreateListValue(TokenValue parsedValue, IEnumerable<IValue> convertedValues)
+            => new IdentifierListValue(parsedValue, convertedValues.Cast<IdentifierValue>().ToList());
     }
 }
