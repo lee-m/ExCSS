@@ -9,6 +9,37 @@ namespace ExCSS.New.ValueConverters
 {
     internal sealed class ColorFunctionValueConverter : IValueConverter2
     {
+        private sealed class RBGComponentValueConverter : IValueConverter2
+        {
+            public IValue Convert(TokenValue value)
+            {
+                var element = value.ToNaturalInteger();
+
+                if (element.HasValue)
+                    return new NumberValue(value, Math.Min(element.Value, 255), NumberUnit.Integer);
+
+                var percent = value.ToPercent();
+
+                if (percent == null)
+                    return null;
+
+                return new NumberValue(value, 255f * percent.NormalizedValue, NumberUnit.Integer);
+            }
+        }
+
+        private sealed class AlphaComponentValueConverter : IValueConverter2
+        {
+            public IValue Convert(TokenValue value)
+            {
+                var element = value.ToNaturalSingle();
+
+                if (element.HasValue)
+                    return new NumberValue(value, Math.Min(element.Value, 1f), NumberUnit.Float);
+
+                return value.ToPercent();
+            }
+        }
+
         public IValue Convert(TokenValue value)
         {
             if (value == null)
