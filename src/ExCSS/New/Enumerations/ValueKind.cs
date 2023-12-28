@@ -14,6 +14,8 @@
         EnumKeyword,
         Identifier,
         Time,
-        List
+        List,
+        CubicBezierTimingFunction,
+        StepsTimingFunction
     }
 }

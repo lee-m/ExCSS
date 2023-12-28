@@ -52,5 +52,9 @@ namespace ExCSS
             || Data == FunctionNames.Hsl
             || Data == FunctionNames.Hsla
             || Data == FunctionNames.Hwb;
+
+        public bool IsTimingFunction =>
+            Data == FunctionNames.CubicBezier
+            || Data == FunctionNames.Steps;
     }
 }

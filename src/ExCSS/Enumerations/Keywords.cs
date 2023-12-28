@@ -310,5 +310,10 @@
         public static readonly string Last = "last";
         public static readonly string SelfStart = "self-start";
         public static readonly string SelfEnd = "self-end";
+        public static readonly string JumpStart = "jump-start";
+        public static readonly string JumpEnd = "jump-end";
+        public static readonly string JumpNone = "jump-none";
+        public static readonly string JumpBoth = "jump-both";
+
     }
 }

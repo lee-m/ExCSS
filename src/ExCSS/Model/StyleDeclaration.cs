@@ -403,10 +403,10 @@ namespace ExCSS
             set => SetPropertyValue(PropertyNames.AnimationPlayState, value);
         }
 
-        public string AnimationTimingFunction
+        public AnimationTimingFunctionProperty AnimationTimingFunction
         {
-            get => GetPropertyValue(PropertyNames.AnimationTimingFunction);
-            set => SetPropertyValue(PropertyNames.AnimationTimingFunction, value);
+            get => (AnimationTimingFunctionProperty)GetProperty(PropertyNames.AnimationTimingFunction);
+            set => SetProperty(PropertyNames.AnimationTimingFunction, value.ValueText);
         }
 
         public string BackfaceVisibility

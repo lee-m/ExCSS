@@ -111,17 +111,6 @@ namespace ExCSS
                 {Keywords.PaddingBox, BoxModel.PaddingBox},
                 {Keywords.ContentBox, BoxModel.ContentBox}
             };
-        public static readonly Dictionary<string, ITimingFunction> TimingFunctions =
-            new(StringComparer.OrdinalIgnoreCase)
-            {
-                {Keywords.Ease, new CubicBezierTimingFunction(0.25f, 0.1f, 0.25f, 1f)},
-                {Keywords.EaseIn, new CubicBezierTimingFunction(0.42f, 0f, 1f, 1f)},
-                {Keywords.EaseOut, new CubicBezierTimingFunction(0f, 0f, 0.58f, 1f)},
-                {Keywords.EaseInOut, new CubicBezierTimingFunction(0.42f, 0f, 0.58f, 1f)},
-                {Keywords.Linear, new CubicBezierTimingFunction(0f, 0f, 1f, 1f)},
-                {Keywords.StepStart, new StepsTimingFunction(1, true)},
-                {Keywords.StepEnd, new StepsTimingFunction(1)}
-            };
         public static readonly Dictionary<string, AnimationFillStyle> AnimationFillStyles =
             new(StringComparer.OrdinalIgnoreCase)
             {

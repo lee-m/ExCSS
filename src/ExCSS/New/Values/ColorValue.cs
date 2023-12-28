@@ -294,17 +294,7 @@ namespace ExCSS.New.Values
         }
 
         public override int GetHashCode()
-        {
-            unchecked
-            {
-                int hash = 17;
-                hash = hash * 31 + _red.GetHashCode();
-                hash = hash * 31 + _green.GetHashCode();
-                hash = hash * 31 + _blue.GetHashCode();
-                hash = hash * 31 + _alpha.GetHashCode();
-                return hash;
-            }
-        }
+            => new HashCode(_red, _green, _blue, _alpha).GetHashCode();
 
         public static ColorValue Mix(ColorValue above, ColorValue below)
         {

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
+
 using ExCSS.New.Enumerations;
 using ExCSS.New.Values;
 
@@ -110,6 +112,22 @@ namespace ExCSS.Tests.NewPropertyTests
                 Assert.Equal(first, baselinePosition.First);
                 Assert.Equal(last, baselinePosition.Last);
             });
+        }
+
+        protected static string GetUppercasePermutations(string value)
+        {
+            var output = new StringBuilder();
+            var rnd = new Random();
+
+            foreach (var ch in value)
+            {
+                if (ch.IsLetter())
+                    output.Append(rnd.NextDouble() >= 0.5f ? char.ToUpper(ch) : ch);
+                else
+                    output.Append(ch);
+            }
+
+            return output.ToString();
         }
 
         public static IEnumerable<object[]> WideKeywordTestValues

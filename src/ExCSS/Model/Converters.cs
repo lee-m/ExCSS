@@ -370,8 +370,8 @@ namespace ExCSS
         public static readonly IValueConverter ImageBorderWidthConverter =
             LengthOrPercentConverter.Or(NumberConverter).Or(Keywords.Auto);
 
-        public static readonly IValueConverter TransitionConverter = new DictionaryValueConverter<ITimingFunction>(
-            Map.TimingFunctions).Or(StepsConverter).Or(CubicBezierConverter);
+        //public static readonly IValueConverter TransitionConverter = new DictionaryValueConverter<ITimingFunction>(
+        //    Map.TimingFunctions).Or(StepsConverter).Or(CubicBezierConverter);
 
         public static readonly IValueConverter GradientConverter = LinearGradientConverter.Or(RadialGradientConverter);
 
