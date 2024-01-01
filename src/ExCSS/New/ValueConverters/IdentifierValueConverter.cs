@@ -18,8 +18,11 @@ namespace ExCSS.New.ValueConverters
         }
     }
 
-    internal sealed class IdentifierListValueConverter : ListValueConverter<IdentifierValueConverter, IdentifierValue>
+    internal sealed class IdentifierListValueConverter : ListValueConverter<IdentifierValue>
     {
+        public IdentifierListValueConverter() : base(Converters.Identifier)
+        { }
+
         protected override ListValue<IdentifierValue> CreateListValue(TokenValue parsedValue, IEnumerable<IValue> convertedValues)
             => new IdentifierListValue(parsedValue, convertedValues.Cast<IdentifierValue>().ToList());
     }

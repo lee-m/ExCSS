@@ -24,8 +24,12 @@ namespace ExCSS.New.ValueConverters
         }
     }
 
-    internal sealed class TimeListValueConverter : ListValueConverter<TimeValueConverter, TimeValue>
+    internal sealed class TimeListValueConverter : ListValueConverter<TimeValue>
     {
+        public TimeListValueConverter()
+            : base(Converters.Time)
+        { }
+
         protected override ListValue<TimeValue> CreateListValue(TokenValue parsedValue, IEnumerable<IValue> convertedValues)
             => new TimeListValue(parsedValue, convertedValues.Cast<TimeValue>().ToList());
     }

@@ -1,5 +1,4 @@
-﻿using ExCSS.New.ValueConverters;
-using ExCSS.New.Values;
+﻿using System.Collections.Generic;
 
 namespace ExCSS.New.StyleProperties.Animation
 {
@@ -8,11 +7,7 @@ namespace ExCSS.New.StyleProperties.Animation
         internal AnimationDurationProperty() : base(PropertyNames.AnimationDuration)
         { }
 
-        protected override IValue CoerceValue(TokenValue newTokenValue)
-        {
-            return TryConvert<TimeValueConverter>(newTokenValue)
-                ?? TryConvert<TimeListValueConverter>(newTokenValue)
-                ?? TryConvert<WideKeywordValueConverter>(newTokenValue);
-        }
+        internal override IEnumerable<IValueConverter2> GetValueConverters()
+            => new[] { Converters.Time, Converters.TimeList, Converters.WideKeyword };
     }
 }

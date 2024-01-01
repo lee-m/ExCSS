@@ -417,21 +417,6 @@ namespace ExCSS
             return string.Join(string.Empty, value.Select(m => m.ToValue()));
         }
 
-        public static ColorValue ToColor(this TokenValue value)
-        {
-            var element = value.OnlyOrDefault();
-
-            if (element != null && element.Type == TokenType.Ident) 
-                return ColorValue.FromName(new TokenValue(value), element.Data);
-
-            if (element != null && element.Type == TokenType.Color && !((ColorToken) element).IsValid)
-            {
-                return ColorValue.FromHex(new TokenValue(value), element.Data);
-            }
-
-            return null;
-        }
-
         public static T As<T>(this IValue value)
             => (T)value;
     }

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 
 using ExCSS.New.Enumerations;
+using ExCSS.New.StyleProperties.Animation;
 using ExCSS.New.Values;
 
 using Xunit;

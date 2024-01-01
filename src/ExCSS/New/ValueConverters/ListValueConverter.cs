@@ -4,19 +4,23 @@ using ExCSS.New.Values;
 
 namespace ExCSS.New.ValueConverters
 {
-    internal abstract class ListValueConverter<TValueConverter, TValue> : IValueConverter2 
-        where TValueConverter: IValueConverter2, new()
-        where TValue : IValue
+    internal abstract class ListValueConverter<TValue> : IValueConverter2 where TValue : IValue
     {
+        private readonly IEnumerable<IValueConverter2> _converters;
+
+        protected ListValueConverter(params IValueConverter2[] converters)
+        {
+            _converters = converters;
+        }
+
         public IValue Convert(TokenValue value)
         {
             var tokenList = value.ToList();
             var values = new List<IValue>();
-            var valueConverter = new TValueConverter();
 
             foreach(var token in tokenList)
             {
-                var convertedValue = valueConverter.Convert(new TokenValue(token));
+                var convertedValue = TryConvertValue(new TokenValue(token));
 
                 if (convertedValue == null)
                     return null;
@@ -25,6 +29,19 @@ namespace ExCSS.New.ValueConverters
             }
 
             return CreateListValue(value, values);
+        }
+
+        private IValue TryConvertValue(TokenValue value)
+        {
+            foreach(var converter in _converters)
+            {
+                var convertedValue = converter.Convert(value);
+
+                if (convertedValue != null)
+                    return convertedValue;
+            }
+
+            return null;
         }
 
         protected abstract ListValue<TValue> CreateListValue(TokenValue parsedValue, IEnumerable<IValue> convertedValues);

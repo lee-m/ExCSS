@@ -1,5 +1,6 @@
-﻿using ExCSS.New.ValueConverters;
-using ExCSS.New.Values;
+﻿using System.Collections.Generic;
+
+using ExCSS.New.ValueConverters;
 
 namespace ExCSS.New.StyleProperties.Flexbox
 {
@@ -9,13 +10,16 @@ namespace ExCSS.New.StyleProperties.Flexbox
             : base(PropertyNames.AlignContent)
         { }
 
-        protected override IValue CoerceValue(TokenValue newTokenValue)
+        internal override IEnumerable<IValueConverter2> GetValueConverters()
         {
-            return TryConvert<NormalKeywordValueConverter>(newTokenValue)
-                   ?? TryConvert<ContentDistributionValueConverter>(newTokenValue)
-                   ?? TryConvert<BaselinePositionValueConverter>(newTokenValue)
-                   ?? TryConvert<ContentPositionValueConverter>(newTokenValue)
-                   ?? TryConvert<WideKeywordValueConverter>(newTokenValue);
+            return new[]
+            {
+                new AllowedKeywordsValueConverter(Keywords.Normal),
+                Converters.ContentDistribution,
+                Converters.BaselinePosition,
+                Converters.ContentPosition,
+                Converters.WideKeyword
+            };
         }
     }
 }

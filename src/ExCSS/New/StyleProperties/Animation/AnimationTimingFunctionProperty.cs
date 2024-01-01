@@ -1,7 +1,6 @@
-﻿using ExCSS.New.ValueConverters;
-using ExCSS.New.Values;
+﻿using System.Collections.Generic;
 
-namespace ExCSS
+namespace ExCSS.New.StyleProperties.Animation
 {
     public sealed class AnimationTimingFunctionProperty : Property
     {
@@ -9,10 +8,13 @@ namespace ExCSS
             : base(PropertyNames.AnimationTimingFunction)
         { }
 
-        protected override IValue CoerceValue(TokenValue newTokenValue)
+        internal override IEnumerable<IValueConverter2> GetValueConverters()
         {
-            return TryConvert<TimingFunctionValueConverter>(newTokenValue)
-                ?? TryConvert<WideKeywordValueConverter>(newTokenValue);
+            return new[]
+            {
+                Converters.TimingFunction,
+                Converters.WideKeyword
+            };
         }
     }
 }

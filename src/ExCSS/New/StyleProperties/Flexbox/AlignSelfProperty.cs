@@ -1,27 +1,24 @@
-﻿using ExCSS.New.ValueConverters;
-using ExCSS.New.Values;
+﻿using System.Collections.Generic;
+
+using ExCSS.New.ValueConverters;
 
 namespace ExCSS.New.StyleProperties.Flexbox
 {
     public sealed class AlignSelfProperty : Property
     {
-        internal class AlignSelfAllowedKeywordsValueConverter : AllowedKeywordsValueConverter
-        {
-            public AlignSelfAllowedKeywordsValueConverter()
-                : base(Keywords.Auto, Keywords.Normal, Keywords.Stretch)
-            { }
-        }
-
         internal AlignSelfProperty()
             : base(PropertyNames.AlignSelf)
         { }
 
-        protected override IValue CoerceValue(TokenValue newTokenValue)
+        internal override IEnumerable<IValueConverter2> GetValueConverters()
         {
-            return TryConvert<AlignSelfAllowedKeywordsValueConverter>(newTokenValue)
-                   ?? TryConvert<SelfPositionValueConverter>(newTokenValue)
-                   ?? TryConvert<BaselinePositionValueConverter>(newTokenValue)
-                   ?? TryConvert<WideKeywordValueConverter>(newTokenValue);
+            return new[]
+            {
+                new AllowedKeywordsValueConverter(Keywords.Auto, Keywords.Normal, Keywords.Stretch),
+                Converters.SelfPosition,
+                Converters.BaselinePosition,
+                Converters.WideKeyword
+            };
         }
     }
 }

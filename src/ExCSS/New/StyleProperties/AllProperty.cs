@@ -1,5 +1,4 @@
-﻿using ExCSS.New.ValueConverters;
-using ExCSS.New.Values;
+﻿using System.Collections.Generic;
 
 namespace ExCSS.New.StyleProperties
 {
@@ -9,10 +8,7 @@ namespace ExCSS.New.StyleProperties
             : base(PropertyNames.All)
         { }
 
-        protected override IValue CoerceValue(TokenValue newTokenValue)
-        {
-            var converter = new WideKeywordValueConverter();
-            return converter.Convert(newTokenValue);
-        }
+        internal override IEnumerable<IValueConverter2> GetValueConverters()
+            => new[] { Converters.WideKeyword };
     }
 }

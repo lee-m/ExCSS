@@ -9,32 +9,33 @@ namespace ExCSS.New.ValueConverters
 {
     internal sealed class TimingFunctionValueConverter : IValueConverter2
     {
-        private readonly Dictionary<string, Func<TokenValue, IValue>> _timingFunctions =
-            new(StringComparer.OrdinalIgnoreCase)
-            {
-                { Keywords.Ease, parsedValue => CubicBezierTimingFunction.Ease(parsedValue) },
-                { Keywords.EaseIn, parsedValue => CubicBezierTimingFunction.EaseIn(parsedValue) },
-                { Keywords.EaseOut, parsedValue => CubicBezierTimingFunction.EaseOut(parsedValue) },
-                { Keywords.EaseInOut, parsedValue => CubicBezierTimingFunction.EaseInOut(parsedValue) },
-                { Keywords.Linear, parsedValue => CubicBezierTimingFunction.Linear(parsedValue) },
-                { Keywords.StepStart, parsedValue => StepsTimingFunction.StepStart(parsedValue) },
-                { Keywords.StepEnd, parsedValue => StepsTimingFunction.StepEnd(parsedValue) }
-            };
+        private readonly Dictionary<string, Func<TokenValue, IValue>> _timingFunctions;
+        private readonly IValueConverter2 _timingFunctionKeywordsConverter;
+        private readonly IValueConverter2 _stepPositionKeywordsConverter;
 
-        private class TimingFunctionKeywordValueConverter : AllowedKeywordsValueConverter
+        public TimingFunctionValueConverter()
         {
-            public TimingFunctionKeywordValueConverter()
-                : base(Keywords.Ease, Keywords.EaseIn, Keywords.EaseOut, Keywords.EaseInOut,
-                       Keywords.Linear, Keywords.StepStart, Keywords.StepEnd)
-            { }
+            _timingFunctions =
+                new Dictionary<string, Func<TokenValue, IValue>>(StringComparer.OrdinalIgnoreCase)
+                {
+                    { Keywords.Ease, parsedValue => CubicBezierTimingFunction.Ease(parsedValue) },
+                    { Keywords.EaseIn, parsedValue => CubicBezierTimingFunction.EaseIn(parsedValue) },
+                    { Keywords.EaseOut, parsedValue => CubicBezierTimingFunction.EaseOut(parsedValue) },
+                    { Keywords.EaseInOut, parsedValue => CubicBezierTimingFunction.EaseInOut(parsedValue) },
+                    { Keywords.Linear, parsedValue => CubicBezierTimingFunction.Linear(parsedValue) },
+                    { Keywords.StepStart, parsedValue => StepsTimingFunction.StepStart(parsedValue) },
+                    { Keywords.StepEnd, parsedValue => StepsTimingFunction.StepEnd(parsedValue) }
+                };
+
+            _timingFunctionKeywordsConverter =
+                new AllowedKeywordsValueConverter(Keywords.Ease, Keywords.EaseIn, Keywords.EaseOut, Keywords.EaseInOut,
+                                                  Keywords.Linear, Keywords.StepStart, Keywords.StepEnd);
+
+            _stepPositionKeywordsConverter =
+                new AllowedKeywordsValueConverter(Keywords.JumpStart, Keywords.JumpEnd,
+                                                  Keywords.JumpNone, Keywords.JumpBoth, Keywords.Start, Keywords.End);
         }
 
-        private class StepPositionKeywordValueConverter : AllowedKeywordsValueConverter
-        {
-            public StepPositionKeywordValueConverter()
-                : base(Keywords.JumpStart, Keywords.JumpEnd, Keywords.JumpNone, Keywords.JumpBoth, Keywords.Start, Keywords.End)
-            { }
-        }
         public IValue Convert(TokenValue value)
         {
             if (value == null)
@@ -46,15 +47,13 @@ namespace ExCSS.New.ValueConverters
 
         private IValue TryConvertTimingFunctionKeywordValue(TokenValue value)
         {
-            var keywordValue = new TimingFunctionKeywordValueConverter().Convert(value);
+            var keywordValue = _timingFunctionKeywordsConverter.Convert(value);
 
-            if (keywordValue != null)
-            {
-                var keyword = keywordValue.As<KeywordValue>().Keyword;
-                return _timingFunctions[keyword](value);
-            }
+            if (keywordValue == null)
+                return null;
 
-            return null;
+            var keyword = keywordValue.As<KeywordValue>().Keyword;
+            return _timingFunctions[keyword](value);
         }
 
         private IValue TryConvertTimingFunctionSpecification(TokenValue value)
@@ -84,13 +83,10 @@ namespace ExCSS.New.ValueConverters
         private IValueConverter2[] GetTimingFunctionArgumentConverters(string functionName)
         {
             if (functionName == FunctionNames.CubicBezier)
-            {
-                var floatValueConverter = new FloatNumericValueConverter();
-                return new IValueConverter2[] { floatValueConverter, floatValueConverter, floatValueConverter, floatValueConverter };
-            }
-            
+                return new[] { Converters.Float, Converters.Float, Converters.Float, Converters.Float };
+          
             if (functionName == FunctionNames.Steps)
-                return new IValueConverter2[] { new IntegerValueConverter(), new StepPositionKeywordValueConverter() };
+                return new[] { Converters.Integer, _stepPositionKeywordsConverter };
 
             return null;
         }
@@ -133,8 +129,8 @@ namespace ExCSS.New.ValueConverters
                                        : args[1].As<KeywordValue>();
 
 
-                //If the step position is jump-none, the number of intervals must be a positive integer greater than 0, otherwise
-                //it must be a positive integer greater than 1
+                //If the step position is jump-none, the number of intervals must be a positive integer
+                //greater than 0, otherwise it must be a positive integer greater than 1
                 if (numIntervals.Value < 0)
                     return null;
 

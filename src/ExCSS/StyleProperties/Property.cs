@@ -11,13 +11,6 @@ namespace ExCSS
     {
         private readonly PropertyFlags _flags;
 
-        private static readonly Dictionary<Type, IValueConverter2> _cachedValueConverters;
-
-        static Property()
-        {
-            _cachedValueConverters = new Dictionary<Type, IValueConverter2>();
-        }
-
         internal Property(string name, PropertyFlags flags = PropertyFlags.None)
         {
             Name = name;
@@ -35,22 +28,26 @@ namespace ExCSS
             return Value != null;
         }
 
-        protected virtual IValue CoerceValue(TokenValue newTokenValue)
-            => null;
-
-        internal IValue TryConvert<TConverter>(TokenValue value) where TConverter : IValueConverter2, new()
+        private IValue CoerceValue(TokenValue newTokenValue)
         {
-            lock (_cachedValueConverters)
-            {
-                if (!_cachedValueConverters.TryGetValue(typeof(TConverter), out var converter))
-                {
-                    converter = new TConverter();
-                    _cachedValueConverters.Add(typeof(TConverter), converter);
-                }
+            var converters = GetValueConverters();
 
-                return converter.Convert(value);
+            if (converters == null)
+                return null;
+
+            foreach(var converter in converters)
+            {
+                var value = converter.Convert(newTokenValue);
+
+                if (value != null)
+                    return value;
             }
+
+            return null;
         }
+        
+        internal virtual IEnumerable<IValueConverter2> GetValueConverters()
+            => null;
 
         public string ValueText => Value?.ToString();
 

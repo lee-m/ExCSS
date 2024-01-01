@@ -4,18 +4,18 @@ using ExCSS.New.Enumerations;
 
 namespace ExCSS.New.Values
 {
-    public abstract class ListValue<TValue> : BaseValue where TValue : IValue
+    public class ListValue<TValue> : IValue where TValue : IValue
     {
-        protected ListValue(IEnumerable<Token> parsedValue,
-                            ValueKind kind,
-                            IList<TValue> values)
-            : base(parsedValue)
+        public ListValue(IEnumerable<Token> parsedValue, IList<TValue> values)
         {
-            Kind = kind;
             Values = values;
+            Original = parsedValue.ToText();
         }
 
+        public override string ToString() => Original;
+
         public IList<TValue> Values { get; }
-        public override ValueKind Kind { get; }
+        public ValueKind Kind => ValueKind.List;
+        public string Original { get; }
     }
 }

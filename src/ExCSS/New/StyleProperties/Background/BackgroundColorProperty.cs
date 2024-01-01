@@ -1,5 +1,6 @@
-﻿using ExCSS.New.ValueConverters;
-using ExCSS.New.Values;
+﻿using System.Collections.Generic;
+
+using ExCSS.New.ValueConverters;
 
 namespace ExCSS.New.StyleProperties.Background
 {
@@ -9,12 +10,15 @@ namespace ExCSS.New.StyleProperties.Background
             : base(PropertyNames.BackgroundColor, PropertyFlags.Hashless | PropertyFlags.Animatable)
         { }
 
-        protected override IValue CoerceValue(TokenValue newTokenValue)
+        internal override IEnumerable<IValueConverter2> GetValueConverters()
         {
-            return newTokenValue.ToColor()
-                   ?? TryConvert<ColorFunctionValueConverter>(newTokenValue)
-                   ?? TryConvert<WideKeywordValueConverter>(newTokenValue)
-                   ?? TryConvert<CurrentColorKeywordValueConverter>(newTokenValue);
+            return new[]
+            {
+                Converters.Color,
+                Converters.ColorFunction,
+                Converters.WideKeyword,
+                new AllowedKeywordsValueConverter(Keywords.CurrentColor)
+            };
         }
     }
 }

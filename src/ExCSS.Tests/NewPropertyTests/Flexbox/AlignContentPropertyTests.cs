@@ -75,7 +75,13 @@ namespace ExCSS.Tests.NewPropertyTests.Flexbox
         [InlineData("flex-start", ContentPositionKeyword.FlexStart)]
         [InlineData("flex-end", ContentPositionKeyword.FlexEnd)]
         public void AlignContentPropertyAcceptsContentPosition(string value, ContentPositionKeyword expectedKeyword)
-            => TestAcceptsEnumKeyword(value, expectedKeyword);
+        {
+            TestAcceptsValue(value, prop =>
+            {
+                Assert.Equal(ValueKind.ContentPosition, prop.Value.Kind);
+                Assert.Equal(expectedKeyword, prop.Value.As<ContentPositionValue>().Keyword);
+            });
+        }
 
         [Theory]
         [MemberData(nameof(WideKeywordTestValues))]

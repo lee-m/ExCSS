@@ -6,11 +6,11 @@ using ExCSS.New.Values;
 
 namespace ExCSS.New.ValueConverters
 {
-    internal abstract class AllowedKeywordsValueConverter : IValueConverter2
+    internal sealed class AllowedKeywordsValueConverter : IValueConverter2
     {
         private readonly List<string> _allowedKeywords;
 
-        protected AllowedKeywordsValueConverter(params string[] allowedKeywords)
+        public AllowedKeywordsValueConverter(params string[] allowedKeywords)
         {
             _allowedKeywords = allowedKeywords.ToList();
         }
@@ -22,8 +22,10 @@ namespace ExCSS.New.ValueConverters
             if (keyword == null)
                 return null;
 
-            if (_allowedKeywords.Contains(keyword.Data, StringComparer.InvariantCultureIgnoreCase))
-                return new KeywordValue(value, keyword.Data);
+            var foundKeyword = _allowedKeywords.Find(s => s.Equals(keyword.Data, StringComparison.InvariantCultureIgnoreCase));
+
+            if(foundKeyword != null)
+                return new KeywordValue(TokenValue.FromString(foundKeyword), foundKeyword);
 
             return null;
         }
