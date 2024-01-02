@@ -29,5 +29,11 @@ namespace ExCSS.New
                                                                new KeyValuePair<string, AnimationFillMode>(Keywords.Backwards, AnimationFillMode.Backwards),
                                                                new KeyValuePair<string, AnimationFillMode>(Keywords.Both, AnimationFillMode.Both),
                                                                new KeyValuePair<string, AnimationFillMode>(Keywords.Forwards, AnimationFillMode.Forwards));
+
+        public static readonly IValueConverter2 AnimationDirections
+            = new EnumKeywordValueConverter<AnimationDirection>(new KeyValuePair<string, AnimationDirection>(Keywords.Normal, AnimationDirection.Normal),
+                                                                new KeyValuePair<string, AnimationDirection>(Keywords.Reverse, AnimationDirection.Reverse),
+                                                                new KeyValuePair<string, AnimationDirection>(Keywords.Alternate, AnimationDirection.Alternate),
+                                                                new KeyValuePair<string, AnimationDirection>(Keywords.AlternateReverse, AnimationDirection.AlternateReverse));
     };
 }

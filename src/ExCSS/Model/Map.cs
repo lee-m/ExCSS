@@ -112,14 +112,6 @@ namespace ExCSS
                 {Keywords.ContentBox, BoxModel.ContentBox}
             };
 
-        public static readonly Dictionary<string, AnimationDirection> AnimationDirections =
-            new(StringComparer.OrdinalIgnoreCase)
-            {
-                {Keywords.Normal, AnimationDirection.Normal},
-                {Keywords.Reverse, AnimationDirection.Reverse},
-                {Keywords.Alternate, AnimationDirection.Alternate},
-                {Keywords.AlternateReverse, AnimationDirection.AlternateReverse}
-            };
         public static readonly Dictionary<string, Visibility> Visibilities =
             new(StringComparer.OrdinalIgnoreCase)
             {
@@ -274,20 +266,7 @@ namespace ExCSS
                 {Keywords.AvoidColumn, BreakMode.AvoidColumn},
                 {Keywords.AvoidRegion, BreakMode.AvoidRegion}
             };
-        public static readonly Dictionary<string, float> HorizontalModes =
-            new(StringComparer.OrdinalIgnoreCase)
-            {
-                {Keywords.Left, 0f},
-                {Keywords.Center, 0.5f},
-                {Keywords.Right, 1f}
-            };
-        public static readonly Dictionary<string, float> VerticalModes =
-            new(StringComparer.OrdinalIgnoreCase)
-            {
-                {Keywords.Top, 0f},
-                {Keywords.Center, 0.5f},
-                {Keywords.Bottom, 1f}
-            };
+
         public static readonly Dictionary<string, UnicodeMode> UnicodeModes =
             new(StringComparer.OrdinalIgnoreCase)
             {
