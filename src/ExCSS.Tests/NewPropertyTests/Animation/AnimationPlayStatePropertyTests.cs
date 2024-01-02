@@ -23,7 +23,7 @@ namespace ExCSS.Tests.NewPropertyTests.Animation
                     new object[] { GetUppercasePermutations(Keywords.Running), AnimationPlayState.Running },
 
                     new object[] { Keywords.Paused, AnimationPlayState.Paused },
-                    new object[] { GetUppercasePermutations(Keywords.Paused), AnimationPlayState.Paused },
+                    new object[] { GetUppercasePermutations(Keywords.Paused), AnimationPlayState.Paused }
                 };
             }
         }

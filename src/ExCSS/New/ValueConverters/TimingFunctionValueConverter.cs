@@ -9,9 +9,9 @@ namespace ExCSS.New.ValueConverters
 {
     internal sealed class TimingFunctionValueConverter : IValueConverter2
     {
-        private readonly Dictionary<string, Func<TokenValue, IValue>> _timingFunctions;
-        private readonly IValueConverter2 _timingFunctionKeywordsConverter;
         private readonly IValueConverter2 _stepPositionKeywordsConverter;
+        private readonly IValueConverter2 _timingFunctionKeywordsConverter;
+        private readonly Dictionary<string, Func<TokenValue, IValue>> _timingFunctions;
 
         public TimingFunctionValueConverter()
         {
@@ -42,7 +42,7 @@ namespace ExCSS.New.ValueConverters
                 return null;
 
             return TryConvertTimingFunctionKeywordValue(value)
-                ?? TryConvertTimingFunctionSpecification(value);
+                   ?? TryConvertTimingFunctionSpecification(value);
         }
 
         private IValue TryConvertTimingFunctionKeywordValue(TokenValue value)
@@ -84,7 +84,7 @@ namespace ExCSS.New.ValueConverters
         {
             if (functionName == FunctionNames.CubicBezier)
                 return new[] { Converters.Float, Converters.Float, Converters.Float, Converters.Float };
-          
+
             if (functionName == FunctionNames.Steps)
                 return new[] { Converters.Integer, _stepPositionKeywordsConverter };
 
@@ -93,7 +93,7 @@ namespace ExCSS.New.ValueConverters
 
         private IValue GetTimingFunction(TokenValue parsedValue, string functionName, List<IValue> args)
         {
-            if(functionName == FunctionNames.CubicBezier)
+            if (functionName == FunctionNames.CubicBezier)
             {
                 if (args[0] == null || args[1] == null || args[2] == null || args[3] == null)
                     return null;
@@ -113,7 +113,7 @@ namespace ExCSS.New.ValueConverters
                 return new CubicBezierTimingFunction(parsedValue, x1, y1, x2, y2);
             }
 
-            if(functionName == FunctionNames.Steps)
+            if (functionName == FunctionNames.Steps)
             {
                 //First argument must be a integer. 
                 if (args.Count >= 1 && (args[0] == null || args[0].Kind != ValueKind.Number))
@@ -127,7 +127,6 @@ namespace ExCSS.New.ValueConverters
                 var stepPosition = args.Count == 1
                                        ? new KeywordValue(TokenValue.Empty, Keywords.End)
                                        : args[1].As<KeywordValue>();
-
 
                 //If the step position is jump-none, the number of intervals must be a positive integer
                 //greater than 0, otherwise it must be a positive integer greater than 1
@@ -144,4 +143,3 @@ namespace ExCSS.New.ValueConverters
         }
     }
 }
-

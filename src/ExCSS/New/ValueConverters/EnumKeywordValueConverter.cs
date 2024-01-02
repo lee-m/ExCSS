@@ -5,7 +5,7 @@ using ExCSS.New.Values;
 
 namespace ExCSS.New.ValueConverters
 {
-    internal class EnumKeywordValueConverter<TEnum> : IValueConverter2 where TEnum: unmanaged
+    internal class EnumKeywordValueConverter<TEnum> : IValueConverter2 where TEnum : unmanaged
     {
         private readonly Dictionary<string, TEnum> _mapping;
 

@@ -15,7 +15,7 @@ namespace ExCSS.New.ValueConverters
             { Keywords.SelfStart, SelfPositionKeyword.SelfStart },
             { Keywords.SelfEnd, SelfPositionKeyword.SelfEnd },
             { Keywords.FlexStart, SelfPositionKeyword.FlexStart },
-            { Keywords.FlexEnd, SelfPositionKeyword.FlexEnd },
+            { Keywords.FlexEnd, SelfPositionKeyword.FlexEnd }
         };
 
         public IValue Convert(TokenValue value)

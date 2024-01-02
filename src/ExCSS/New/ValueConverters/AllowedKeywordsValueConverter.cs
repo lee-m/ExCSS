@@ -24,7 +24,7 @@ namespace ExCSS.New.ValueConverters
 
             var foundKeyword = _allowedKeywords.Find(s => s.Equals(keyword.Data, StringComparison.InvariantCultureIgnoreCase));
 
-            if(foundKeyword != null)
+            if (foundKeyword != null)
                 return new KeywordValue(TokenValue.FromString(foundKeyword), foundKeyword);
 
             return null;

@@ -4,7 +4,7 @@ using ExCSS.New.Enumerations;
 
 namespace ExCSS.New.Values
 {
-    public class EnumKeywordValue<T> : BaseValue where T: unmanaged
+    public class EnumKeywordValue<T> : BaseValue where T : unmanaged
     {
         internal EnumKeywordValue(IEnumerable<Token> parsedValue, T enumKeyword) : base(parsedValue)
         {

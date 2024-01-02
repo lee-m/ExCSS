@@ -18,7 +18,7 @@ namespace ExCSS.New.ValueConverters
             var tokenList = value.ToList();
             var values = new List<IValue>();
 
-            foreach(var token in tokenList)
+            foreach (var token in tokenList)
             {
                 var convertedValue = TryConvertValue(new TokenValue(token));
 
@@ -33,7 +33,7 @@ namespace ExCSS.New.ValueConverters
 
         private IValue TryConvertValue(TokenValue value)
         {
-            foreach(var converter in _converters)
+            foreach (var converter in _converters)
             {
                 var convertedValue = converter.Convert(value);
 

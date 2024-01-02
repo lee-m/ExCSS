@@ -1,6 +1,7 @@
 ﻿using ExCSS.New.Enumerations;
 using ExCSS.New.StyleProperties.Background;
 using ExCSS.New.Values;
+
 using Xunit;
 
 namespace ExCSS.Tests.NewPropertyTests

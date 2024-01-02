@@ -135,7 +135,7 @@ namespace ExCSS.New.ValueConverters
 
                     if (functionName == FunctionNames.Hwb)
                         return ColorValue.FromHwb(parsedValue, h, saturation_whiteness, luminosity_blackness);
-                    
+
                     return ColorValue.FromHsla(parsedValue, h, saturation_whiteness, luminosity_blackness, a);
                 }
 

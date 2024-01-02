@@ -11,7 +11,7 @@ namespace ExCSS.New
         public static readonly IValueConverter2 TimeList = new TimeListValueConverter();
         public static readonly IValueConverter2 Float = new NumericValueConverter(ValueExtensions.ToSingle, NumberUnit.Float);
         public static readonly IValueConverter2 ZeroToInfiniteFloat = new BoundedNumericValueConverter(Float, 0, float.MaxValue);
-        public static readonly IValueConverter2 Integer = new NumericValueConverter((t) => t.ToInteger(), NumberUnit.Integer);
+        public static readonly IValueConverter2 Integer = new NumericValueConverter(t => t.ToInteger(), NumberUnit.Integer);
         public static readonly IValueConverter2 Identifier = new IdentifierValueConverter();
         public static readonly IValueConverter2 IdentifierList = new IdentifierListValueConverter();
         public static readonly IValueConverter2 WideKeyword = new WideKeywordValueConverter();
@@ -39,5 +39,5 @@ namespace ExCSS.New
         public static readonly IValueConverter2 AnimationPlayStates
             = new EnumKeywordValueConverter<AnimationPlayState>(new KeyValuePair<string, AnimationPlayState>(Keywords.Running, AnimationPlayState.Running),
                                                                 new KeyValuePair<string, AnimationPlayState>(Keywords.Paused, AnimationPlayState.Paused));
-    };
+    }
 }

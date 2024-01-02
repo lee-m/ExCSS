@@ -16,7 +16,7 @@ namespace ExCSS.New.ValueConverters
             bool? last = null;
             var completed = false;
 
-            foreach(var token in value)
+            foreach (var token in value)
             {
                 if (token.Type == TokenType.Whitespace)
                     continue;
@@ -25,11 +25,11 @@ namespace ExCSS.New.ValueConverters
                 if (completed)
                     return null;
 
-                if(token.Type == TokenType.Ident 
-                   && (token.Data == Keywords.First || token.Data == Keywords.Last))
+                if (token.Type == TokenType.Ident
+                    && (token.Data == Keywords.First || token.Data == Keywords.Last))
                 {
                     //Can't specify first or last more than once
-                    if (first != null|| last != null)
+                    if (first != null || last != null)
                         return null;
 
                     first = token.Data == Keywords.First ? true : null;

@@ -1,6 +1,5 @@
 ﻿using ExCSS.New.Enumerations;
 using ExCSS.New.StyleProperties;
-using ExCSS.New.Values;
 
 using Xunit;
 

@@ -17,7 +17,7 @@ namespace ExCSS.New.StyleProperties.Flexbox
                 new AllowedKeywordsValueConverter(Keywords.Normal),
                 Converters.ContentDistribution,
                 Converters.BaselinePosition,
-                Converters.ContentPosition,
+                Converters.ContentPosition
             };
         }
     }

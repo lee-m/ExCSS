@@ -5,7 +5,7 @@ using ExCSS.New.Values;
 
 namespace ExCSS.New.ValueConverters
 {
-    public class NumericValueConverter : IValueConverter2 
+    public class NumericValueConverter : IValueConverter2
     {
         private readonly Func<TokenValue, float?> _innerConverter;
         private readonly NumberUnit _unit;

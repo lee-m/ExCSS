@@ -5,10 +5,10 @@ using ExCSS.New.Enumerations;
 namespace ExCSS.New.Values
 {
     public sealed class SelfPositionValue : BaseValue
-    {        
+    {
         internal SelfPositionValue(IEnumerable<Token> parsedValue,
                                    OverflowPositionValue overflow,
-                                   SelfPositionKeyword keyword) 
+                                   SelfPositionKeyword keyword)
             : base(parsedValue)
         {
             Overflow = overflow;
