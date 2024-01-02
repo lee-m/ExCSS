@@ -1,54 +1,9 @@
-﻿using ExCSS.New.StyleProperties.Animation;
-
-using Xunit;
+﻿using Xunit;
 
 namespace ExCSS.Tests
 {
     public class AnimationPropertyTests : CssConstructionFunctions
     {
-        
-
-        [Fact]
-        public void AnimationDelayMillisecondsLegal()
-        {
-            var snippet = "animation-delay : 0ms";
-            var property = ParseDeclaration(snippet);
-            Assert.Equal("animation-delay", property.Name);
-            Assert.False(property.IsImportant);
-            Assert.IsType<AnimationDelayProperty>(property);
-            var concrete = (AnimationDelayProperty)property;
-            Assert.False(concrete.IsInherited);
-            Assert.True(concrete.HasValue);
-            Assert.Equal("0ms", concrete.ValueText);
-        }
-
-        [Fact]
-        public void AnimationDelayZeroIllegal()
-        {
-            var snippet = "animation-delay : 0";
-            var property = ParseDeclaration(snippet);
-            Assert.Equal("animation-delay", property.Name);
-            Assert.False(property.IsImportant);
-            Assert.IsType<AnimationDelayProperty>(property);
-            var concrete = (AnimationDelayProperty)property;
-            Assert.False(concrete.IsInherited);
-            Assert.False(concrete.HasValue);
-        }
-
-        [Fact]
-        public void AnimationDelayZeroZeroSecondMillisecondsLegal()
-        {
-            var snippet = "animation-delay : 0s  , 0s  , 1s  , 20ms";
-            var property = ParseDeclaration(snippet);
-            Assert.Equal("animation-delay", property.Name);
-            Assert.False(property.IsImportant);
-            Assert.IsType<AnimationDelayProperty>(property);
-            var concrete = (AnimationDelayProperty)property;
-            Assert.False(concrete.IsInherited);
-            Assert.True(concrete.HasValue);
-            Assert.Equal("0s, 0s, 1s, 20ms", concrete.ValueText);
-        }
-
         [Fact]
         public void AnimationIterationCountLegal()
         {

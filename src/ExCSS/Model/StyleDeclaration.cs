@@ -361,10 +361,10 @@ namespace ExCSS
             set => SetPropertyValue(PropertyNames.Animation, value);
         }
 
-        public string AnimationDelay
+        public AnimationDelayProperty AnimationDelay
         {
-            get => GetPropertyValue(PropertyNames.AnimationDelay);
-            set => SetPropertyValue(PropertyNames.AnimationDelay, value);
+            get => (AnimationDelayProperty)GetProperty(PropertyNames.AnimationDelay);
+            set => SetProperty(PropertyNames.AnimationDelay, value.ValueText);
         }
 
         public AnimationDirectionProperty AnimationDirection

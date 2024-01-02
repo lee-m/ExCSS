@@ -6,9 +6,9 @@ using Xunit;
 
 namespace ExCSS.Tests.NewPropertyTests.Animation
 {
-    public class AnimationDurationPropertyTests : BasePropertyTest<AnimationDurationProperty>
+    public class AnimationDelayPropertyTests : BasePropertyTest<AnimationDelayProperty>
     {
-        public AnimationDurationPropertyTests() : base(PropertyNames.AnimationDuration)
+        public AnimationDelayPropertyTests() : base(PropertyNames.AnimationDelay)
         { }
 
         [Theory]
@@ -16,7 +16,9 @@ namespace ExCSS.Tests.NewPropertyTests.Animation
         [InlineData("0s", 0, TimeUnit.S)]
         [InlineData("10MS", 10, TimeUnit.Ms)]
         [InlineData("10S", 10, TimeUnit.S)]
-        public void AnimationDurationLegalValues(string value, double parsedValue, TimeUnit unit)
+        [InlineData("-500MS", -500, TimeUnit.Ms)]
+        [InlineData("-500S", -500, TimeUnit.S)]
+        public void AnimationDelayLegalValues(string value, double parsedValue, TimeUnit unit)
         {
             TestAcceptsValue(value, prop =>
             {
@@ -31,7 +33,7 @@ namespace ExCSS.Tests.NewPropertyTests.Animation
         }
 
         [Fact]
-        public void AnimationDurationMultipleSecondsLegal()
+        public void AnimationDelayMultipleSecondsLegal()
         {
             TestAcceptsValue("1s  , 2s  , 300ms  , 400ms", prop =>
             {
@@ -61,13 +63,13 @@ namespace ExCSS.Tests.NewPropertyTests.Animation
 
         [Theory]
         [MemberData(nameof(WideKeywordTestValues))]
-        public void AnimationDurationPropertyAcceptsWideKeywords(string value, WideKeyword expected)
+        public void AnimationDelayPropertyAcceptsWideKeywords(string value, WideKeyword expected)
             => TestAcceptsEnumKeyword(value, expected);
 
         [Theory]
-        [InlineData("-10")]
+        [InlineData("10")]
         [InlineData("abc")]
-        public void AnimationDurationPropertyIllegalValue(string value)
+        public void AnimationDelayPropertyIllegalValue(string value)
             => TestInvalidValue(value);
     }
 }

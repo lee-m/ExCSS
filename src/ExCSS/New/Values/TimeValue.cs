@@ -4,7 +4,7 @@ using ExCSS.New.Enumerations;
 
 namespace ExCSS.New.Values
 {
-    public class TimeValue : BaseValue, IEquatable<TimeValue>, IComparable<TimeValue>, IFormattable
+    public class TimeValue : BaseValue, IEquatable<TimeValue>, IComparable<TimeValue>
     {
         public static readonly TimeValue Zero = new(TokenValue.Empty, 0f, TimeUnit.Ms);
 
@@ -18,19 +18,6 @@ namespace ExCSS.New.Values
         public float Value { get; }
         public TimeUnit Type { get; }
         public override ValueKind Kind => ValueKind.Time;
-
-        public string UnitString
-        {
-            get
-            {
-                return Type switch
-                {
-                    TimeUnit.Ms => UnitNames.Ms,
-                    TimeUnit.S => UnitNames.S,
-                    _ => string.Empty
-                };
-            }
-        }
 
         /// <summary>
         ///     Compares the magnitude of two times.
@@ -73,7 +60,7 @@ namespace ExCSS.New.Values
 
         public static TimeUnit GetUnit(string s)
         {
-            switch (s)
+            switch (s.ToLower())
             {
                 case "s":
                     return TimeUnit.S;
@@ -137,19 +124,6 @@ namespace ExCSS.New.Values
         /// </summary>
         /// <returns>The unit string.</returns>
         public override string ToString()
-        {
-            return string.Concat(Value.ToString(), UnitString);
-        }
-
-        /// <summary>
-        ///     Returns a formatted string representing the time.
-        /// </summary>
-        /// <param name="format">The format of the number.</param>
-        /// <param name="formatProvider">The provider to use.</param>
-        /// <returns>The unit string.</returns>
-        public string ToString(string format, IFormatProvider formatProvider)
-        {
-            return string.Concat(Value.ToString(format, formatProvider), UnitString);
-        }
+            => Original;
     }
 }
