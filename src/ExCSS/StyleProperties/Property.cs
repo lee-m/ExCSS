@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 using ExCSS.New;
 using ExCSS.New.Values;
@@ -30,10 +31,8 @@ namespace ExCSS
 
         private IValue CoerceValue(TokenValue newTokenValue)
         {
-            var converters = GetValueConverters();
-
-            if (converters == null)
-                return null;
+            var converters = new List<IValueConverter2> { New.Converters.WideKeyword };
+            converters.AddRange(GetValueConverters() ?? Enumerable.Empty<IValueConverter2>());
 
             foreach(var converter in converters)
             {

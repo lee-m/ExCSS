@@ -16,7 +16,6 @@ namespace ExCSS.New.StyleProperties.Background
             {
                 Converters.Color,
                 Converters.ColorFunction,
-                Converters.WideKeyword,
                 new AllowedKeywordsValueConverter(Keywords.CurrentColor)
             };
         }

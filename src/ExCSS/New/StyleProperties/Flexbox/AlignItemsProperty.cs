@@ -16,8 +16,7 @@ namespace ExCSS.New.StyleProperties.Flexbox
             {
                 new AllowedKeywordsValueConverter(Keywords.Normal, Keywords.Stretch),
                 Converters.SelfPosition,
-                Converters.BaselinePosition,
-                Converters.WideKeyword
+                Converters.BaselinePosition
             };
         }
     }

@@ -8,6 +8,6 @@ namespace ExCSS.New.StyleProperties.Animation
         { }
 
         internal override IEnumerable<IValueConverter2> GetValueConverters()
-            => new[] { Converters.Time, Converters.TimeList, Converters.WideKeyword };
+            => new[] { Converters.Time, Converters.TimeList };
     }
 }

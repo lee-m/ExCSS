@@ -18,7 +18,6 @@ namespace ExCSS.New.StyleProperties.Flexbox
                 Converters.ContentDistribution,
                 Converters.BaselinePosition,
                 Converters.ContentPosition,
-                Converters.WideKeyword
             };
         }
     }

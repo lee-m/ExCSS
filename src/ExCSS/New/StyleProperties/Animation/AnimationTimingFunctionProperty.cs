@@ -9,12 +9,6 @@ namespace ExCSS.New.StyleProperties.Animation
         { }
 
         internal override IEnumerable<IValueConverter2> GetValueConverters()
-        {
-            return new[]
-            {
-                Converters.TimingFunction,
-                Converters.WideKeyword
-            };
-        }
+            => new[] { Converters.TimingFunction };
     }
 }

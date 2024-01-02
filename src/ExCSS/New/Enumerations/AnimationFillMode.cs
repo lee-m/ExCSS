@@ -1,6 +1,6 @@
-﻿namespace ExCSS
+﻿namespace ExCSS.New.Enumerations
 {
-    public enum AnimationFillStyle : byte
+    public enum AnimationFillMode
     {
         None,
         Forwards,

@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 
 using ExCSS.New.ValueConverters;
-using ExCSS.New.Values;
 
 namespace ExCSS.New.StyleProperties.Animation
 {
@@ -17,8 +16,8 @@ namespace ExCSS.New.StyleProperties.Animation
 
             return new[]
             {
-                Converters.WideKeyword, 
                 Converters.ZeroToInfiniteFloat,
+                infiniteKeywordConverter,
                 new CombiListValueConverter(infiniteKeywordConverter, Converters.ZeroToInfiniteFloat)
             };
         }

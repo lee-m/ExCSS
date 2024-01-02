@@ -10,7 +10,7 @@
             //TimeConverter.Option().For(PropertyNames.AnimationDelay),
             PositiveOrInfiniteNumberConverter.Option().For(PropertyNames.AnimationIterationCount),
             AnimationDirectionConverter.Option().For(PropertyNames.AnimationDirection),
-            AnimationFillStyleConverter.Option().For(PropertyNames.AnimationFillMode),
+            //AnimationFillStyleConverter.Option().For(PropertyNames.AnimationFillMode),
             PlayStateConverter.Option().For(PropertyNames.AnimationPlayState),
             IdentifierConverter.Option().For(PropertyNames.AnimationName)).FromList().OrDefault();
 

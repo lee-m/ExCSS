@@ -14,7 +14,6 @@ namespace ExCSS.New.StyleProperties.Animation
             return new[]
             {
                 new AllowedKeywordsValueConverter(Keywords.None),
-                Converters.WideKeyword,
                 Converters.Identifier,
                 Converters.IdentifierList
             };

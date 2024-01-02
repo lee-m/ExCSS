@@ -111,14 +111,7 @@ namespace ExCSS
                 {Keywords.PaddingBox, BoxModel.PaddingBox},
                 {Keywords.ContentBox, BoxModel.ContentBox}
             };
-        public static readonly Dictionary<string, AnimationFillStyle> AnimationFillStyles =
-            new(StringComparer.OrdinalIgnoreCase)
-            {
-                {Keywords.None, AnimationFillStyle.None},
-                {Keywords.Forwards, AnimationFillStyle.Forwards},
-                {Keywords.Backwards, AnimationFillStyle.Backwards},
-                {Keywords.Both, AnimationFillStyle.Both}
-            };
+
         public static readonly Dictionary<string, AnimationDirection> AnimationDirections =
             new(StringComparer.OrdinalIgnoreCase)
             {

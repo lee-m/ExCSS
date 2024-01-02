@@ -14,11 +14,16 @@ namespace ExCSS.Tests.NewPropertyTests.Animation
         { }
 
         public static IEnumerable<object[]> InfiniteCasingVariationTestValues
-            => new List<object[]>
+        {
+            get
             {
-                new object[] { Keywords.Infinite },
-                new object[] { GetUppercasePermutations(Keywords.Infinite) }
-            };
+                return new List<object[]>
+                {
+                    new object[] { Keywords.Infinite },
+                    new object[] { GetUppercasePermutations(Keywords.Infinite) }
+                };
+            }
+        }
 
         [Theory]
         [InlineData("0", 0)]

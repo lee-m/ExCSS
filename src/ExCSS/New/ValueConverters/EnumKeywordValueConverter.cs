@@ -1,16 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 using ExCSS.New.Values;
 
 namespace ExCSS.New.ValueConverters
 {
-    internal abstract class EnumKeywordValueConverter<TEnum> : IValueConverter2 where TEnum: unmanaged
+    internal class EnumKeywordValueConverter<TEnum> : IValueConverter2 where TEnum: unmanaged
     {
         private readonly Dictionary<string, TEnum> _mapping;
 
-        protected EnumKeywordValueConverter(params KeyValuePair<string, TEnum>[] mappingValues)
+        public EnumKeywordValueConverter(params KeyValuePair<string, TEnum>[] mappingValues)
         {
-            _mapping = new Dictionary<string, TEnum>();
+            _mapping = new Dictionary<string, TEnum>(StringComparer.OrdinalIgnoreCase);
 
             foreach (var pair in mappingValues)
                 _mapping.Add(pair.Key, pair.Value);

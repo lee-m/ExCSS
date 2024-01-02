@@ -1,4 +1,6 @@
-﻿using ExCSS.New.Enumerations;
+﻿using System.Collections.Generic;
+
+using ExCSS.New.Enumerations;
 using ExCSS.New.ValueConverters;
 
 namespace ExCSS.New
@@ -21,5 +23,11 @@ namespace ExCSS.New
 
         public static readonly IValueConverter2 TimingFunction = new TimingFunctionValueConverter();
         public static readonly IValueConverter2 ColorFunction = new ColorFunctionValueConverter();
-    }
+
+        public static readonly IValueConverter2 AnimationFillModes
+            = new EnumKeywordValueConverter<AnimationFillMode>(new KeyValuePair<string, AnimationFillMode>(Keywords.None, AnimationFillMode.None),
+                                                               new KeyValuePair<string, AnimationFillMode>(Keywords.Backwards, AnimationFillMode.Backwards),
+                                                               new KeyValuePair<string, AnimationFillMode>(Keywords.Both, AnimationFillMode.Both),
+                                                               new KeyValuePair<string, AnimationFillMode>(Keywords.Forwards, AnimationFillMode.Forwards));
+    };
 }
