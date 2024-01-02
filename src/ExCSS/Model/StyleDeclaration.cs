@@ -397,10 +397,10 @@ namespace ExCSS
             set => SetProperty(PropertyNames.AnimationName, value.ValueText);
         }
 
-        public string AnimationPlayState
+        public AnimationPlayStateProperty AnimationPlayState
         {
-            get => GetPropertyValue(PropertyNames.AnimationPlayState);
-            set => SetPropertyValue(PropertyNames.AnimationPlayState, value);
+            get => (AnimationPlayStateProperty)GetProperty(PropertyNames.AnimationPlayState);
+            set => SetPropertyValue(PropertyNames.AnimationPlayState, value.ValueText);
         }
 
         public AnimationTimingFunctionProperty AnimationTimingFunction

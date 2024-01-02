@@ -1,6 +1,6 @@
 ﻿namespace ExCSS
 {
-    public enum PlayState : byte
+    public enum AnimationPlayState
     {
         Running,
         Paused

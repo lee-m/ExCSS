@@ -35,5 +35,9 @@ namespace ExCSS.New
                                                                 new KeyValuePair<string, AnimationDirection>(Keywords.Reverse, AnimationDirection.Reverse),
                                                                 new KeyValuePair<string, AnimationDirection>(Keywords.Alternate, AnimationDirection.Alternate),
                                                                 new KeyValuePair<string, AnimationDirection>(Keywords.AlternateReverse, AnimationDirection.AlternateReverse));
+
+        public static readonly IValueConverter2 AnimationPlayStates
+            = new EnumKeywordValueConverter<AnimationPlayState>(new KeyValuePair<string, AnimationPlayState>(Keywords.Running, AnimationPlayState.Running),
+                                                                new KeyValuePair<string, AnimationPlayState>(Keywords.Paused, AnimationPlayState.Paused));
     };
 }

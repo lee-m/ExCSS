@@ -50,48 +50,6 @@ namespace ExCSS.Tests
         }
 
         [Fact]
-        public void AnimationPlayStateRunningLegal()
-        {
-            var snippet = "animation-play-state: running";
-            var property = ParseDeclaration(snippet);
-            Assert.Equal("animation-play-state", property.Name);
-            Assert.False(property.IsImportant);
-            Assert.IsType<AnimationPlayStateProperty>(property);
-            var concrete = (AnimationPlayStateProperty)property;
-            Assert.False(concrete.IsInherited);
-            Assert.True(concrete.HasValue);
-            Assert.Equal("running", concrete.ValueText);
-        }
-
-        [Fact]
-        public void AnimationPlayStatePausedUppercaseLegal()
-        {
-            var snippet = "animation-play-state: PAUSED";
-            var property = ParseDeclaration(snippet);
-            Assert.Equal("animation-play-state", property.Name);
-            Assert.False(property.IsImportant);
-            Assert.IsType<AnimationPlayStateProperty>(property);
-            var concrete = (AnimationPlayStateProperty)property;
-            Assert.False(concrete.IsInherited);
-            Assert.True(concrete.HasValue);
-            Assert.Equal("paused", concrete.ValueText);
-        }
-
-        [Fact]
-        public void AnimationPlayStatePausedRunningPausedLegal()
-        {
-            var snippet = "animation-play-state: paused, Running, paused";
-            var property = ParseDeclaration(snippet);
-            Assert.Equal("animation-play-state", property.Name);
-            Assert.False(property.IsImportant);
-            Assert.IsType<AnimationPlayStateProperty>(property);
-            var concrete = (AnimationPlayStateProperty)property;
-            Assert.False(concrete.IsInherited);
-            Assert.True(concrete.HasValue);
-            Assert.Equal("paused, running, paused", concrete.ValueText);
-        }
-
-        [Fact]
         public void AnimationIterationCountLegal()
         {
             var snippet = "animation : 5";

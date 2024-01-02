@@ -119,12 +119,6 @@ namespace ExCSS
                 {Keywords.Hidden, Visibility.Hidden},
                 {Keywords.Collapse, Visibility.Collapse}
             };
-        public static readonly Dictionary<string, PlayState> PlayStates =
-            new(StringComparer.OrdinalIgnoreCase)
-            {
-                {Keywords.Running, PlayState.Running},
-                {Keywords.Paused, PlayState.Paused}
-            };
         public static readonly Dictionary<string, FontVariant> FontVariants =
             new(StringComparer.OrdinalIgnoreCase)
             {

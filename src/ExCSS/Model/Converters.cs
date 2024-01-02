@@ -240,7 +240,6 @@ namespace ExCSS
         public static readonly IValueConverter PageBreakModeConverter = Map.PageBreakModes.ToConverter();
         public static readonly IValueConverter UnicodeModeConverter = Map.UnicodeModes.ToConverter();
         public static readonly IValueConverter VisibilityConverter = Map.Visibilities.ToConverter();
-        public static readonly IValueConverter PlayStateConverter = Map.PlayStates.ToConverter();
         public static readonly IValueConverter FontVariantConverter = Map.FontVariants.ToConverter();
         public static readonly IValueConverter DirectionModeConverter = Map.DirectionModes.ToConverter();
         public static readonly IValueConverter HorizontalAlignmentConverter = Map.HorizontalAlignments.ToConverter();
